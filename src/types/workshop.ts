@@ -8,11 +8,11 @@ export type Motion = "full" | "reduced";
 
 export type ForcedState = "rest" | "hover" | "focus" | "pressed";
 
-export type SelectControl = {
+export type SelectControl<O extends readonly string[] = readonly string[]> = {
   kind: "select";
   label: string;
-  options: readonly string[];
-  default: string;
+  options: O;
+  default: O[number];
 };
 
 export type TextControl = {
@@ -39,7 +39,9 @@ export type Args<C extends Controls> = {
     ? boolean
     : ToggleControl extends C[K]
       ? ArgValue
-      : string;
+      : C[K] extends SelectControl<infer O>
+        ? O[number]
+        : string;
 };
 
 export type FrameContext = {

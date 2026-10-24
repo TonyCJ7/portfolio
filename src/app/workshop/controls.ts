@@ -10,11 +10,11 @@ import type {
 
 export const STATES = ["rest", "hover", "focus", "pressed"] as const;
 
-export function select(
+export function select<const O extends readonly string[]>(
   label: string,
-  options: readonly string[],
-  def: string,
-): SelectControl {
+  options: O,
+  def: O[number],
+): SelectControl<O> {
   return { kind: "select", label, options, default: def };
 }
 
@@ -77,14 +77,29 @@ export function serializeArg(value: ArgValue): string {
   return value;
 }
 
+function attribute(key: string, value: string | true): string {
+  if (value === true) {
+    return key;
+  }
+
+  if (/^\d+$/.test(value)) {
+    return `${key}={${value}}`;
+  }
+
+  return `${key}="${value}"`;
+}
+
 export function jsx(
   name: string,
   props: Record<string, ArgValue | undefined>,
   children?: string,
 ): string {
   const attrs = Object.entries(props)
-    .filter(([, value]) => value !== undefined && value !== false && value !== "")
-    .map(([key, value]) => (value === true ? key : `${key}="${value}"`));
+    .filter(
+      (pair): pair is [string, string | true] =>
+        pair[1] !== undefined && pair[1] !== false && pair[1] !== "",
+    )
+    .map(([key, value]) => attribute(key, value));
   const open = [name, ...attrs].join(" ");
 
   if (children === undefined) {

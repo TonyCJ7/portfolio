@@ -5,7 +5,7 @@
 Build one control definition each for an entry's `controls` map, so the entry file reads as a short table.
 
 - In: `label`, the text shown above the field. `options`, the allowed values of a select. `def`, the value used when the URL has none. `max`, the longest text accepted.
-- Out: the matching `SelectControl`, `TextControl` or `ToggleControl`, typed narrowly so toggles produce booleans in the entry's args.
+- Out: the matching `SelectControl`, `TextControl` or `ToggleControl`, typed narrowly so toggles produce booleans and selects produce the union of their options in the entry's args.
 
 ### [defineEntry(entry)](../../../../../src/app/workshop/controls.ts#L29)
 
@@ -35,12 +35,19 @@ Writes a control value the way the URL stores it.
 - In: `value`, a string or boolean.
 - Out: the string unchanged; `"1"` for true and `"0"` for false.
 
-### [jsx(name, props, children)](../../../../../src/app/workshop/controls.ts#L80)
+### [attribute(key, value)](../../../../../src/app/workshop/controls.ts#L80)
+
+Writes one JSX attribute for the usage line.
+
+- In: `key`, the prop name. `value`, its string value, or true for a bare flag.
+- Out: `key` alone for true, `key={11}` for an all-digit value (a numeric prop in JSX), otherwise `key="value"`.
+
+### [jsx(name, props, children)](../../../../../src/app/workshop/controls.ts#L92)
 
 Renders the usage line shown under the stage: the JSX a page would write for the current controls.
 
 - In: `name`, the component name. `props`, prop values by name. `children`, the text between the tags, or none.
-- Out: `<Name prop="v" flag>children</Name>`, or `<Name prop="v" />` without children. Props that are undefined, false or empty are left out; a true prop is written as a bare flag.
+- Out: `<Name prop="v" flag>children</Name>`, or `<Name prop="v" />` without children. Props that are undefined, false or empty are left out; a true prop is written as a bare flag and an all-digit value in braces.
 
 ## Constants
 

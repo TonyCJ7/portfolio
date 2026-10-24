@@ -10,7 +10,7 @@ Names the interaction states an entry can force on the frame through its `state`
 
 ### [SelectControl](../../../../src/types/workshop.ts#L11), [TextControl](../../../../src/types/workshop.ts#L18), [ToggleControl](../../../../src/types/workshop.ts#L25), [ControlDef](../../../../src/types/workshop.ts#L31)
 
-Describe one control in an entry's Controls panel. A select has a fixed list of `options` and a `default`; a text control has a `default` string and a `max` length; a toggle has a boolean `default`. `ControlDef` is the union of the three, told apart by `kind`.
+Describe one control in an entry's Controls panel. A select has a fixed list of `options` and a `default` drawn from them; its type parameter remembers the exact option strings so the entry's args are typed by them; a text control has a `default` string and a `max` length; a toggle has a boolean `default`. `ControlDef` is the union of the three, told apart by `kind`.
 
 ### [Controls](../../../../src/types/workshop.ts#L33)
 
@@ -22,7 +22,7 @@ The value a control can hold: a string for selects and text, a boolean for toggl
 
 ### [Args](../../../../src/types/workshop.ts#L37)
 
-Derives the argument object an entry's `render` and `usage` receive from its `controls`: a boolean for every toggle, a string for every select and text control. When the controls are only known as the general `Controls` map, every value is `ArgValue`.
+Derives the argument object an entry's `render` and `usage` receive from its `controls`: a boolean for every toggle, the union of its options for every select, a string for every text control. When the controls are only known as the general `Controls` map, every value is `ArgValue`.
 
 ### [FrameContext](../../../../src/types/workshop.ts#L45)
 

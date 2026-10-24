@@ -34,7 +34,7 @@ export const entry = defineEntry({
   },
   render: (args) => {
     const size = args.size === "11" ? 11 : 12;
-    const tone = args.tone as "muted" | "active" | "accent";
+    const tone = args.tone;
 
     if (args.as === "time") {
       return (
