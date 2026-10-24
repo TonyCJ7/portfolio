@@ -1,0 +1,60 @@
+import NextLink from "next/link";
+import type { ReactNode } from "react";
+
+type LinkProps = {
+  kind?: "prose" | "arrow" | "large" | "social";
+  href: string;
+  external?: boolean;
+  children: ReactNode;
+};
+
+const KIND_CLASSES = {
+  prose:
+    "rounded-xs font-medium text-fg decoration-accent decoration-1 underline-offset-4 transition-colors duration-150 ease-standard hover:underline focus-visible:underline",
+  arrow:
+    "group inline-flex items-center gap-1 text-title text-fg hover:text-accent-text focus-visible:text-accent-text",
+  large:
+    "text-headline text-fg underline decoration-accent decoration-1 underline-offset-6 wrap-anywhere hover:text-accent-text focus-visible:text-accent-text phone:text-headline-phone",
+  social:
+    "font-mono text-label text-fg-muted uppercase transition-colors duration-150 hover:text-fg focus-visible:text-fg",
+};
+
+export default function Link({
+  kind = "prose",
+  href,
+  external = false,
+  children,
+}: LinkProps) {
+  const className = KIND_CLASSES[kind];
+  const content = (
+    <>
+      {children}
+      {kind === "arrow" && (
+        <span
+          aria-hidden
+          className="transition-transform duration-75 ease-standard group-hover:translate-x-1 group-hover:-translate-y-1 group-focus-visible:translate-x-1 group-focus-visible:-translate-y-1 motion-reduce:transition-none"
+        >
+          ↗
+        </span>
+      )}
+    </>
+  );
+
+  if (href.startsWith("/")) {
+    return (
+      <NextLink href={href} className={className}>
+        {content}
+      </NextLink>
+    );
+  }
+
+  return (
+    <a
+      href={href}
+      className={className}
+      {...(external && { target: "_blank", rel: "noopener noreferrer" })}
+    >
+      {content}
+    </a>
+  );
+}
