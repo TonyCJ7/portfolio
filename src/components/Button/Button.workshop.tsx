@@ -25,7 +25,7 @@ export const entry = defineEntry({
     folder: "src/components/Button/",
     props: [
       "variant: primary | ghost (default primary)",
-      "href: renders a link; next/link for paths, a plain anchor for # and external",
+      "href: renders a link; next/link for site pages, a plain anchor for files such as /Tony_CJ_Resume.pdf, # and external",
       "onClick: used when there is no href, renders a button",
       "arrow (default true for primary, false for ghost)",
     ],

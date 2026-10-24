@@ -1,5 +1,6 @@
 import NextLink from "next/link";
 import type { ReactNode } from "react";
+import { isInternalRoute } from "@/lib/href";
 
 type LinkProps = {
   kind?: "prose" | "arrow" | "large" | "social";
@@ -40,7 +41,7 @@ export default function Link({
     </>
   );
 
-  if (href.startsWith("/")) {
+  if (isInternalRoute(href)) {
     return (
       <NextLink href={href} className={className}>
         {content}

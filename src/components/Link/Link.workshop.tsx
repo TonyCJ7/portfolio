@@ -36,7 +36,7 @@ export const entry = defineEntry({
     folder: "src/components/Link/",
     props: [
       "kind: prose | arrow | large | social (default prose)",
-      "href: next/link for paths starting with /, a plain anchor for #, mailto: and external",
+      "href: next/link for site pages, a plain anchor for files such as /Tony_CJ_Resume.pdf, #, mailto: and external",
       "external: opens in a new tab",
     ],
     tokens: [

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { isInternalRoute } from "@/lib/href";
 
 type ButtonProps = {
   variant?: "primary" | "ghost";
@@ -49,7 +50,7 @@ export default function Button({
     );
   }
 
-  if (href.startsWith("/")) {
+  if (isInternalRoute(href)) {
     return (
       <Link href={href} className={className}>
         {content}
