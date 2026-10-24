@@ -20,6 +20,9 @@
   [data-state="hover"] & {
     @slot;
   }
+  &[data-state="hover"] {
+    @slot;
+  }
 }
 
 @custom-variant focus-visible {
