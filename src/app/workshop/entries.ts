@@ -22,6 +22,7 @@ import { entry as colophon } from "@/components/Colophon/Colophon.workshop";
 import { entry as about } from "@/sections/About/About.workshop";
 import { entry as experience } from "@/sections/Experience/Experience.workshop";
 import { entry as highlights } from "@/sections/Highlights/Highlights.workshop";
+import { entry as skills } from "@/sections/Skills/Skills.workshop";
 
 export const entries: WorkshopEntry[] = [
   tokens,
@@ -47,6 +48,7 @@ export const entries: WorkshopEntry[] = [
   about,
   experience,
   highlights,
+  skills,
 ];
 
 export function findEntry(id: string): WorkshopEntry | undefined {
