@@ -4,8 +4,16 @@ import { useSyncExternalStore } from "react";
 
 const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
 
+let reducedMotionMedia: MediaQueryList | undefined;
+
+function reducedMotionQuery(): MediaQueryList {
+  reducedMotionMedia ??= matchMedia(REDUCED_MOTION_QUERY);
+
+  return reducedMotionMedia;
+}
+
 function subscribe(onChange: () => void): () => void {
-  const media = matchMedia(REDUCED_MOTION_QUERY);
+  const media = reducedMotionQuery();
   const observer = new MutationObserver(onChange);
 
   media.addEventListener("change", onChange);
@@ -22,7 +30,7 @@ function subscribe(onChange: () => void): () => void {
 
 function getSnapshot(): boolean {
   return (
-    matchMedia(REDUCED_MOTION_QUERY).matches
+    reducedMotionQuery().matches
     || document.documentElement.dataset.motion === "reduced"
   );
 }
