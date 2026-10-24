@@ -20,6 +20,7 @@ import { entry as navList } from "@/components/NavList/NavList.workshop";
 import { entry as intro } from "@/components/Intro/Intro.workshop";
 import { entry as colophon } from "@/components/Colophon/Colophon.workshop";
 import { entry as about } from "@/sections/About/About.workshop";
+import { entry as experience } from "@/sections/Experience/Experience.workshop";
 
 export const entries: WorkshopEntry[] = [
   tokens,
@@ -43,6 +44,7 @@ export const entries: WorkshopEntry[] = [
   intro,
   colophon,
   about,
+  experience,
 ];
 
 export function findEntry(id: string): WorkshopEntry | undefined {
