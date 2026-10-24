@@ -23,7 +23,7 @@ export const entry = defineEntry({
       "Line: 1 px tall, current color, 32 px at rest and 64 px on hover, focus and when active",
     ],
     motion: [
-      "Line width 32 → 64 px over 150 ms standard; colour 150 ms; none under reduced motion",
+      "Line width 32 → 64 px over 150 ms standard; colour 150 ms; under reduced motion the line jumps to its new width at once, the colour fades stay",
     ],
     a11y: [
       "aria-current on the active link",

@@ -35,7 +35,7 @@ export const entry = defineEntry({
       "text-title, full radius, 20 px side padding",
     ],
     motion: [
-      "Background, color and scale 150 ms standard; arrow 75 ms translate; none under reduced motion",
+      "Background, color and scale 150 ms standard; arrow 75 ms translate; under reduced motion the pill does not scale and the arrow jumps to its hover position at once, the colour fades stay",
     ],
     a11y: [
       "Ink on tangerine 5.84:1 at rest, 7.77:1 on hover and focus in both schemes",

@@ -14,4 +14,4 @@ Renders one link of the sticky section navigation: a short line and a mono upper
 
 - In: the `NavLinkProps`. `href` is a hash, so the link is a plain `a`, not a `next/link`.
 - Out: an `a` with `aria-current="true"` when `active` is true, and no `aria-current` otherwise.
-- The label is Text Muted at rest and turns Text on hover, on focus and when active. The 1 px line follows the label colour. It grows from 32 px to 64 px in the same three cases, over 150 ms. Under reduced motion the line jumps without animating.
+- The label is Text Muted at rest and turns Text on hover, on focus and when active. The 1 px line follows the label colour. It grows from 32 px to 64 px in the same three cases, over 150 ms. Under reduced motion the line jumps to its new width at once; the colour fades stay.

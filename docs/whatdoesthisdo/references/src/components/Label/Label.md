@@ -1,5 +1,20 @@
 ## `src/components/Label/Label.tsx`
 
+### [LabelBaseProps](../../../../../../src/components/Label/Label.tsx#L3)
+
+Describes the props every form of `Label` takes: `tone`, `size`, `className` and `children`.
+
+- `tone`: `"muted"`, `"active"` or `"accent"`, `"muted"` when omitted.
+- `size`: `12` or `11`, `12` when omitted.
+- `className`: extra classes appended to the label's own.
+- `children`: the caption text.
+
+### [LabelProps](../../../../../../src/components/Label/Label.tsx#L10)
+
+Describes the props of `Label`: the `LabelBaseProps` plus the element choice `as`.
+
+- `as`: `"span"` (also when omitted), `"time"`, which requires `dateTime`, or `"a"`, which requires `href`. The union ties each required prop to its element, so a `time` without `dateTime` does not type-check.
+
 ### [Label(props)](../../../../../../src/components/Label/Label.tsx#L23)
 
 Renders the small mono caption the site uses for section names, dates, places and nav items: Geist Mono, uppercase through CSS, letter-spaced.

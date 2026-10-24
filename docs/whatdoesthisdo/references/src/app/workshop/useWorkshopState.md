@@ -1,13 +1,13 @@
 ## `src/app/workshop/useWorkshopState.ts`
 
-### [readCtx(params)](../../../../../src/app/workshop/useWorkshopState.ts#L19)
+### [readCtx(params)](../../../../../../src/app/workshop/useWorkshopState.ts#L19)
 
 Reads the frame settings from the URL for the hook below.
 
 - In: `params`, the page's search params.
 - Out: a frame context; `scheme` is light only for `scheme=light`, `device` is phone only for `device=phone`, `motion` is reduced only for `motion=reduced`; anything else gives the default.
 
-### [useWorkshopState(entry)](../../../../../src/app/workshop/useWorkshopState.ts#L27)
+### [useWorkshopState(entry)](../../../../../../src/app/workshop/useWorkshopState.ts#L27)
 
 Keeps all Workshop state in the URL, so every combination of controls and frame settings is a link that can be shared.
 
@@ -16,4 +16,4 @@ Keeps all Workshop state in the URL, so every combination of controls and frame 
 
 ## Constants
 
-- [`DEFAULT_CTX`](../../../../../src/app/workshop/useWorkshopState.ts#L13): dark, desktop, full motion; a frame setting equal to its default is removed from the URL to keep links short.
+- [`DEFAULT_CTX`](../../../../../../src/app/workshop/useWorkshopState.ts#L13): dark, desktop, full motion; a frame setting equal to its default is removed from the URL to keep links short.

@@ -1,13 +1,13 @@
 ## `src/app/workshop/_components/Sidebar/Sidebar.tsx`
 
-### [ctxQuery(ctx)](../../../../../../../src/app/workshop/_components/Sidebar/Sidebar.tsx#L20)
+### [ctxQuery(ctx)](../../../../../../../../src/app/workshop/_components/Sidebar/Sidebar.tsx#L20)
 
 Builds the query string that carries the frame settings from one entry to the next, for the links below.
 
 - In: `ctx`, the current frame settings.
 - Out: `?scheme=…&device=…&motion=…` holding only the settings that differ from their defaults, or an empty string.
 
-### [Sidebar({ entries, currentId, ctx })](../../../../../../../src/app/workshop/_components/Sidebar/Sidebar.tsx#L40)
+### [Sidebar({ entries, currentId, ctx })](../../../../../../../../src/app/workshop/_components/Sidebar/Sidebar.tsx#L40)
 
 Lists every entry grouped by build stage, with a filter box, and marks the open one.
 
@@ -16,4 +16,4 @@ Lists every entry grouped by build stage, with a filter box, and marks the open 
 
 ## Constants
 
-- [`STAGES`](../../../../../../../src/app/workshop/_components/Sidebar/Sidebar.tsx#L14): the three build stages and their headings, in order.
+- [`STAGES`](../../../../../../../../src/app/workshop/_components/Sidebar/Sidebar.tsx#L14): the three build stages and their headings, in order.

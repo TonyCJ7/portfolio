@@ -1,6 +1,6 @@
 ## `src/app/workshop/_components/Toolbar/Toolbar.tsx`
 
-### [Toolbar({ ctx, onChange })](../../../../../../../src/app/workshop/_components/Toolbar/Toolbar.tsx#L16)
+### [Toolbar({ ctx, onChange })](../../../../../../../../src/app/workshop/_components/Toolbar/Toolbar.tsx#L16)
 
 Shows the three segmented switches above the stage: scheme, device and motion.
 
@@ -9,4 +9,4 @@ Shows the three segmented switches above the stage: scheme, device and motion.
 
 ## Constants
 
-- [`GROUPS`](../../../../../../../src/app/workshop/_components/Toolbar/Toolbar.tsx#L10): the setting key, label and two options of each switch.
+- [`GROUPS`](../../../../../../../../src/app/workshop/_components/Toolbar/Toolbar.tsx#L10): the setting key, label and two options of each switch.

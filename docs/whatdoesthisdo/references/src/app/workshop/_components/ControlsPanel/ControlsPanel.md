@@ -1,6 +1,6 @@
 ## `src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx`
 
-### [ControlsPanel({ controls, args, onChange, onReset })](../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L14)
+### [ControlsPanel({ controls, args, onChange, onReset })](../../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L14)
 
 Renders one field per control of the open entry, plus a Reset button.
 
@@ -9,4 +9,4 @@ Renders one field per control of the open entry, plus a Reset button.
 
 ## Constants
 
-- [`FIELD_CLASS`](../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L12): the shared classes of the select and text fields.
+- [`FIELD_CLASS`](../../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L12): the shared classes of the select and text fields.

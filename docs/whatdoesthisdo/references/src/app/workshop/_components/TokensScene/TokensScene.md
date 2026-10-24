@@ -1,6 +1,6 @@
 ## `src/app/workshop/_components/TokensScene/TokensScene.tsx`
 
-### [TokensScene({ show, sample, ctx })](../../../../../../../src/app/workshop/_components/TokensScene/TokensScene.tsx#L38)
+### [TokensScene({ show, sample, ctx })](../../../../../../../../src/app/workshop/_components/TokensScene/TokensScene.tsx#L38)
 
 Renders the Tokens entry: the colour swatches with their computed values and the type steps set in a sample text.
 
@@ -9,5 +9,5 @@ Renders the Tokens entry: the colour swatches with their computed values and the
 
 ## Constants
 
-- [`COLOR_TOKENS`](../../../../../../../src/app/workshop/_components/TokensScene/TokensScene.tsx#L12): the twelve colour tokens in the order of the design system: the ten scheme-dependent ones, then `ink` and `accent-hover`, which keep one value in both schemes.
-- [`TYPE_STEPS`](../../../../../../../src/app/workshop/_components/TokensScene/TokensScene.tsx#L27): the eight type steps with the class each one uses; the classes are spelled out so Tailwind generates them.
+- [`COLOR_TOKENS`](../../../../../../../../src/app/workshop/_components/TokensScene/TokensScene.tsx#L12): the twelve colour tokens in the order of the design system: the ten scheme-dependent ones, then `ink` and `accent-hover`, which keep one value in both schemes.
+- [`TYPE_STEPS`](../../../../../../../../src/app/workshop/_components/TokensScene/TokensScene.tsx#L27): the eight type steps with the class each one uses; the classes are spelled out so Tailwind generates them.

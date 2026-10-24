@@ -1,6 +1,6 @@
 ## `src/app/workshop/_components/UsageLine/UsageLine.tsx`
 
-### [UsageLine({ code })](../../../../../../../src/app/workshop/_components/UsageLine/UsageLine.tsx#L5)
+### [UsageLine({ code })](../../../../../../../../src/app/workshop/_components/UsageLine/UsageLine.tsx#L5)
 
 Shows the JSX a page would write for the current controls, under the stage.
 
