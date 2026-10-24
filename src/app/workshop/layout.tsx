@@ -4,8 +4,9 @@ import SkipLink from "@/components/SkipLink/SkipLink";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 
 export const metadata: Metadata = {
-  title: "Workshop · Tony Cherian Jacob",
+  title: { default: "Workshop", template: "%s · Tony Cherian Jacob" },
   description: "Every component of the site, with live controls.",
+  alternates: { canonical: "/workshop" },
 };
 
 export default function WorkshopLayout({ children }: LayoutProps<"/workshop">) {

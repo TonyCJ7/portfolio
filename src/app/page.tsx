@@ -4,6 +4,7 @@ import Colophon from "@/components/Colophon/Colophon";
 import Intro from "@/components/Intro/Intro";
 import SkipLink from "@/components/SkipLink/SkipLink";
 import Spotlight from "@/components/Spotlight/Spotlight";
+import { personJsonLd } from "@/content/jsonLd";
 import { profile } from "@/content/profile";
 import About from "@/sections/About/About";
 import Contact from "@/sections/Contact/Contact";
@@ -35,6 +36,12 @@ export default function Home() {
           <Colophon />
         </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
     </>
   );
 }

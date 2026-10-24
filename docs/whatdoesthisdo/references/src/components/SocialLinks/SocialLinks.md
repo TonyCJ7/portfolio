@@ -1,13 +1,13 @@
 ## `src/components/SocialLinks/SocialLinks.tsx`
 
-### [SocialLinksProps](../../../../../../src/components/SocialLinks/SocialLinks.tsx#L5)
+### [SocialLinksProps](../../../../../../src/components/SocialLinks/SocialLinks.tsx#L6)
 
 Describes the props of `SocialLinks`.
 
 - `handles`: shows the full handles instead of the short names, and adds the location after them. Defaults to false.
 - `forced`: the link the Workshop shows in a hover or focus state, as a zero-based `index` and a `state`. Omitted on the site.
 
-### [SocialLinks({ handles, forced })](../../../../../../src/components/SocialLinks/SocialLinks.tsx#L31)
+### [SocialLinks({ handles, forced })](../../../../../../src/components/SocialLinks/SocialLinks.tsx#L32)
 
 Renders Tony's GitHub, LinkedIn and email links as one wrapping row, for the intro column and the contact section.
 
@@ -18,4 +18,4 @@ Renders Tony's GitHub, LinkedIn and email links as one wrapping row, for the int
 
 ## Constants
 
-- [`LINKS`](../../../../../../src/components/SocialLinks/SocialLinks.tsx#L10): the three links in display order, each with its href, short name, handle text and whether it opens a new tab. Hrefs and handles are built from `profile.github`, `profile.linkedin` and `profile.email`.
+- [`LINKS`](../../../../../../src/components/SocialLinks/SocialLinks.tsx#L11): the three links in display order, each with its href, short name, handle text and whether it opens a new tab. Hrefs and handles are built from `profile.github`, `profile.linkedin` and `profile.email`; the GitHub and LinkedIn hrefs come from `githubUrl` and `linkedinUrl`, the same helpers the JSON-LD uses.

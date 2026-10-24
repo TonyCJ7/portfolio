@@ -14,7 +14,14 @@ export async function generateMetadata({
   const { entry } = await params;
   const found = findEntry(entry);
 
-  return { title: found ? `${found.name} · Workshop` : "Workshop" };
+  if (!found) {
+    return { title: "Workshop" };
+  }
+
+  return {
+    title: `${found.name} · Workshop`,
+    alternates: { canonical: `/workshop/${found.id}` },
+  };
 }
 
 async function EntryGate({

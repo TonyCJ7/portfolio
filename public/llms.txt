@@ -1,0 +1,21 @@
+<!-- Mirrors src/content/profile.ts (tagline, metaDescription), src/content/highlights.ts, src/content/experience.ts and the Workshop description in src/app/workshop/layout.tsx. Edit by hand when they change. -->
+# Tony Cherian Jacob
+
+> 8+ years of React and Next.js. Currently at Almosafer in Dubai, making travel search faster and easier to use.
+
+## Pages
+
+- [Home](/): Senior frontend engineer in Dubai with 8+ years of React and Next.js, now making travel search faster and easier to use at Almosafer.
+- [Workshop](/workshop): Every component of the site, with live controls.
+
+## Facts
+
+- 13% more bookings per search: AI filters that turn a plain sentence into flight search filters, at Almosafer.
+- 9s → 1.8s Largest Contentful Paint: A new design system and server-side data fetching, at Almosafer.
+- 40+ components in one Storybook: Shared by 20 developers across 5 micro frontends, at Almosafer.
+- 30–40% lower AI token usage: An MCP that extracts and stores code context, adopted across Almosafer.
+- 2026 — present · Senior Frontend Specialist · Almosafer: Built AI filters for natural-language flight search, lifting search-to-book by 13%. Built and standardized an MCP for code context across Almosafer's micro frontends, cutting token usage by 30–40%.
+- 2023 — 2026 · Frontend Specialist · Almosafer: Cut Largest Contentful Paint from 9 seconds to 1.8 with a new design system and server-side data fetching. Shipped 25+ A/B experiments, chosen with analytics events, and lifted search-to-book conversion by 22%.
+- 2021 — 2022 · Software Designer · Nokia Networks: Built the UI for a self-organizing network that maps 100k+ nodes with OpenLayers 6. Traced a map rendering bottleneck and fixed it with caching, cutting render time by 40%.
+- 2018 — 2021 · Senior Software Engineer · QBurst Technologies: Built the single-page app for an e-commerce site with 42 million monthly visitors and, with 3 colleagues, a 50+ component design system. Cut landing page LCP from 7.6 seconds to 1.4 with paginated CMS data and lazy loading.
+- 2021 · part time · Frontend Developer · HASpaces: Built an admin panel and a comparison and rating system in React and SCSS for 100k+ candidates. Virtualized the candidate list, cutting scripting and painting time by 60%.

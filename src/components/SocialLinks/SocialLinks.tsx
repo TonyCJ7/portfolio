@@ -1,6 +1,7 @@
 import Label from "@/components/Label/Label";
 import Link from "@/components/Link/Link";
 import { profile } from "@/content/profile";
+import { githubUrl, linkedinUrl } from "@/lib/social";
 
 type SocialLinksProps = {
   handles?: boolean;
@@ -9,13 +10,13 @@ type SocialLinksProps = {
 
 const LINKS = [
   {
-    href: `https://github.com/${profile.github}`,
+    href: githubUrl(profile.github),
     name: "GitHub",
     handle: `GitHub · ${profile.github}`,
     external: true,
   },
   {
-    href: `https://www.linkedin.com/in/${profile.linkedin}`,
+    href: linkedinUrl(profile.linkedin),
     name: "LinkedIn",
     handle: `LinkedIn · ${profile.linkedin}`,
     external: true,
