@@ -19,6 +19,7 @@ import { entry as socialLinks } from "@/components/SocialLinks/SocialLinks.works
 import { entry as navList } from "@/components/NavList/NavList.workshop";
 import { entry as intro } from "@/components/Intro/Intro.workshop";
 import { entry as colophon } from "@/components/Colophon/Colophon.workshop";
+import { entry as about } from "@/sections/About/About.workshop";
 
 export const entries: WorkshopEntry[] = [
   tokens,
@@ -41,6 +42,7 @@ export const entries: WorkshopEntry[] = [
   navList,
   intro,
   colophon,
+  about,
 ];
 
 export function findEntry(id: string): WorkshopEntry | undefined {
