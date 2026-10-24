@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LogoLink from "@/components/Logo/LogoLink";
+import SkipLink from "@/components/SkipLink/SkipLink";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 
 export const metadata: Metadata = {
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 export default function WorkshopLayout({ children }: LayoutProps<"/workshop">) {
   return (
     <div className="min-h-dvh">
+      <SkipLink href="#workshop-main" />
       <header className="flex items-center gap-3 border-b border-line px-6 py-3">
         <LogoLink size={28} />
         <span className="font-mono text-label uppercase text-fg-muted">
@@ -19,7 +21,9 @@ export default function WorkshopLayout({ children }: LayoutProps<"/workshop">) {
           <ThemeToggle size="text" />
         </div>
       </header>
-      {children}
+      <main id="workshop-main" tabIndex={-1}>
+        {children}
+      </main>
     </div>
   );
 }
