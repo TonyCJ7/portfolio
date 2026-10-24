@@ -123,8 +123,8 @@
   --color-accent: var(--accent);
   --color-accent-text: var(--accent-text);
   --color-accent-soft: var(--accent-soft);
-  --color-ink: #16161a;
-  --color-accent-hover: #ff8a5c;
+  --color-ink: var(--ink);
+  --color-accent-hover: var(--accent-hover);
 
   --font-sans: var(--font-dm-sans), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
@@ -213,6 +213,8 @@
 }
 
 :root {
+  --ink: #16161a;
+  --accent-hover: #ff8a5c;
   --gutter: clamp(24px, 6vw, 48px);
 }
 

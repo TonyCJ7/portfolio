@@ -20,6 +20,8 @@ const COLOR_TOKENS = [
   "accent",
   "accent-text",
   "accent-soft",
+  "ink",
+  "accent-hover",
 ] as const;
 
 const TYPE_STEPS = [
@@ -77,7 +79,7 @@ export default function TokensScene({ show, sample, ctx }: TokensSceneProps) {
               {TYPE_STEPS.map((step) => (
                 <li key={step.name} className="flex flex-col gap-1">
                   <span className="font-mono text-label-sm text-fg-muted">{step.name}</span>
-                  <p className={`${step.className} overflow-wrap-anywhere text-fg`}>{sample}</p>
+                  <p className={`${step.className} wrap-anywhere text-fg`}>{sample}</p>
                 </li>
               ))}
             </ul>
