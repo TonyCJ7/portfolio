@@ -86,6 +86,7 @@ repository extension so each session loads them.
 | Spelling | American, the résumé's | 2026-10-24 |
 | Deployment | undecided; keep Vercel and VPS open, no `output` setting, origin from `NEXT_PUBLIC_SITE_URL` with a placeholder default | 2026-10-24 |
 | Download CV | the ghost button renders only when `public/Tony_CJ_Resume.pdf` exists (phone-free copy Tony supplies later) | 2026-10-24 |
+| Default theme | dark, regardless of the OS scheme; visitors switch with the toggle, the choice is stored in `tj-theme` | 2026-10-24 |
 | Spotlight light scheme | Tangerine Text `rgba(201, 58, 8, 0.06)`; dark `rgba(255, 92, 26, 0.08)` | 2026-10-24 |
 | Logo | final, `src/components/Logo/Logo.tsx`, not reopened | earlier |
 
@@ -97,8 +98,8 @@ repository extension so each session loads them.
    named-utility block in globals.css holds what utilities express badly: the wiggle keyframes, the experience
    list sibling dimming, the view-transition reveal.
 2. **Tokens are defined on two selectors each:** `:root, [data-scheme="dark"]` for dark and
-   `:root[data-theme="light"], [data-scheme="light"]` for light, with `prefers-color-scheme: light` applied to
-   `:root:not([data-theme])`. The same block therefore serves the site root and the Workshop stage frame, which
+   `:root[data-theme="light"], [data-scheme="light"]` for light. There is no `prefers-color-scheme` rule:
+   dark is the default whatever the OS says, and the toggle is how a visitor switches. The same block therefore serves the site root and the Workshop stage frame, which
    sets `data-scheme` on a subtree.
 3. **One breakpoint, 1024 px, through a Tailwind custom variant `phone:`.** DESIGN.md has two layouts: desktop
    at 1024 px viewport and above (two columns, section labels as text), phone below (one column, sticky bars).
@@ -110,7 +111,7 @@ repository extension so each session loads them.
 4. **Fonts:** DM Sans (`--font-sans`) and Geist Mono (`--font-mono`) via `next/font/google`, replacing the
    scaffold's Geist.
 5. **Theme:** inline head script reads `localStorage["tj-theme"]` and sets `data-theme` on `html` before paint;
-   no stored value means the OS scheme. `ThemeToggle` writes the same key. Reduced motion: a `useReducedMotion`
+   no stored value means dark. `ThemeToggle` writes the same key. Reduced motion: a `useReducedMotion`
    hook reads the media query and `html[data-motion="reduced"]`; global CSS kills transitions and animations
    under either.
 6. **Workshop architecture:** `src/app/workshop/[entry]/page.tsx`, statically generated for every entry

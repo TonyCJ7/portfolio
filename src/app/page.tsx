@@ -2,7 +2,7 @@ import Logo from "@/components/Logo/Logo";
 
 export default function Home() {
   return (
-    <div className="flex min-h-dvh flex-col font-sans">
+    <div className="flex min-h-dvh flex-col">
       <header className="flex items-center gap-3 px-8 py-6">
         <Logo size={36} />
         <span className="text-title tracking-tight">Tony Cherian Jacob</span>
@@ -12,7 +12,7 @@ export default function Home() {
           <span className="inline-block size-2.5 rounded-full bg-accent" />
           Frontend developer
         </p>
-        <h1 className="max-w-[12ch] text-display">
+        <h1 className="max-w-measure text-display">
           I build interfaces people enjoy using.
         </h1>
         <a
