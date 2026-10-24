@@ -28,8 +28,16 @@ export default function Spotlight() {
       const rect = spot.getBoundingClientRect();
 
       frame = 0;
-      spot.style.setProperty("--x", `${pointerX - rect.left}px`);
-      spot.style.setProperty("--y", `${pointerY - rect.top}px`);
+
+      if (rect.width === 0 || rect.height === 0) {
+        return;
+      }
+
+      const scaleX = spot.offsetWidth / rect.width;
+      const scaleY = spot.offsetHeight / rect.height;
+
+      spot.style.setProperty("--x", `${(pointerX - rect.left) * scaleX}px`);
+      spot.style.setProperty("--y", `${(pointerY - rect.top) * scaleY}px`);
       spot.classList.replace("opacity-0", "opacity-100");
     };
 
