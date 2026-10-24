@@ -5,7 +5,7 @@
 Draws the tj monogram as an inline SVG: the letters in the current text colour and the dot in Tangerine, so the mark follows light and dark schemes without separate files.
 
 - In: `size`, the rendered width and height in pixels, `32` when omitted. `className`, extra classes for the `svg` element, none when omitted.
-- Out: an `svg` with `role="img"` and the accessible name "Tony Cherian Jacob".
+- Out: an `svg` with `role="img"` and the accessible name "tj mark", since the link around it carries the name "Home".
 
 ## Constants
 

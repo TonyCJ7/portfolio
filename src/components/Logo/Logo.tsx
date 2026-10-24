@@ -15,7 +15,7 @@ export default function Logo({ size = 32, className }: LogoProps) {
       width={size}
       height={size}
       role="img"
-      aria-label="Tony Cherian Jacob"
+      aria-label="tj mark"
       className={className}
     >
       <path fill="currentColor" d={GLYPH} />
