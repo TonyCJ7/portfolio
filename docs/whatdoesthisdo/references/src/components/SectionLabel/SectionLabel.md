@@ -14,4 +14,4 @@ Renders the uppercase heading that opens a page section. On a phone it becomes a
 - In: the `SectionLabelProps`.
 - Out: an `h2` with the given `id` that holds a mono uppercase Label. On desktop the label is Text Muted and the heading is plain.
 - On a phone the heading sticks at the top, with Ground at 60% opacity, an 8 px backdrop blur and a 1 px bottom border. The label turns Text. The bar reaches the page gutter on both sides through `--gutter`.
-- Used by: the page sections. Each `section` carries `aria-labelledby` with this `id`, plus `scroll-mt-24 phone:scroll-mt-14` so a hash jump clears the sticky bar.
+- Used by: the page sections. Each `section` carries `aria-labelledby` with this `id`, plus `scroll-mt-24 phone:scroll-mt-14`, which sets the landing offset of a hash jump: 96 px on desktop, 56 px on a phone.
