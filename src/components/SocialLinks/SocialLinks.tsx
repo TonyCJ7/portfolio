@@ -1,3 +1,4 @@
+import Label from "@/components/Label/Label";
 import Link from "@/components/Link/Link";
 import { profile } from "@/content/profile";
 
@@ -41,6 +42,11 @@ export default function SocialLinks({ handles = false, forced }: SocialLinksProp
           </Link>
         </li>
       ))}
+      {handles && (
+        <li className="flex">
+          <Label>{profile.location}</Label>
+        </li>
+      )}
     </ul>
   );
 }
