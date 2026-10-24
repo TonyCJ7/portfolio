@@ -1,4 +1,4 @@
-import { defineEntry, select, toggle } from "@/app/workshop/controls";
+import { defineEntry, select, STATES, toggle } from "@/app/workshop/controls";
 import { experience } from "@/content/experience";
 import type { Experience } from "@/types/content";
 import ExperienceList from "./ExperienceList";
@@ -22,7 +22,7 @@ const extreme: Experience = {
   ],
 };
 
-const ROW_STATES = ["rest", "hover", "focus", "pressed", "dimmed"] as const;
+const ROW_STATES = [...STATES, "dimmed"] as const;
 
 function findSample(id: string): Experience {
   return experience.find((item) => item.id === id) ?? extreme;

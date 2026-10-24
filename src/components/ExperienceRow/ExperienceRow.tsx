@@ -14,7 +14,7 @@ export default function ExperienceRow({ entry, target = false }: ExperienceRowPr
   return (
     <li
       data-row={target ? "target" : undefined}
-      className="group relative grid grid-cols-[2fr_6fr] gap-x-6 phone:grid-cols-1 phone:gap-y-2"
+      className="group relative isolate grid grid-cols-[2fr_6fr] gap-x-6 phone:grid-cols-1 phone:gap-y-2"
     >
       <span
         aria-hidden

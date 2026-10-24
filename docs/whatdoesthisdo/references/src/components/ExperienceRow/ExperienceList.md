@@ -12,4 +12,4 @@ Describes the props of `ExperienceList`.
 Renders the experience section's ordered list, one `ExperienceRow` per job, 48 px apart.
 
 - In: `items`, the jobs. `targetId`, the job whose row gets `target`, from the Workshop only.
-- Out: an `ol` with the `exp-list` class. Its rules in `globals.css` fade every other row to 50% opacity while one row is hovered or holds focus. Under `[data-state="dimmed"]` every row except the target fades. The fade takes 150 ms and is instant under reduced motion.
+- Out: an `ol` with the `exp-list` class. Its rules in `globals.css` fade every other row to 50% opacity while one row holds focus. Hover fades them only on devices that hover, so a tapped row on touch leaves no siblings dimmed. Under `[data-state="dimmed"]` every row except the target fades. The fade takes 150 ms and is instant under reduced motion.

@@ -275,7 +275,12 @@ main:focus-visible {
     transition: opacity 150ms var(--ease-standard);
   }
 
-  .exp-list:has(> li:hover) > li:not(:hover),
+  @media (hover: hover) {
+    .exp-list:has(> li:hover) > li:not(:hover) {
+      opacity: 0.5;
+    }
+  }
+
   .exp-list:has(> li:focus-within) > li:not(:focus-within),
   [data-state="dimmed"] .exp-list > li:not([data-row="target"]) {
     opacity: 0.5;
