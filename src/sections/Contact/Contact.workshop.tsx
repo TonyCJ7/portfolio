@@ -16,7 +16,7 @@ export const entry = defineEntry({
     ],
     tokens: [
       "Intro: text-body in Text 2, capped at the measure (36rem), 24 px below the label",
-      "Email: Link kind large, a mailto link in text-headline (text-headline-phone on phone) with a Tangerine underline, 24 px below the intro; it wraps anywhere, so the address breaks inside a narrow column",
+      "Email: Link kind large, a mailto link in text-headline (text-headline-phone on phone) with a Tangerine underline, 24 px below the intro; it wraps anywhere, so a longer address wraps inside the column instead of overflowing it",
       "Handles: SocialLinks with handles, the three links then the location as plain text, 24 px below the email",
       "Label: SectionLabel, a sticky frosted bar on phone",
     ],
