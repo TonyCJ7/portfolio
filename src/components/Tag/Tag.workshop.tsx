@@ -1,6 +1,7 @@
 import { defineEntry, text, toggle } from "@/app/workshop/controls";
 import TagList from "./TagList";
 
+// TODO: Task 16 replaces this interim list with skills[0].items.
 const FRONTEND_GROUP = [
   "React",
   "Next.js",

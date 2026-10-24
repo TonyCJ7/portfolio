@@ -1,5 +1,12 @@
 ## `src/components/Tag/TagList.tsx`
 
+### [TagListProps](../../../../../../src/components/Tag/TagList.tsx#L3)
+
+Describes the props of `TagList`.
+
+- `items`: the names to show, one pill each.
+- `label`: the optional accessible name of the list, `Tools` when omitted.
+
 ### [TagList(props)](../../../../../../src/components/Tag/TagList.tsx#L8)
 
 Renders a labeled, wrapping row of Tag pills.
