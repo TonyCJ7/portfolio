@@ -11,6 +11,7 @@ import { entry as navLink } from "@/components/NavLink/NavLink.workshop";
 import { entry as sectionLabel } from "@/components/SectionLabel/SectionLabel.workshop";
 import { entry as spotlight } from "@/components/Spotlight/Spotlight.workshop";
 import { entry as skipLink } from "@/components/SkipLink/SkipLink.workshop";
+import { entry as experienceRow } from "@/components/ExperienceRow/ExperienceRow.workshop";
 
 export const entries: WorkshopEntry[] = [
   tokens,
@@ -25,6 +26,7 @@ export const entries: WorkshopEntry[] = [
   sectionLabel,
   spotlight,
   skipLink,
+  experienceRow,
 ];
 
 export function findEntry(id: string): WorkshopEntry | undefined {

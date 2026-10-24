@@ -1,20 +1,6 @@
 import { defineEntry, text, toggle } from "@/app/workshop/controls";
+import { skills } from "@/content/skills";
 import TagList from "./TagList";
-
-// TODO: Task 16 replaces this interim list with skills[0].items.
-const FRONTEND_GROUP = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "JavaScript",
-  "HTML5",
-  "CSS3",
-  "Sass",
-  "styled-components",
-  "Emotion",
-  "Material UI",
-  "REST APIs",
-];
 
 export const entry = defineEntry({
   id: "tag",
@@ -30,7 +16,7 @@ export const entry = defineEntry({
     folder: "src/components/Tag/",
     props: [
       "Tag: children",
-      "TagList: items, label (default Tools, read out as the list name)",
+      "TagList: items, label (default Tools, read out as the list name), className",
     ],
     tokens: [
       "Tangerine Soft fill with Tangerine Text",
@@ -44,7 +30,7 @@ export const entry = defineEntry({
     ],
   },
   render: (args) => (
-    <TagList items={args.many ? FRONTEND_GROUP : [args.text]} />
+    <TagList items={args.many ? skills[0].items : [args.text]} />
   ),
   usage: (args) => {
     if (args.many) {

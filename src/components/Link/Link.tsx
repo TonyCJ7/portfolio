@@ -6,6 +6,7 @@ type LinkProps = {
   kind?: "prose" | "arrow" | "large" | "social";
   href: string;
   external?: boolean;
+  className?: string;
   children: ReactNode;
 };
 
@@ -13,7 +14,7 @@ const KIND_CLASSES = {
   prose:
     "rounded-xs font-medium text-fg decoration-accent decoration-1 underline-offset-4 transition-colors duration-150 ease-standard hover:underline focus-visible:underline",
   arrow:
-    "group inline-flex items-center gap-1 text-title text-fg hover:text-accent-text focus-visible:text-accent-text",
+    "group text-title text-fg hover:text-accent-text focus-visible:text-accent-text",
   large:
     "text-headline text-fg underline decoration-accent decoration-1 underline-offset-6 wrap-anywhere hover:text-accent-text focus-visible:text-accent-text phone:text-headline-phone",
   social:
@@ -24,16 +25,17 @@ export default function Link({
   kind = "prose",
   href,
   external = false,
+  className = "",
   children,
 }: LinkProps) {
-  const className = KIND_CLASSES[kind];
+  const classes = `${KIND_CLASSES[kind]} ${className}`.trim();
   const content = (
     <>
       {children}
       {kind === "arrow" && (
         <span
           aria-hidden
-          className="transition-transform duration-75 ease-standard group-hover:translate-x-1 group-hover:-translate-y-1 group-focus-visible:translate-x-1 group-focus-visible:-translate-y-1 motion-reduce:transition-none"
+          className="ms-1 inline-block transition-transform duration-75 ease-standard group-hover:translate-x-1 group-hover:-translate-y-1 group-focus-visible:translate-x-1 group-focus-visible:-translate-y-1 motion-reduce:transition-none"
         >
           ↗
         </span>
@@ -43,7 +45,7 @@ export default function Link({
 
   if (isInternalRoute(href)) {
     return (
-      <NextLink href={href} className={className}>
+      <NextLink href={href} className={classes}>
         {content}
       </NextLink>
     );
@@ -52,7 +54,7 @@ export default function Link({
   return (
     <a
       href={href}
-      className={className}
+      className={classes}
       {...(external && { target: "_blank", rel: "noopener noreferrer" })}
     >
       {content}

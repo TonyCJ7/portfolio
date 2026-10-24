@@ -2,21 +2,22 @@
 
 ### [LinkProps](../../../../../../src/components/Link/Link.tsx#L5)
 
-Describes the props of `Link`: `kind`, `href`, `external` and `children`.
+Describes the props of `Link`: `kind`, `href`, `external`, `className` and `children`.
 
 - `kind`: `"prose"`, `"arrow"`, `"large"` or `"social"`, `"prose"` when omitted.
 - `href`: where the link goes. It is required.
 - `external`: whether the link opens in a new tab. `false` when omitted.
+- `className`: extra classes appended after the kind's own. The experience row passes its whole-row hit area this way.
 - `children`: the link text.
 
-### [Link({ kind, href, external, children })](../../../../../../src/components/Link/Link.tsx#L23)
+### [Link({ kind, href, external, className, children })](../../../../../../src/components/Link/Link.tsx#L24)
 
 Renders a text link in one of the four styles the sections use: inline prose, an arrow link, a large link and a mono social link.
 
 - In: the `LinkProps`. `kind` picks the style, `href` picks the element.
 - Out: with an `href` that `isInternalRoute` accepts (it starts with `/` and its last path segment has no file extension), a `next/link` anchor, so internal pages route on the client. With any other `href` (`#section`, `mailto:`, a full URL, a static file such as `/Tony_CJ_Resume.pdf`), a plain `a`. With `external`, a plain `a` also gets `target="_blank"` and `rel="noopener noreferrer"`; a `next/link` anchor does not.
-- Prose is medium weight text with a Tangerine underline that shows on hover and focus. Arrow is a title-size link that turns Accent Text on hover and focus, and its `↗` moves 4 px right and 4 px up. Large is a headline-size underlined link that turns Accent Text, switches to the phone headline step on phone, and wraps unbroken strings. Social is a mono uppercase label in Text Muted that turns Text. Pressed looks like hover, so nothing styles `:active`. Prose and social fade their colour over 150 ms. Arrow and large change colour at once. Under reduced motion the arrow jumps to its hover position at once, and the prose and social fades stay.
+- Prose is medium weight text with a Tangerine underline that shows on hover and focus. Arrow is a title-size inline link that turns Accent Text on hover and focus. Its `↗` is an inline block 4 px after the text, so it stays after the last word when the title wraps, and it moves 4 px right and 4 px up. Large is a headline-size underlined link that turns Accent Text, switches to the phone headline step on phone, and wraps unbroken strings. Social is a mono uppercase label in Text Muted that turns Text. Pressed looks like hover, so nothing styles `:active`. Prose and social fade their colour over 150 ms. Arrow and large change colour at once. Under reduced motion the arrow jumps to its hover position at once, and the prose and social fades stay.
 
 ## Constants
 
-- [`KIND_CLASSES`](../../../../../../src/components/Link/Link.tsx#L12): the classes of each kind, keyed by `kind`.
+- [`KIND_CLASSES`](../../../../../../src/components/Link/Link.tsx#L13): the classes of each kind, keyed by `kind`.

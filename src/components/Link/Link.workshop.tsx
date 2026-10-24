@@ -38,6 +38,7 @@ export const entry = defineEntry({
       "kind: prose | arrow | large | social (default prose)",
       "href: next/link for site pages, a plain anchor for files such as /Tony_CJ_Resume.pdf, #, mailto: and external",
       "external: opens in a new tab",
+      "className: extra classes appended last (the experience row adds its whole-row hit area)",
     ],
     tokens: [
       "Prose: text-fg, medium weight, Tangerine underline on hover and focus",

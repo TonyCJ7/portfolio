@@ -270,6 +270,26 @@ main:focus-visible {
   .theme-word-light {
     display: var(--theme-word-light);
   }
+
+  .exp-list > li {
+    transition: opacity 150ms var(--ease-standard);
+  }
+
+  .exp-list:has(> li:hover) > li:not(:hover),
+  .exp-list:has(> li:focus-within) > li:not(:focus-within),
+  [data-state="dimmed"] .exp-list > li:not([data-row="target"]) {
+    opacity: 0.5;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .exp-list > li {
+      transition: none;
+    }
+  }
+
+  html[data-motion="reduced"] .exp-list > li {
+    transition: none;
+  }
 }
 
 ::view-transition-old(root),
