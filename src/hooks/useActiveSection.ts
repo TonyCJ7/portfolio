@@ -18,11 +18,15 @@ export function useActiveSection(ids: string[]): string {
   const [active, setActive] = useState(firstId);
 
   useEffect(() => {
-    if (!idsKey) {
+    const sectionIds = idsKey.split(" ");
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((section) => section !== null);
+
+    if (sections.length === 0) {
       return;
     }
 
-    const sectionIds = idsKey.split(" ");
     const lastId = sectionIds[sectionIds.length - 1];
     const inBand = new Set<string>();
 
@@ -55,12 +59,8 @@ export function useActiveSection(ids: string[]): string {
       { rootMargin: SPY_BAND, threshold: 0 },
     );
 
-    for (const id of sectionIds) {
-      const section = document.getElementById(id);
-
-      if (section) {
-        observer.observe(section);
-      }
+    for (const section of sections) {
+      observer.observe(section);
     }
 
     window.addEventListener("scroll", update, { passive: true });
