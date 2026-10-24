@@ -1,7 +1,8 @@
 import { defineEntry, toggle } from "@/app/workshop/controls";
+import { profile } from "@/content/profile";
 import ExperienceSection from "./Experience";
 
-const CV_HREF = "/Tony_CJ_Resume.pdf";
+const CV_HREF = `/${profile.cvFile}`;
 
 export const entry = defineEntry({
   id: "experience",
@@ -49,7 +50,7 @@ export const entry = defineEntry({
   },
   usage: (args) => {
     if (args.cv) {
-      return "<ExperienceSection cvHref=\"/Tony_CJ_Resume.pdf\" />";
+      return `<ExperienceSection cvHref="${CV_HREF}" />`;
     }
 
     return "<ExperienceSection />";
