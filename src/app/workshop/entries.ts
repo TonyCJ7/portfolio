@@ -13,6 +13,7 @@ import { entry as spotlight } from "@/components/Spotlight/Spotlight.workshop";
 import { entry as skipLink } from "@/components/SkipLink/SkipLink.workshop";
 import { entry as experienceRow } from "@/components/ExperienceRow/ExperienceRow.workshop";
 import { entry as highlightTile } from "@/components/HighlightTile/HighlightTile.workshop";
+import { entry as skillGroup } from "@/components/SkillGroup/SkillGroup.workshop";
 
 export const entries: WorkshopEntry[] = [
   tokens,
@@ -29,6 +30,7 @@ export const entries: WorkshopEntry[] = [
   skipLink,
   experienceRow,
   highlightTile,
+  skillGroup,
 ];
 
 export function findEntry(id: string): WorkshopEntry | undefined {
