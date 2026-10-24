@@ -71,7 +71,7 @@ export const entry = defineEntry({
     if (kind === "prose") {
       return (
         <p className="max-w-measure text-body text-fg-2">
-          Read more about the work at {link} in the experience section.
+          A prose link such as {link} sits inside running text.
         </p>
       );
     }
