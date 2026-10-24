@@ -13,3 +13,4 @@ Renders the highlights section's list, one `HighlightTile` per highlight.
 
 - In: `items`, the highlights. `liftedIndex`, the zero-based index whose tile gets `lifted`, from the Workshop only.
 - Out: a `ul` grid of two columns, one column on phone. The list paints the Border color and leaves a 1 px gap between tiles. Each tile paints Ground, so the gaps read as 1 px hairlines.
+- The list is `isolate`, so a lifted tile's `z-index` stacks only among the tiles. A sticky section bar outside the list stays on top of it.

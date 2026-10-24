@@ -28,14 +28,14 @@ export const entry = defineEntry({
     ],
     tokens: [
       "Figure: text-stat Text; what: text-title Text; how: text-small Text 2",
-      "Tile: 24 px padding, 6 px radius, Ground fill; hover Surface with shadow-lift, raised above its neighbors",
+      "Tile: 24 px padding, square, Ground fill; hover Surface with shadow-lift, raised above its neighbors",
       "Grid: two columns, one on phone; 1 px gap over Border makes the hairlines",
     ],
     motion: [
       "Background and shadow 150 ms standard; no transform, so reduced motion keeps it",
     ],
     a11y: [
-      "A ul of li tiles, each labelled by its figure and what it measures",
+      "A ul of li tiles; each reads figure, what, how in order",
       "Not a link and not focusable; the lift is pointer feedback only",
     ],
   },

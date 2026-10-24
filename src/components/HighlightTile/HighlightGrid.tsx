@@ -8,7 +8,7 @@ type HighlightGridProps = {
 
 export default function HighlightGrid({ items, liftedIndex }: HighlightGridProps) {
   return (
-    <ul className="grid grid-cols-2 gap-px bg-line phone:grid-cols-1 [&>li]:bg-ground">
+    <ul className="isolate grid grid-cols-2 gap-px bg-line phone:grid-cols-1 [&>li]:bg-ground">
       {items.map((item, index) => (
         <HighlightTile key={item.figure} {...item} lifted={index === liftedIndex} />
       ))}
