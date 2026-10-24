@@ -27,7 +27,7 @@ export const entry = defineEntry({
     motion: ["none"],
     a11y: [
       "section with id skills and aria-labelledby skills-label, so its accessible name is the h2's text, Skills",
-      "Education is an h3 with id education-label, one level under the section's h2; it is not a nav section",
+      "Education is an h3, one level under the section's h2; it is not a nav section",
       "scroll-mt-24 phone:scroll-mt-14 set the landing offset of a hash jump: 96 px on desktop, 56 px on phone",
     ],
   },

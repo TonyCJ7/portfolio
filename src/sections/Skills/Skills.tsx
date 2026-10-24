@@ -23,7 +23,7 @@ export default function Skills({ showEducation = true }: SkillsProps) {
       </div>
       {showEducation && (
         <>
-          <h3 id="education-label" className="mt-12">
+          <h3 className="mt-12">
             <Label>{education.label}</Label>
           </h3>
           <div className="mt-4">
