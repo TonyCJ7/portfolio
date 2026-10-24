@@ -14,7 +14,7 @@ const BASE_CLASSES =
 
 const VARIANT_CLASSES = {
   primary:
-    "bg-accent text-ink hover:bg-accent-text focus-visible:bg-accent-text",
+    "bg-accent text-ink hover:bg-accent-hover focus-visible:bg-accent-hover",
   ghost:
     "border border-line text-fg hover:bg-surface focus-visible:bg-surface active:bg-surface-hover",
 };

@@ -17,7 +17,7 @@ export default function Home() {
         </h1>
         <a
           href="https://github.com/TonyCJ7"
-          className="inline-flex min-h-12 items-center rounded-full bg-accent px-6 font-medium text-ink transition-colors hover:bg-accent-text"
+          className="inline-flex min-h-12 items-center rounded-full bg-accent px-6 font-medium text-ink transition-colors hover:bg-accent-hover"
         >
           See my work on GitHub
         </a>

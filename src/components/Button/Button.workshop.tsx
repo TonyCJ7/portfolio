@@ -30,7 +30,7 @@ export const entry = defineEntry({
       "arrow (default true for primary, false for ghost)",
     ],
     tokens: [
-      "Primary: Tangerine fill, Ink text, Tangerine Text on hover",
+      "Primary: Tangerine fill, Ink text, Accent Hover fill on hover and focus",
       "Ghost: Line border, Text color, Surface on hover, Surface Hover when pressed",
       "text-title, full radius, 20 px side padding",
     ],
@@ -38,7 +38,7 @@ export const entry = defineEntry({
       "Background, color and scale 150 ms standard; arrow 75 ms translate; none under reduced motion",
     ],
     a11y: [
-      "Ink on tangerine 5.8:1 at rest, 7.8:1 on dark hover, 3.5:1 on light hover",
+      "Ink on tangerine 5.84:1 at rest, 7.77:1 on hover and focus in both schemes",
       "Pressed shown on :active",
       "Min height 44 px",
       "Arrow is hidden from screen readers",
