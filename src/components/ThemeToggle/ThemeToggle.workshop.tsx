@@ -19,7 +19,7 @@ export const entry = defineEntry({
     ],
     tokens: [
       "Dot 10 px: Tangerine fill in dark, 2 px Text ring in light",
-      "Word: mono label, Text Muted at rest, Text on hover, focus and pressed",
+      "Word: mono label, Text Muted at rest, Text on hover, focus and pressed; both words render and CSS shows the one for the scheme",
       "Surface fill and Line border on hover, Surface when pressed, full radius",
     ],
     motion: [
@@ -28,7 +28,7 @@ export const entry = defineEntry({
       "300 ms crossfade without View Transitions; instant under reduced motion",
     ],
     a11y: [
-      "aria-pressed is true in light; aria-label names the scheme it switches to",
+      "No aria-pressed; the name states the current theme then the action, so the visible word is contained (2.5.3)",
       "Min 44 x 44 px hit area, icon form included",
       "Dot is hidden from screen readers",
     ],

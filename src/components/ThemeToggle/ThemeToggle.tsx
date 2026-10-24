@@ -32,15 +32,15 @@ export default function ThemeToggle({ size = "auto" }: ThemeToggleProps) {
     <button
       ref={buttonRef}
       type="button"
-      aria-pressed={theme === "light"}
-      aria-label={`Switch to ${next} theme`}
+      aria-label={`${theme} theme, switch to ${next}`}
       onClick={toggle}
       className={BUTTON_CLASSES}
     >
       <span aria-hidden className={DOT_CLASSES} />
-      <Label className={`${WORD_COLOR_CLASSES} ${WORD_VISIBILITY[size]}`}>
-        {theme}
-      </Label>
+      <span className={WORD_VISIBILITY[size]}>
+        <Label className={`theme-word-dark ${WORD_COLOR_CLASSES}`}>dark</Label>
+        <Label className={`theme-word-light ${WORD_COLOR_CLASSES}`}>light</Label>
+      </span>
     </button>
   );
 }
