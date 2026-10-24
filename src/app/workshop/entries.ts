@@ -17,6 +17,7 @@ import { entry as skillGroup } from "@/components/SkillGroup/SkillGroup.workshop
 import { entry as educationRow } from "@/components/EducationRow/EducationRow.workshop";
 import { entry as socialLinks } from "@/components/SocialLinks/SocialLinks.workshop";
 import { entry as navList } from "@/components/NavList/NavList.workshop";
+import { entry as intro } from "@/components/Intro/Intro.workshop";
 
 export const entries: WorkshopEntry[] = [
   tokens,
@@ -37,6 +38,7 @@ export const entries: WorkshopEntry[] = [
   educationRow,
   socialLinks,
   navList,
+  intro,
 ];
 
 export function findEntry(id: string): WorkshopEntry | undefined {
