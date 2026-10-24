@@ -21,7 +21,8 @@ export const entry = defineEntry({
       "Reduced motion: the arrow jumps to its hover position with no transition",
     ],
     a11y: [
-      "A footer landmark; only one sentence is in the accessibility tree at a time",
+      "On the page it is the contentinfo landmark because it sits outside main; inside the Workshop frame it is a plain footer",
+      "Only one sentence is in the accessibility tree at a time",
       "The arrow is aria-hidden, so the link reads its words only",
       "/workshop redirects to the Tokens entry",
     ],
