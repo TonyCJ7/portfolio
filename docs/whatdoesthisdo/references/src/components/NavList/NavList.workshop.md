@@ -17,4 +17,4 @@ Turns the Pointer on and Keyboard on controls into the `forced` prop of `NavList
 ## Constants
 
 - [`LABELS`](../../../../../../src/components/NavList/NavList.workshop.tsx#L6): the section labels from `nav` in page order, the options of all three controls.
-- [`entry`](../../../../../../src/components/NavList/NavList.workshop.tsx#L31): the Nav list Workshop entry: Active (in view), Pointer on and Keyboard on controls, centered in the frame. It always passes `activeId`, so the scroll-spy never runs on the Workshop page. No control is keyed `state`, because the Stage writes a `state` control onto the frame's `data-state`, which would force every item.
+- [`entry`](../../../../../../src/components/NavList/NavList.workshop.tsx#L31): the Nav list Workshop entry: Active (in view), Pointer on and Keyboard on controls, centered in the frame. It always passes `activeId`. `NavList` still calls `useActiveSection`, which subscribes on the Workshop page too, but its result is ignored. No control is keyed `state`, because the Stage writes a `state` control onto the frame's `data-state`, which would force every item.

@@ -64,10 +64,12 @@ export function useActiveSection(ids: string[]): string {
     }
 
     window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
 
     return () => {
       observer.disconnect();
       window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
     };
   }, [idsKey]);
 
