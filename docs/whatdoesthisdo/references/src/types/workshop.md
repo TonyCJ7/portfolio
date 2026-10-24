@@ -24,18 +24,18 @@ The value a control can hold: a string for selects and text, a boolean for toggl
 
 Derives the argument object an entry's `render` and `usage` receive from its `controls`: a boolean for every toggle, the union of its options for every select, a string for every text control. When the controls are only known as the general `Controls` map, every value is `ArgValue`.
 
-### [FrameContext](../../../../../src/types/workshop.ts#L45)
+### [FrameContext](../../../../../src/types/workshop.ts#L47)
 
 Bundles the scheme, device and motion the frame is showing, so an entry can render differently per setting.
 
-### [Spec](../../../../../src/types/workshop.ts#L51)
+### [Spec](../../../../../src/types/workshop.ts#L53)
 
 Holds the text of an entry's Spec tab: the component `folder`, and lists of `props`, `tokens`, `motion` rules and `a11y` rules, with an optional `note`.
 
-### [WorkshopEntry](../../../../../src/types/workshop.ts#L60)
+### [WorkshopEntry](../../../../../src/types/workshop.ts#L62)
 
 Describes one page of the Workshop: its URL `id`, display `name`, build `stage` (1 primitives, 2 composites, 3 sections), one-line `lede`, whether the frame centres its content, its `controls`, its `spec`, a `render` function that returns the live component for the current args and frame, and a `usage` function that returns the JSX string shown under the stage.
 
-### [WorkshopState](../../../../../src/types/workshop.ts#L72)
+### [WorkshopState](../../../../../src/types/workshop.ts#L74)
 
 What the URL-state hook returns to the Workshop view: the current frame context and args, and the three writers `setArg`, `setCtx` and `reset`.

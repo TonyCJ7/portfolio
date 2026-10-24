@@ -46,7 +46,7 @@ export const entry = defineEntry({
       "Social: mono label, uppercase, Text Muted, Text on hover and focus",
     ],
     motion: [
-      "Color 150 ms standard; arrow 75 ms translate; under reduced motion the arrow jumps to its hover position at once, the colour fades stay",
+      "Prose and social fade their colour over 150 ms; arrow and large change colour at once; arrow 75 ms translate; under reduced motion the arrow jumps to its hover position at once, and the prose and social fades stay",
     ],
     a11y: [
       "External links open in a new tab with rel noopener noreferrer",

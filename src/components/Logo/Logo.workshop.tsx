@@ -26,7 +26,7 @@ export const entry = defineEntry({
     ],
     a11y: [
       "The link is named Home; the mark inside is named tj mark",
-      "2 px Tangerine focus ring on keyboard focus",
+      "shared 2 px focus ring on keyboard focus, Tangerine in dark and Tangerine Text in light",
     ],
   },
   render: (args) => <LogoLink size={Number(args.size) as 44 | 36} />,
