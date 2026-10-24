@@ -5,7 +5,7 @@
 Wraps every page of the portfolio in the `html` and `body` elements and hands the two font variables to the whole document.
 
 - In: `children`, the page Next.js renders for the current route.
-- Out: the document shell. The `head` starts with the inline theme script, so a stored scheme is applied before the first paint. The `html` element carries the font class names and `suppressHydrationWarning`, because that script sets `data-theme` on it before React hydrates. The `body` is at least the viewport height.
+- Out: the document shell. The `head` starts with the inline theme script, so a stored scheme is applied before the first paint. The `html` element carries the font class names and `suppressHydrationWarning`, because that script sets `data-theme` on it before React hydrates. It also carries `data-scroll-behavior="smooth"`, which tells Next that the smooth scrolling in `globals.css` is intended, so the router turns it off during its own route transitions. The `body` is at least the viewport height.
 
 ## Constants
 
