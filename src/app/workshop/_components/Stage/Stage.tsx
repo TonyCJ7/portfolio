@@ -1,19 +1,20 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { ArgValue, FrameContext, WorkshopEntry } from "@/types/workshop";
 
 type StageProps = {
   entry: WorkshopEntry;
   args: Record<string, ArgValue>;
   ctx: FrameContext;
+  onCtxChange: (patch: Partial<FrameContext>) => void;
 };
 
 const FRAME_WIDTH = { desktop: 656, phone: 390 };
 
 const STAGE_INSET = 32;
 
-export default function Stage({ entry, args, ctx }: StageProps) {
+export default function Stage({ entry, args, ctx, onCtxChange }: StageProps) {
   const stageRef = useRef<HTMLDivElement>(null);
   const frameRef = useRef<HTMLDivElement>(null);
   const [stageWidth, setStageWidth] = useState(0);
@@ -44,6 +45,27 @@ export default function Stage({ entry, args, ctx }: StageProps) {
 
     return () => observer.disconnect();
   }, []);
+
+  // Layout effect: it re-subscribes in the commit that writes data-scheme, so React's write is not echoed.
+  useLayoutEffect(() => {
+    const frame = frameRef.current;
+
+    if (frame === null) {
+      return;
+    }
+
+    const observer = new MutationObserver(() => {
+      const scheme = frame.dataset.scheme === "light" ? "light" : "dark";
+
+      if (scheme !== ctx.scheme) {
+        onCtxChange({ scheme });
+      }
+    });
+
+    observer.observe(frame, { attributes: true, attributeFilter: ["data-scheme"] });
+
+    return () => observer.disconnect();
+  }, [ctx.scheme, onCtxChange]);
 
   return (
     <div

@@ -81,6 +81,8 @@
   --spot: rgba(255, 92, 26, 0.08);
   --lift-line: rgba(245, 245, 244, 0.08);
   --lift-shadow: rgba(0, 0, 0, 0.25);
+  --theme-dot-fill: var(--accent);
+  --theme-dot-ring: transparent;
   color-scheme: dark;
 }
 
@@ -99,6 +101,8 @@
   --spot: rgba(201, 58, 8, 0.06);
   --lift-line: #dcdcda;
   --lift-shadow: rgba(22, 22, 26, 0.1);
+  --theme-dot-fill: transparent;
+  --theme-dot-ring: var(--fg);
   color-scheme: light;
 }
 
@@ -239,4 +243,38 @@ body {
 
 :focus:not(:focus-visible) {
   outline: none;
+}
+
+@layer components {
+  .theme-dot {
+    background: var(--theme-dot-fill);
+    box-shadow: inset 0 0 0 2px var(--theme-dot-ring);
+  }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  animation: reveal 500ms var(--ease-out-tj);
+}
+
+@keyframes reveal {
+  from {
+    clip-path: circle(0 at var(--vt-x) var(--vt-y));
+  }
+  to {
+    clip-path: circle(var(--vt-r) at var(--vt-x) var(--vt-y));
+  }
+}
+
+html.theme-fade,
+html.theme-fade * {
+  transition:
+    background-color 300ms var(--ease-standard),
+    color 300ms var(--ease-standard),
+    border-color 300ms var(--ease-standard) !important;
 }

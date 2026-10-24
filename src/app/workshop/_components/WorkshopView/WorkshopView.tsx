@@ -54,7 +54,7 @@ export default function WorkshopView({ entryId }: WorkshopViewProps) {
           <p className="max-w-measure text-small text-fg-2">{entry.lede}</p>
         </div>
         <Toolbar ctx={ctx} onChange={setCtx} />
-        <Stage entry={entry} args={args} ctx={ctx} />
+        <Stage entry={entry} args={args} ctx={ctx} onCtxChange={setCtx} />
         <UsageLine code={entry.usage(args, ctx)} />
       </div>
       <aside className="flex min-w-0 flex-col gap-4">

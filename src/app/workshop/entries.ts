@@ -6,6 +6,7 @@ import { entry as tag } from "@/components/Tag/Tag.workshop";
 import { entry as logo } from "@/components/Logo/Logo.workshop";
 import { entry as button } from "@/components/Button/Button.workshop";
 import { entry as link } from "@/components/Link/Link.workshop";
+import { entry as themeToggle } from "@/components/ThemeToggle/ThemeToggle.workshop";
 
 export const entries: WorkshopEntry[] = [
   tokens,
@@ -15,6 +16,7 @@ export const entries: WorkshopEntry[] = [
   logo,
   button,
   link,
+  themeToggle,
 ];
 
 export function findEntry(id: string): WorkshopEntry | undefined {

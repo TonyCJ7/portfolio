@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LogoLink from "@/components/Logo/LogoLink";
+import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 
 export const metadata: Metadata = {
   title: "Workshop · Tony Cherian Jacob",
@@ -14,6 +15,9 @@ export default function WorkshopLayout({ children }: LayoutProps<"/workshop">) {
         <span className="font-mono text-label uppercase text-fg-muted">
           Workshop
         </span>
+        <div className="ms-auto">
+          <ThemeToggle size="text" />
+        </div>
       </header>
       {children}
     </div>
