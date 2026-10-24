@@ -12,7 +12,7 @@ Reads the frame settings from the URL for the hook below.
 Keeps all Workshop state in the URL, so every combination of controls and frame settings is a link that can be shared.
 
 - In: `entry`, the entry on screen; its controls decide which params are read.
-- Out: the frame context, the coerced args, and three writers. `setArg` sets one control param; `setCtx` sets scheme, device or motion and removes a param that returns to its default; `reset` removes every control param. Writes go through `history.replaceState`, which Next's router picks up, so the page never reloads. While `motion` is reduced the hook sets `data-motion="reduced"` on `html` and removes it when the setting changes or the view unmounts.
+- Out: the frame context, the coerced args, and three writers. `setArg` sets one control param and removes it when the value is the control's default; `setCtx` sets scheme, device or motion and removes a param that returns to its default; `reset` removes every control param. Writes go through `history.replaceState`, which Next's router picks up, so the page never reloads. While `motion` is reduced the hook sets `data-motion="reduced"` on `html` and removes it when the setting changes or the view unmounts.
 
 ## Constants
 

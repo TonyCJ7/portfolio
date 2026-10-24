@@ -32,12 +32,6 @@ export function defineEntry<C extends Controls>(
   return entry as unknown as WorkshopEntry;
 }
 
-export function defaultArgs(controls: Controls): Record<string, ArgValue> {
-  return Object.fromEntries(
-    Object.entries(controls).map(([key, control]) => [key, control.default]),
-  );
-}
-
 function coerceArg(control: ControlDef, raw: string | null): ArgValue {
   if (raw === null) {
     return control.default;

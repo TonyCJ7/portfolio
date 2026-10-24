@@ -14,35 +14,28 @@ Types an entry from its own controls and hands it back as a general `WorkshopEnt
 - In: `entry`, the entry object; its `render` and `usage` are checked against its own controls.
 - Out: the same object, widened. This is the one cast in the Workshop, so every other file stays strictly typed.
 
-### [defaultArgs(controls)](../../../../../src/app/workshop/controls.ts#L35)
-
-Builds the args an entry shows before any control is touched.
-
-- In: `controls`, the entry's controls map.
-- Out: an object with each control's `default` under its key.
-
-### [coerceArg(control, raw)](../../../../../src/app/workshop/controls.ts#L41)
+### [coerceArg(control, raw)](../../../../../src/app/workshop/controls.ts#L35)
 
 Turns one raw URL value into a value the control accepts, for the function below.
 
 - In: `control`, the control definition. `raw`, the search param string, or null when absent.
 - Out: the default when `raw` is null; for a select, `raw` only when it is one of the options, else the default; for text, `raw` cut to `max` characters; for a toggle, `true` for `"1"`, `false` for `"0"`, else the default.
 
-### [coerceArgs(controls, params)](../../../../../src/app/workshop/controls.ts#L66)
+### [coerceArgs(controls, params)](../../../../../src/app/workshop/controls.ts#L60)
 
 Reads every control's value from the URL so a shared link with a stale or mistyped value still renders.
 
 - In: `controls`, the entry's controls map. `params`, the page's search params.
 - Out: an object with one coerced value per control key.
 
-### [serializeArg(value)](../../../../../src/app/workshop/controls.ts#L78)
+### [serializeArg(value)](../../../../../src/app/workshop/controls.ts#L72)
 
 Writes a control value the way the URL stores it.
 
 - In: `value`, a string or boolean.
 - Out: the string unchanged; `"1"` for true and `"0"` for false.
 
-### [jsx(name, props, children)](../../../../../src/app/workshop/controls.ts#L86)
+### [jsx(name, props, children)](../../../../../src/app/workshop/controls.ts#L80)
 
 Renders the usage line shown under the stage: the JSX a page would write for the current controls.
 

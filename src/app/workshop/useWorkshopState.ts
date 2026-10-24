@@ -48,9 +48,15 @@ export function useWorkshopState(entry: WorkshopEntry): WorkshopState {
 
   const setArg = useCallback(
     (key: string, value: ArgValue) => {
-      write((next) => next.set(key, serializeArg(value)));
+      write((next) => {
+        if (value === entry.controls[key]?.default) {
+          next.delete(key);
+        } else {
+          next.set(key, serializeArg(value));
+        }
+      });
     },
-    [write],
+    [entry, write],
   );
 
   const setCtx = useCallback(

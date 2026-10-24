@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type KeyboardEvent } from "react";
 import { notFound } from "next/navigation";
 import { entries, findEntry } from "../../entries";
 import { useWorkshopState } from "../../useWorkshopState";
@@ -19,6 +19,8 @@ const TABS = ["controls", "spec"] as const;
 
 const TAB_LABELS = { controls: "Controls", spec: "Spec" };
 
+const PANEL_ID = "entry-panel";
+
 export default function WorkshopView({ entryId }: WorkshopViewProps) {
   const entry = findEntry(entryId);
   const [tab, setTab] = useState<(typeof TABS)[number]>("controls");
@@ -28,6 +30,20 @@ export default function WorkshopView({ entryId }: WorkshopViewProps) {
   }
 
   const { ctx, args, setArg, setCtx, reset } = useWorkshopState(entry);
+
+  function onTabKeyDown(event: KeyboardEvent<HTMLButtonElement>) {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") {
+      return;
+    }
+
+    const index = TABS.indexOf(tab);
+    const step = event.key === "ArrowRight" ? 1 : -1;
+    const next = TABS[(index + step + TABS.length) % TABS.length];
+
+    event.preventDefault();
+    setTab(next);
+    document.getElementById(`tab-${next}`)?.focus();
+  }
 
   return (
     <div className="grid grid-cols-[236px_minmax(0,1fr)_340px] gap-6 p-6 phone:grid-cols-1">
@@ -50,15 +66,17 @@ export default function WorkshopView({ entryId }: WorkshopViewProps) {
               role="tab"
               id={`tab-${name}`}
               aria-selected={tab === name}
-              aria-controls={`panel-${name}`}
+              aria-controls={PANEL_ID}
+              tabIndex={tab === name ? 0 : -1}
               onClick={() => setTab(name)}
+              onKeyDown={onTabKeyDown}
               className="-mb-px border-b-2 border-transparent px-3 py-2 text-label uppercase text-fg-muted aria-selected:border-accent aria-selected:text-fg hover:text-fg"
             >
               {TAB_LABELS[name]}
             </button>
           ))}
         </div>
-        <div role="tabpanel" id={`panel-${tab}`} aria-labelledby={`tab-${tab}`}>
+        <div role="tabpanel" id={PANEL_ID} aria-labelledby={`tab-${tab}`}>
           {tab === "controls"
             ? (
                 <ControlsPanel
