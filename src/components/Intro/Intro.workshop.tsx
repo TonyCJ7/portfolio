@@ -22,6 +22,7 @@ export const entry = defineEntry({
     ],
     tokens: [
       "Column: sticky at the top, full viewport height (dvh), 96 px block padding; top block and social links pushed apart",
+      "Short viewport: the column scrolls on its own, so the nav list and social links stay reachable by wheel and Tab; 4 px inline padding inside a -4 px margin keeps the focus ring unclipped",
       "Mark row: LogoLink 44 px and ThemeToggle at either end; the mark is 36 px on phones",
       "Name: text-display Text, 24 px below the mark; role: text-tagline Text, 12 px below; tagline: text-body Text 2, 16 px below, capped at the lede width; all three wrap anywhere",
       "Buttons: primary Get in touch to #contact and ghost Download CV, 32 px below, 12 px gap, wrapping",

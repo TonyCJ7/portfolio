@@ -19,8 +19,9 @@ function enterDelay(index: number): CSSProperties {
 }
 
 export default function Intro({ profile, cvHref }: IntroProps) {
+  // -mx-1 px-1 keeps edge focus rings inside the scroll box that overflow-y-auto creates.
   return (
-    <header className="sticky top-0 flex h-dvh flex-col justify-between gap-6 py-24 phone:static phone:h-auto phone:py-12">
+    <header className="sticky top-0 -mx-1 flex h-dvh flex-col justify-between gap-6 overflow-y-auto px-1 py-24 phone:static phone:h-auto phone:overflow-visible phone:py-12">
       <div>
         <div
           className={`flex items-center justify-between ${ENTER}`}
