@@ -7,17 +7,17 @@ export const entry = defineEntry({
   name: "Focus ring",
   stage: 1,
   center: true,
-  lede: "One rule for every keyboard user: a two-pixel tangerine outline, offset by two, on focus-visible only. Pointer clicks show nothing.",
+  lede: "One rule for every keyboard user: a two-pixel tangerine outline, offset by two, on focus-visible only. Pointer clicks show nothing, and a focused landmark shows none.",
   controls: {
     target: select("Target", ["button", "link", "input"], "button"),
     state: select("State", ["rest", "focus"], "focus"),
   },
   spec: {
     folder: "src/app/globals.css",
-    props: ["No component; one global rule on :focus-visible"],
+    props: ["No component; one global rule on :focus-visible", "main:focus-visible shows no ring, so a skip link target stays quiet"],
     tokens: [
-      "outline-color Tangerine; offset 2px",
-      "3.9:1 on ink, 3.3:1 on paper",
+      "outline-color --focus-ring: Tangerine in dark, Tangerine Text in light; offset 2px",
+      "5.8:1 on ink, 4.7:1 on paper",
       "Radius inherited from the control",
     ],
     motion: ["None"],
@@ -53,5 +53,5 @@ export const entry = defineEntry({
       </button>
     );
   },
-  usage: () => ':focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }',
+  usage: () => ':focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }',
 });
