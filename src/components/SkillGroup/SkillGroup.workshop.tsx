@@ -27,7 +27,7 @@ export const entry = defineEntry({
     ],
     tokens: [
       "Row: label column 2fr, tags column 6fr, 24 px column gap, 16 px vertical padding",
-      "Label: muted Label; tags: TagList",
+      "Label: muted Label as a block, 6 px top padding to sit level with the first row of tags; tags: TagList",
       "Border hairline above every row and below the table",
       "Phone: one column, label above the tags with an 8 px gap",
     ],

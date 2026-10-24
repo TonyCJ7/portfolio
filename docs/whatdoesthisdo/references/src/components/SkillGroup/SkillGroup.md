@@ -10,6 +10,6 @@ Describes the props of `SkillGroup`.
 
 Renders one row of the skills table: the group's name beside the tags it names.
 
-- In: `group`, the skill group. Its name becomes a muted `Label` in a `dt`. Its items become a `TagList` in a `dd`, and the list is read out under the group's name.
+- In: `group`, the skill group. Its name becomes a muted `Label` in a `dt`. The label is a block with 6 px top padding, so its first line sits level with the first row of tags. As a block it also keeps its own 16.2 px line height when a long name wraps. Its items become a `TagList` in a `dd`, and the list is read out under the group's name.
 - Out: a `div` holding one `dt` and one `dd`, valid inside a `dl`. A Border hairline runs above the row, with 16 px of padding above and below.
 - On desktop the label takes 2 of 8 columns and the tags take 6, with a 24 px gap. On phone the row is one column, the label above the tags with an 8 px gap.

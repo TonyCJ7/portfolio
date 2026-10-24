@@ -20,7 +20,7 @@ export default function ExperienceRow({ entry, target = false }: ExperienceRowPr
         aria-hidden
         className="absolute -inset-y-4 -inset-x-6 -z-10 rounded-sm transition-[background-color,box-shadow] duration-150 ease-standard group-hover:bg-surface group-hover:shadow-lift group-focus-within:bg-surface group-focus-within:shadow-lift phone:-inset-x-4"
       />
-      <Label as="time" dateTime={entry.from} className="pt-1">
+      <Label as="time" dateTime={entry.from} className="block pt-1">
         {entry.dates}
       </Label>
       <div>
