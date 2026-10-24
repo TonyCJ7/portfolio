@@ -46,7 +46,7 @@ export const experience: Experience[] = [
     company: "QBurst Technologies",
     url: "https://www.qburst.com",
     place: "Thiruvananthapuram",
-    body: "Built the single-page app for an e-commerce site with 42 million monthly visitors and, with 3 colleagues, a 50+ component design system. Cut landing page LCP from 7.6 seconds to 1.4 with lazy loading.",
+    body: "Built the single-page app for an e-commerce site with 42 million monthly visitors and, with 3 colleagues, a 50+ component design system. Cut landing page LCP from 7.6 seconds to 1.4 with paginated CMS data and lazy loading.",
     tags: ["SPA", "Design system", "Lazy loading"],
   },
   {

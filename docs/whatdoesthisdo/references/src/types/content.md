@@ -14,7 +14,7 @@ Describes one Highlights tile. `figure` is the stat with no words (`"13%"`), `wh
 
 ### [SkillGroup](../../../../../src/types/content.ts#L7)
 
-Describes one row of the skills table: a group label and its tool names, spelled as the résumé spells them.
+Describes one row of the skills table: a group label and its tool names. The names follow the résumé and are shortened only to fit the 18-character tag budget, which today means `"Testing Library"` for React Testing Library.
 
 ### [Education](../../../../../src/types/content.ts#L9)
 
