@@ -22,6 +22,17 @@
   }
 }
 
+@custom-variant group-hover {
+  @media (hover: hover) {
+    &:is(:where(.group):hover *) {
+      @slot;
+    }
+  }
+  [data-state="hover"] :where(.group) & {
+    @slot;
+  }
+}
+
 @custom-variant focus-visible {
   &:focus-visible {
     @slot;
