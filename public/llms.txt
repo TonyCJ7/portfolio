@@ -1,4 +1,4 @@
-<!-- Mirrors src/content/profile.ts (tagline, metaDescription), src/content/highlights.ts, src/content/experience.ts and the Workshop description in src/app/workshop/layout.tsx. Edit by hand when they change. -->
+<!-- Mirrors src/content/profile.ts (tagline, metaDescription), src/content/highlights.ts, src/content/experience.ts and workshopDescription in src/lib/metadata.ts. Edit by hand when they change. -->
 # Tony Cherian Jacob
 
 > 8+ years of React and Next.js. Currently at Almosafer in Dubai, making travel search faster and easier to use.

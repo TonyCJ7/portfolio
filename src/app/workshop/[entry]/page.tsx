@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
+import { workshopOpenGraph } from "@/lib/metadata";
 import { entries, findEntry } from "../entries";
 import WorkshopView from "../_components/WorkshopView/WorkshopView";
 
@@ -18,9 +19,12 @@ export async function generateMetadata({
     return { title: "Workshop" };
   }
 
+  const canonical = `/workshop/${found.id}`;
+
   return {
     title: `${found.name} · Workshop`,
-    alternates: { canonical: `/workshop/${found.id}` },
+    alternates: { canonical },
+    openGraph: workshopOpenGraph(canonical),
   };
 }
 

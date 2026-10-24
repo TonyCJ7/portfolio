@@ -1,6 +1,6 @@
 ## `src/app/page.tsx`
 
-### [Home()](../../../../../src/app/page.tsx#L15)
+### [Home()](../../../../../src/app/page.tsx#L28)
 
 Renders the portfolio's home page: the skip link, the spotlight, and the two-column page with the intro on the left and the five sections on the right.
 
@@ -10,3 +10,7 @@ Renders the portfolio's home page: the skip link, the spotlight, and the two-col
 - The CV link appears only when `public/<profile.cvFile>` exists on disk at render time. Then `/<profile.cvFile>` goes to both the intro's Download CV button and the Experience section's résumé link. Without the file both links are left out.
 - After the grid comes the `personJsonLd` script, `application/ld+json`, with every `<` escaped as `\u003c` so the text can never close the script tag. It is the page's last child, so the skip link stays first.
 - Nothing from the grid to `main` sets `overflow`, a `z-index` or a background. The phone section bars need `position: sticky` to keep working. The highlight tiles lift to `z-index` 10 and must stay under those bars. The spotlight at `-z-10` must show through to the ground.
+
+## Constants
+
+- [`metadata`](../../../../../src/app/page.tsx#L17): the home page's own head tags: the canonical `/` and the Open Graph block, type `profile`, with `profile.pageTitle`, `profile.metaDescription`, url `/` and `openGraphBase`. The generated preview image joins it because the image file sits in the same segment.

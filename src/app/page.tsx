@@ -1,16 +1,29 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
+import type { Metadata } from "next";
 import Colophon from "@/components/Colophon/Colophon";
 import Intro from "@/components/Intro/Intro";
 import SkipLink from "@/components/SkipLink/SkipLink";
 import Spotlight from "@/components/Spotlight/Spotlight";
 import { personJsonLd } from "@/content/jsonLd";
 import { profile } from "@/content/profile";
+import { openGraphBase } from "@/lib/metadata";
 import About from "@/sections/About/About";
 import Contact from "@/sections/Contact/Contact";
 import ExperienceSection from "@/sections/Experience/Experience";
 import Highlights from "@/sections/Highlights/Highlights";
 import Skills from "@/sections/Skills/Skills";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: {
+    ...openGraphBase,
+    type: "profile",
+    title: profile.pageTitle,
+    description: profile.metaDescription,
+    url: "/",
+  },
+};
 
 export default function Home() {
   const cvHref = existsSync(join(process.cwd(), "public", profile.cvFile))

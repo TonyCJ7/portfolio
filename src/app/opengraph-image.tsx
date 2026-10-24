@@ -3,16 +3,22 @@ import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { DOT, GLYPH } from "@/components/Logo/paths";
 import { profile } from "@/content/profile";
+import { ogImage } from "@/lib/metadata";
 
-export const alt = `${profile.name}, ${profile.role}`;
+export const alt = ogImage.alt;
 
-export const size = { width: 1200, height: 630 };
+export const size = { width: ogImage.width, height: ogImage.height };
 
-export const contentType = "image/png";
+export const contentType = ogImage.type;
 
 const dmSansBold = await readFile(
   join(process.cwd(), "src/assets/fonts/DMSans-Bold.ttf"),
 );
+
+const markSize = 160;
+
+// The j's lower cap is the mark's leftmost ink, 46.4 units into its 256 unit grid.
+const markInset = (46.4 / 256) * markSize;
 
 // Satori widens each word by its kerning (T-o in "Tony"); one unbroken run keeps the gaps even.
 const unbrokenName = profile.name.replaceAll(" ", "\u00a0");
@@ -32,7 +38,12 @@ export default function OpengraphImage() {
           fontFamily: "DM Sans",
         }}
       >
-        <svg width={160} height={160} viewBox="0 0 256 256">
+        <svg
+          width={markSize}
+          height={markSize}
+          viewBox="0 0 256 256"
+          style={{ marginLeft: -markInset }}
+        >
           <path fill="#F5F5F4" d={GLYPH} />
           <path fill="#FF5C1A" d={DOT} />
         </svg>

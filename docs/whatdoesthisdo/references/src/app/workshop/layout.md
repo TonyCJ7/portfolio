@@ -1,6 +1,6 @@
 ## `src/app/workshop/layout.tsx`
 
-### [WorkshopLayout({ children })](../../../../../../src/app/workshop/layout.tsx#L12)
+### [WorkshopLayout({ children })](../../../../../../src/app/workshop/layout.tsx#L14)
 
 Wraps every Workshop page in the Workshop chrome: a `SkipLink` to `#workshop-main` first, then the header with the `LogoLink` mark linking home, the word "Workshop" in mono label style, and a `ThemeToggle` with its text at the far end.
 
@@ -9,4 +9,4 @@ Wraps every Workshop page in the Workshop chrome: a `SkipLink` to `#workshop-mai
 
 ## Constants
 
-- [`metadata`](../../../../../../src/app/workshop/layout.tsx#L6): the Workshop title, description and canonical `/workshop`. The title `Workshop` passes the root template `%s · Tony Cherian Jacob` on to the entry pages again, since a plain string title would stop it. An entry page sets its own title and canonical.
+- [`metadata`](../../../../../../src/app/workshop/layout.tsx#L7): the Workshop title, `workshopDescription`, the canonical `/workshop` and `workshopOpenGraph(\"/workshop\")`. The title `Workshop` comes with `titleTemplate`, so the entry pages still get ` · Tony Cherian Jacob`; a plain string title would stop the template. An entry page sets its own title, canonical and Open Graph block.

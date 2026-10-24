@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Geist_Mono } from "next/font/google";
 import { profile } from "@/content/profile";
+import { titleTemplate } from "@/lib/metadata";
 import { siteUrl } from "@/lib/siteUrl";
 import { THEME_SCRIPT } from "./themeScript";
 import "./globals.css";
@@ -17,22 +18,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
-  title: {
-    default: profile.pageTitle,
-    template: "%s · Tony Cherian Jacob",
-  },
+  title: { default: profile.pageTitle, template: titleTemplate },
   description: profile.metaDescription,
-  alternates: { canonical: "/" },
-  openGraph: {
-    type: "profile",
-    title: profile.pageTitle,
-    description: profile.metaDescription,
-    url: "/",
-    siteName: profile.name,
-    locale: "en_US",
-  },
   twitter: { card: "summary_large_image" },
-  robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {

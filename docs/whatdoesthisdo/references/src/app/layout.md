@@ -1,6 +1,6 @@
 ## `src/app/layout.tsx`
 
-### [RootLayout({ children })](../../../../../src/app/layout.tsx#L42)
+### [RootLayout({ children })](../../../../../src/app/layout.tsx#L30)
 
 Wraps every page of the portfolio in the `html` and `body` elements and hands the two font variables to the whole document.
 
@@ -9,7 +9,7 @@ Wraps every page of the portfolio in the `html` and `body` elements and hands th
 
 ## Constants
 
-- [`dmSans`](../../../../../src/app/layout.tsx#L8): the DM Sans face loaded by next/font, exposed to CSS as `--font-dm-sans` and mapped to `font-sans` in `globals.css`.
-- [`geistMono`](../../../../../src/app/layout.tsx#L13): the Geist Mono face loaded by next/font, exposed to CSS as `--font-geist-mono` and mapped to `font-mono`.
-- [`metadata`](../../../../../src/app/layout.tsx#L18): the head tags every page starts from. `metadataBase` is `siteUrl`, so relative URLs become absolute. The title is `profile.pageTitle`, and child pages get the template `%s · Tony Cherian Jacob`. The description is `profile.metaDescription`. The canonical link is `/`. Open Graph has type `profile`, the same title and description, `siteName` and locale `en_US`. The Twitter card is `summary_large_image`, and robots may index and follow. A child segment that sets one of these fields replaces it whole.
-- [`viewport`](../../../../../src/app/layout.tsx#L38): the browser theme colour, Tangerine `#FF5C1A`, so the mobile browser chrome matches the brand.
+- [`dmSans`](../../../../../src/app/layout.tsx#L9): the DM Sans face loaded by next/font, exposed to CSS as `--font-dm-sans` and mapped to `font-sans` in `globals.css`.
+- [`geistMono`](../../../../../src/app/layout.tsx#L14): the Geist Mono face loaded by next/font, exposed to CSS as `--font-geist-mono` and mapped to `font-mono`.
+- [`metadata`](../../../../../src/app/layout.tsx#L19): the head tags every page starts from. `metadataBase` is `siteUrl`, so relative URLs become absolute. The title is `profile.pageTitle`, and child pages get `titleTemplate`, `%s · Tony Cherian Jacob`. The description is `profile.metaDescription`, and the Twitter card is `summary_large_image`. The canonical link and the Open Graph block are left to each page, so no route inherits the home page's URL. Robots fields are left out, so pages are indexable by default and Next.js's `noindex` on a 404 stands alone.
+- [`viewport`](../../../../../src/app/layout.tsx#L26): the browser theme colour, Tangerine `#FF5C1A`, so the mobile browser chrome matches the brand.

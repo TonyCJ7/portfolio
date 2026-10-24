@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
+import { profile } from "@/content/profile";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Tony Cherian Jacob",
     short_name: "TCJ",
-    description: "Frontend developer portfolio of Tony Cherian Jacob",
+    description: profile.metaDescription,
     start_url: "/",
     display: "standalone",
     background_color: "#F5F5F4",

@@ -6,6 +6,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: siteUrl.href, lastModified },
-    { url: new URL("/workshop", siteUrl).href, lastModified },
+    { url: new URL("/workshop/tokens", siteUrl).href, lastModified },
   ];
 }

@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import LogoLink from "@/components/Logo/LogoLink";
 import SkipLink from "@/components/SkipLink/SkipLink";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
+import { titleTemplate, workshopDescription, workshopOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: { default: "Workshop", template: "%s · Tony Cherian Jacob" },
-  description: "Every component of the site, with live controls.",
+  title: { default: "Workshop", template: titleTemplate },
+  description: workshopDescription,
   alternates: { canonical: "/workshop" },
+  openGraph: workshopOpenGraph("/workshop"),
 };
 
 export default function WorkshopLayout({ children }: LayoutProps<"/workshop">) {
