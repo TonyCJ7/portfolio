@@ -1,4 +1,5 @@
 import { defineEntry, jsx, text } from "@/app/workshop/controls";
+import PhoneScrollScene from "@/app/workshop/_components/PhoneScrollScene/PhoneScrollScene";
 import SectionLabel from "./SectionLabel";
 
 const PLACEHOLDER_PARAGRAPHS = [
@@ -43,14 +44,14 @@ export const entry = defineEntry({
 
     if (ctx.device === "phone") {
       return (
-        <div className="-mx-(--gutter) h-[480px] overflow-y-auto px-(--gutter)">
+        <PhoneScrollScene>
           {label}
           {PLACEHOLDER_PARAGRAPHS.map((paragraph) => (
             <p key={paragraph} className="py-4 text-body text-fg-2">
               {paragraph}
             </p>
           ))}
-        </div>
+        </PhoneScrollScene>
       );
     }
 

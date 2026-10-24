@@ -1,4 +1,5 @@
 import { defineEntry } from "@/app/workshop/controls";
+import PhoneScrollScene from "@/app/workshop/_components/PhoneScrollScene/PhoneScrollScene";
 import Highlights from "./Highlights";
 
 export const entry = defineEntry({
@@ -30,9 +31,9 @@ export const entry = defineEntry({
   render: (_args, ctx) => {
     if (ctx.device === "phone") {
       return (
-        <div className="-mx-(--gutter) h-[480px] overflow-y-auto px-(--gutter)">
+        <PhoneScrollScene>
           <Highlights />
-        </div>
+        </PhoneScrollScene>
       );
     }
 

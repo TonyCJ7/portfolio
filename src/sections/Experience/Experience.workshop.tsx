@@ -1,4 +1,5 @@
 import { defineEntry, toggle } from "@/app/workshop/controls";
+import PhoneScrollScene from "@/app/workshop/_components/PhoneScrollScene/PhoneScrollScene";
 import { profile } from "@/content/profile";
 import ExperienceSection from "./Experience";
 
@@ -40,9 +41,9 @@ export const entry = defineEntry({
 
     if (ctx.device === "phone") {
       return (
-        <div className="-mx-(--gutter) h-[480px] overflow-y-auto px-(--gutter)">
+        <PhoneScrollScene>
           {section}
-        </div>
+        </PhoneScrollScene>
       );
     }
 
