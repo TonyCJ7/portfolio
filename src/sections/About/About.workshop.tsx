@@ -6,7 +6,7 @@ export const entry = defineEntry({
   name: "About",
   stage: 3,
   center: false,
-  lede: "The first section of the home page's right column: the About label and three paragraphs. On a phone the label sticks as a bar while the text scrolls under it.",
+  lede: "The first section of the home page's right column: the About label and its paragraphs. On a phone the label sticks as a bar while the text scrolls under it.",
   controls: {},
   spec: {
     folder: "src/sections/About/",
@@ -21,7 +21,7 @@ export const entry = defineEntry({
     motion: ["none"],
     a11y: [
       "section with id about and aria-labelledby about-label, so its accessible name is the h2's text, About",
-      "scroll-mt-24 phone:scroll-mt-14 so a hash jump clears the sticky bar",
+      "scroll-mt-24 phone:scroll-mt-14 set the landing offset of a hash jump: 96 px on desktop, 56 px on phone",
     ],
   },
   render: (_args, ctx) => {
