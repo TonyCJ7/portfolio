@@ -8,6 +8,7 @@ import { entry as button } from "@/components/Button/Button.workshop";
 import { entry as link } from "@/components/Link/Link.workshop";
 import { entry as themeToggle } from "@/components/ThemeToggle/ThemeToggle.workshop";
 import { entry as navLink } from "@/components/NavLink/NavLink.workshop";
+import { entry as sectionLabel } from "@/components/SectionLabel/SectionLabel.workshop";
 
 export const entries: WorkshopEntry[] = [
   tokens,
@@ -19,6 +20,7 @@ export const entries: WorkshopEntry[] = [
   link,
   themeToggle,
   navLink,
+  sectionLabel,
 ];
 
 export function findEntry(id: string): WorkshopEntry | undefined {

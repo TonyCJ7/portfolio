@@ -1,0 +1,17 @@
+## `src/components/SectionLabel/SectionLabel.tsx`
+
+### [SectionLabelProps](../../../../../../src/components/SectionLabel/SectionLabel.tsx#L3)
+
+Describes the props of `SectionLabel`: `id` and `children`.
+
+- `id`: the id of the heading. The section that uses it points at this id with `aria-labelledby`.
+- `children`: the label text.
+
+### [SectionLabel({ id, children })](../../../../../../src/components/SectionLabel/SectionLabel.tsx#L8)
+
+Renders the uppercase heading that opens a page section. On a phone it becomes a bar that sticks to the top of the scrolling area.
+
+- In: the `SectionLabelProps`.
+- Out: an `h2` with the given `id` that holds a mono uppercase Label. On desktop the label is Text Muted and the heading is plain.
+- On a phone the heading sticks at the top, with Ground at 60% opacity, an 8 px backdrop blur and a 1 px bottom border. The label turns Text. The bar reaches the page gutter on both sides through `--gutter`.
+- Used by: the page sections. Each `section` carries `aria-labelledby` with this `id`, plus `scroll-mt-24 phone:scroll-mt-14` so a hash jump clears the sticky bar.
