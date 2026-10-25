@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { DM_Sans, Geist_Mono } from "next/font/google";
 import { profile } from "@/content/profile";
 import { titleTemplate } from "@/lib/metadata";
@@ -21,10 +21,6 @@ export const metadata: Metadata = {
   title: { default: profile.pageTitle, template: titleTemplate },
   description: profile.metaDescription,
   twitter: { card: "summary_large_image" },
-};
-
-export const viewport: Viewport = {
-  themeColor: "#FF5C1A",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

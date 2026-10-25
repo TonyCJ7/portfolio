@@ -6,7 +6,7 @@ import {
   type MouseEvent,
   type RefObject,
 } from "react";
-import { THEME_KEY, type Theme } from "@/types/theme";
+import { THEME_COLOR, THEME_KEY, type Theme } from "@/types/theme";
 import { useReducedMotion } from "./useReducedMotion";
 
 type UseThemeResult = {
@@ -37,6 +37,9 @@ function writeTheme(scope: HTMLElement, next: Theme): void {
   }
 
   scope.dataset.theme = next;
+  document
+    .querySelector("meta[name=theme-color]")
+    ?.setAttribute("content", THEME_COLOR[next]);
 
   try {
     localStorage.setItem(THEME_KEY, next);

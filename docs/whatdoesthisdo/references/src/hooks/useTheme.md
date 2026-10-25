@@ -26,31 +26,31 @@ Reads the scheme in force for a toggle.
 Switches one scope to a scheme.
 
 - In: `scope`, the element `themeScope` chose. `next`, the scheme to switch to.
-- Out: nothing. A Workshop frame gets `data-scheme` and storage is left alone. `html` gets `data-theme`, and the choice is saved as `tj-theme` so the head script applies it before the next paint.
+- Out: nothing. A Workshop frame gets `data-scheme` and storage is left alone. `html` gets `data-theme`, the browser bar (the `theme-color` meta) takes that scheme's ground colour from `THEME_COLOR`, and the choice is saved as `tj-theme` so the head script applies both before the next paint. Only the page scheme moves the bar; a Workshop frame never does.
 - Blocked storage throws on `setItem`. The error is swallowed, so the switch still applies on this page.
 
-### [clickOrigin(event)](../../../../../src/hooks/useTheme.ts#L48)
+### [clickOrigin(event)](../../../../../src/hooks/useTheme.ts#L51)
 
 Picks the point the circle reveal grows from.
 
 - In: `event`, the toggle's click.
 - Out: the pointer position in viewport pixels. A keyboard press reports `detail` 0 and no pointer position, so the centre of the toggle is used instead.
 
-### [setRevealOrigin(event)](../../../../../src/hooks/useTheme.ts#L58)
+### [setRevealOrigin(event)](../../../../../src/hooks/useTheme.ts#L61)
 
 Stores the circle's centre and final radius on `html` for the `reveal` keyframes in `globals.css`.
 
 - In: `event`, the toggle's click.
 - Out: nothing. Sets `--vt-x` and `--vt-y` to the origin and `--vt-r` to the distance from the origin to the farthest viewport corner, so the circle covers the whole page when it ends.
 
-### [fade(apply)](../../../../../src/hooks/useTheme.ts#L71)
+### [fade(apply)](../../../../../src/hooks/useTheme.ts#L74)
 
 Runs the fallback switch for browsers without View Transitions.
 
 - In: `apply`, the function that writes the new scheme.
 - Out: nothing. Adds `theme-fade` to `html` before `apply`, so colours, backgrounds and borders cross-fade over 300 ms. The class is removed after `FADE_MS`. A second click inside that time restarts the timer, so the class stays for the whole second fade.
 
-### [swapInstantly(apply)](../../../../../src/hooks/useTheme.ts#L80)
+### [swapInstantly(apply)](../../../../../src/hooks/useTheme.ts#L83)
 
 Switches the scheme in one frame, for reduced motion and for the Workshop frame.
 
@@ -58,13 +58,13 @@ Switches the scheme in one frame, for reduced motion and for the Workshop frame.
 - Out: nothing. Adds `theme-instant` to `html`, which turns every transition off. It then runs `apply` and reads a computed style, so the browser takes the new colours while transitions are off. The class is removed right after.
 - Without it, the links, nav labels, toggle and tiles that fade their colour on hover would also fade the scheme change over 150 ms.
 
-### [getServerSnapshot()](../../../../../src/hooks/useTheme.ts#L90)
+### [getServerSnapshot()](../../../../../src/hooks/useTheme.ts#L93)
 
 Gives the scheme used on the server and during hydration.
 
 - Out: always `"dark"`. The server cannot read storage, so the markup matches the default. The client then reads the real scheme without a hydration mismatch.
 
-### [useTheme(scopeRef)](../../../../../src/hooks/useTheme.ts#L94)
+### [useTheme(scopeRef)](../../../../../src/hooks/useTheme.ts#L97)
 
 Connects a theme toggle to the scheme of the place it sits in: the Workshop frame, or the whole site.
 
