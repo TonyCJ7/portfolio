@@ -51,7 +51,7 @@ export const entry = defineEntry({
       "List: items stack with no gap; each link's 12 px block padding spaces them",
     ],
     motion: [
-      "Line width and colour 150 ms from NavLink; under reduced motion the line jumps, the colour fades stay",
+      "Line scale, label slide and colour 150 ms from NavLink; under reduced motion the line and label jump, the colour fades stay",
       "Scroll-spy: the active item is the latest section crossing a band from 40 to 45 percent of the viewport height; the last section at the bottom of the page",
     ],
     a11y: [

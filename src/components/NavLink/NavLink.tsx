@@ -19,11 +19,11 @@ export default function NavLink({
     >
       <span
         aria-hidden
-        className="h-px w-8 bg-current transition-[width] duration-150 ease-standard group-hover:w-16 group-focus-visible:w-16 group-aria-[current=true]:w-16 motion-reduce:transition-none"
+        className="h-px w-16 origin-left scale-x-50 bg-current transition-transform duration-150 ease-standard group-hover:scale-x-100 group-focus-visible:scale-x-100 group-aria-[current=true]:scale-x-100 motion-reduce:transition-none"
       />
       <Label
         tone="muted"
-        className="transition-colors duration-150 ease-standard group-hover:text-fg group-focus-visible:text-fg group-aria-[current=true]:text-fg"
+        className="-translate-x-8 transition-[color,translate] duration-150 ease-standard group-hover:translate-x-0 group-hover:text-fg group-focus-visible:translate-x-0 group-focus-visible:text-fg group-aria-[current=true]:translate-x-0 group-aria-[current=true]:text-fg motion-reduce:transition-colors"
       >
         {children}
       </Label>
