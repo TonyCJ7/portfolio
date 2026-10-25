@@ -13,7 +13,9 @@ export default function Contact() {
       className="scroll-mt-24 phone:scroll-mt-14"
     >
       <SectionLabel id="contact-label">{sectionLabel("contact")}</SectionLabel>
-      <p className="mt-6 max-w-measure text-body text-fg-2">{contact.intro}</p>
+      <p className="mt-6 max-w-measure text-body text-fg-2 phone:mt-4">
+        {contact.intro}
+      </p>
       <p className="mt-6">
         <Link kind="large" href={`mailto:${profile.email}`}>
           {profile.email}

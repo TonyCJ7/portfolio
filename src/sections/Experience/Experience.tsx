@@ -19,7 +19,7 @@ export default function ExperienceSection({ cvHref }: ExperienceSectionProps) {
       <SectionLabel id="experience-label">
         {sectionLabel("experience")}
       </SectionLabel>
-      <div className="mt-8">
+      <div className="mt-8 phone:mt-6">
         <ExperienceList items={experience} />
       </div>
       {cvHref && (

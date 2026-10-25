@@ -22,7 +22,7 @@ export const entry = defineEntry({
     ],
     tokens: [
       "Rows: ExperienceList, 48 px apart; hovering or focusing one dims its siblings to 50% opacity",
-      "32 px between the label and the first row, and between the last row and the résumé link",
+      "32 px between the label and the first row (24 px on phone), and between the last row and the résumé link",
       "Résumé link: Link kind arrow, text-title Text, Accent Text on hover and focus; opens the PDF in a new tab",
       "Label: SectionLabel, a sticky frosted bar on phone",
     ],
