@@ -7,7 +7,7 @@ export default function Colophon() {
       <p className="phone:hidden">{colophon.long}</p>
       <p className="hidden phone:block">{colophon.short}</p>
       <p className="mt-2">
-        <Link kind="arrow" href="/workshop">
+        <Link kind="arrow-small" href="/workshop">
           {colophon.workshopLink}
         </Link>
       </p>

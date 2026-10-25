@@ -20,7 +20,7 @@ export const entry = defineEntry({
       "Label: SectionLabel, a sticky frosted bar on phone",
     ],
     motion: [
-      "Tile lift: Surface fill and shadow-lift over 150 ms with the standard curve on hover; no transform, so reduced motion keeps it",
+      "Tile lift: Surface Lift fill and shadow-lift over 150 ms with the standard curve on hover; no transform, so reduced motion keeps it",
     ],
     a11y: [
       "section with id highlights and aria-labelledby highlights-label, so its accessible name is the h2's text, Highlights",

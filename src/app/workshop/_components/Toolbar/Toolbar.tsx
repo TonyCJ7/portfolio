@@ -26,7 +26,7 @@ export default function Toolbar({ ctx, onChange }: ToolbarProps) {
               type="button"
               aria-pressed={ctx[group.key] === option}
               onClick={() => onChange({ [group.key]: option })}
-              className="group rounded-sm border border-line px-2 py-1 hover:bg-surface aria-pressed:bg-surface-hover"
+              className="group rounded-sm border border-line px-2 py-1 hover:bg-surface-lift aria-pressed:bg-surface-hover"
             >
               <Label
                 tone={ctx[group.key] === option ? "active" : "muted"}

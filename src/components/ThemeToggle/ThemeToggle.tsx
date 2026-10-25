@@ -9,7 +9,7 @@ type ThemeToggleProps = {
 };
 
 const BUTTON_CLASSES =
-  "group inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-full border border-transparent px-3 text-fg-muted hover:bg-surface hover:border-line hover:text-fg focus-visible:text-fg active:bg-surface active:text-fg transition-colors duration-150 ease-standard";
+  "group inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-full border border-transparent px-3 text-fg-muted hover:bg-surface-lift hover:border-line hover:text-fg focus-visible:text-fg active:bg-surface-lift active:text-fg transition-colors duration-150 ease-standard";
 
 const DOT_CLASSES =
   "theme-dot size-2.5 rounded-full transition-transform duration-75 group-active:scale-60 motion-reduce:transition-none";

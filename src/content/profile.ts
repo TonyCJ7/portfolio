@@ -10,8 +10,8 @@ export const profile: Profile = {
   location: "Dubai, UAE",
   cvFile: "Tony_CJ_Resume.pdf",
   primaryCta: "Get in touch",
-  cvCta: "Download CV",
-  cvLinkText: "Download the full résumé",
+  cvCta: "Full résumé",
+  cvLinkText: "Full résumé",
   pageTitle: "Tony Cherian Jacob · Senior Frontend Engineer",
   metaDescription: "Senior frontend engineer in Dubai with 8+ years of React and Next.js, now making travel search faster and easier to use at Almosafer.",
 };

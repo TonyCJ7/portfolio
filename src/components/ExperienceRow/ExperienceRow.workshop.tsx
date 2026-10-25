@@ -62,12 +62,11 @@ export const entry = defineEntry({
     props: [
       "ExperienceRow: entry (an Experience from src/content/experience.ts), target (Workshop dimmed state only)",
       "ExperienceList: items, targetId (marks one row as the dimmed state's target)",
-      "An entry with an empty url renders its title as plain text",
     ],
     tokens: [
       "Date: mono label, column 1 of a 2fr 6fr grid, one column on phone",
       "Title: text-title arrow link; place: 11 px label; body: text-small Text 2",
-      "Hover and focus layer: Surface with shadow-lift, 6 px radius, 24 px past the row (16 px on phone)",
+      "Hover and focus layer: Surface Lift with shadow-lift, 6 px radius, 24 px past the row (16 px on phone)",
       "48 px between rows",
     ],
     motion: [

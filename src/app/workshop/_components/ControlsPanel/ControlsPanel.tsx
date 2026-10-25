@@ -89,7 +89,7 @@ export default function ControlsPanel({ entryId }: ControlsPanelProps) {
       <button
         type="button"
         onClick={reset}
-        className="group self-start rounded-sm border border-line px-3 py-1.5 hover:bg-surface"
+        className="group self-start rounded-sm border border-line px-3 py-1.5 hover:bg-surface-lift"
       >
         <Label className="block group-hover:text-fg">Reset</Label>
       </button>

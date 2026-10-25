@@ -18,25 +18,21 @@ export default function ExperienceRow({ entry, target = false }: ExperienceRowPr
     >
       <span
         aria-hidden
-        className="absolute -inset-y-4 -inset-x-6 -z-10 rounded-sm transition-[background-color,box-shadow] duration-150 ease-standard group-hover:bg-surface group-hover:shadow-lift group-focus-within:bg-surface group-focus-within:shadow-lift phone:-inset-x-4"
+        className="absolute -inset-y-4 -inset-x-6 -z-10 rounded-sm transition-[background-color,box-shadow] duration-150 ease-standard group-hover:bg-surface-lift group-hover:shadow-lift group-focus-within:bg-surface-lift group-focus-within:shadow-lift phone:-inset-x-4"
       />
       <Label as="time" dateTime={entry.from} className="block pt-1 phone:pt-0">
         {entry.dates}
       </Label>
       <div>
         <h3 className="text-title wrap-anywhere">
-          {entry.url
-            ? (
-                <Link
-                  kind="arrow"
-                  href={entry.url}
-                  external
-                  className="after:absolute after:inset-0"
-                >
-                  {heading}
-                </Link>
-              )
-            : heading}
+          <Link
+            kind="arrow"
+            href={entry.url}
+            external
+            className="after:absolute after:inset-0"
+          >
+            {heading}
+          </Link>
         </h3>
         <Label size={11}>{entry.place}</Label>
         <p className="mt-2 text-small text-fg-2">{entry.body}</p>

@@ -12,6 +12,7 @@ type TokensSceneProps = {
 const COLOR_TOKENS = [
   "ground",
   "surface",
+  "surface-lift",
   "surface-hover",
   "line",
   "fg",

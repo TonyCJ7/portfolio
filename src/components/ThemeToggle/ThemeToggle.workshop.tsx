@@ -20,7 +20,7 @@ export const entry = defineEntry({
     tokens: [
       "Dot 10 px: Tangerine fill in dark, 2 px Text ring in light",
       "Word: mono label, Text Muted at rest, Text on hover, focus and pressed; both words render and CSS shows the one for the scheme",
-      "Surface fill and Line border on hover, Surface when pressed, full radius",
+      "Surface Lift fill and Line border on hover, Surface Lift when pressed, full radius",
     ],
     motion: [
       "Color 150 ms standard; dot scales to 0.6 over 75 ms while pressed",

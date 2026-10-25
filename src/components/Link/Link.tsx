@@ -3,18 +3,21 @@ import type { ReactNode } from "react";
 import { isInternalRoute } from "@/lib/href";
 
 type LinkProps = {
-  kind?: "prose" | "arrow" | "large" | "social";
+  kind?: "prose" | "arrow" | "arrow-small" | "large" | "social";
   href: string;
   external?: boolean;
   className?: string;
   children: ReactNode;
 };
 
+const ARROW_CLASSES =
+  "group pt-1 pe-1 text-fg wrap-anywhere hover:text-accent-text focus-visible:text-accent-text";
+
 const KIND_CLASSES = {
   prose:
     "rounded-xs font-medium text-fg decoration-accent decoration-1 underline-offset-4 wrap-anywhere transition-colors duration-150 ease-standard hover:underline focus-visible:underline",
-  arrow:
-    "group pt-1 pe-1 text-title text-fg wrap-anywhere hover:text-accent-text focus-visible:text-accent-text",
+  arrow: `${ARROW_CLASSES} text-title`,
+  "arrow-small": `${ARROW_CLASSES} text-small font-medium`,
   large:
     "text-headline text-fg underline decoration-accent decoration-1 underline-offset-6 wrap-anywhere hover:text-accent-text focus-visible:text-accent-text phone:text-headline-phone",
   social:
@@ -35,7 +38,7 @@ export default function Link({
   const content = (
     <>
       {children}
-      {kind === "arrow" && (
+      {(kind === "arrow" || kind === "arrow-small") && (
         <span aria-hidden className="whitespace-nowrap">
           {WORD_JOINER}
           <span className="ms-1 inline-block leading-none transition-transform duration-75 ease-standard group-hover:translate-x-1 group-hover:-translate-y-1 group-focus-visible:translate-x-1 group-focus-visible:-translate-y-1 motion-reduce:transition-none">

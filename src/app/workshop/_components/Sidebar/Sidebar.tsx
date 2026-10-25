@@ -95,7 +95,7 @@ export default function Sidebar({ currentId, ctx }: SidebarProps) {
                     <Link
                       href={`/workshop/${entry.id}${query}`}
                       aria-current={entry.id === currentId ? "page" : undefined}
-                      className="block rounded-sm px-2 py-1 text-small text-fg-2 hover:bg-surface hover:text-fg aria-[current=page]:bg-accent-soft aria-[current=page]:text-fg"
+                      className="block rounded-sm px-2 py-1 text-small text-fg-2 hover:bg-surface-lift hover:text-fg aria-[current=page]:bg-accent-soft aria-[current=page]:text-fg"
                     >
                       {entry.name}
                     </Link>

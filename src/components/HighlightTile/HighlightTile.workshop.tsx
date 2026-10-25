@@ -28,7 +28,7 @@ export const entry = defineEntry({
     ],
     tokens: [
       "Figure: text-stat Text; what: text-title Text; how: text-small Text 2",
-      "Tile: 24 px padding, square, Ground fill; hover Surface with shadow-lift, raised above its neighbors",
+      "Tile: 24 px padding, square, Ground fill; hover Surface Lift with shadow-lift, raised above its neighbors",
       "Grid: two columns, one on phone; 1 px gap over Border makes the hairlines",
     ],
     motion: [

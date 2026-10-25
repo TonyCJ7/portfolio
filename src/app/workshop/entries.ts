@@ -14,7 +14,6 @@ import { entry as skipLink } from "@/components/SkipLink/SkipLink.workshop";
 import { entry as experienceRow } from "@/components/ExperienceRow/ExperienceRow.workshop";
 import { entry as highlightTile } from "@/components/HighlightTile/HighlightTile.workshop";
 import { entry as skillGroup } from "@/components/SkillGroup/SkillGroup.workshop";
-import { entry as educationRow } from "@/components/EducationRow/EducationRow.workshop";
 import { entry as socialLinks } from "@/components/SocialLinks/SocialLinks.workshop";
 import { entry as navList } from "@/components/NavList/NavList.workshop";
 import { entry as intro } from "@/components/Intro/Intro.workshop";
@@ -41,7 +40,6 @@ export const entries: WorkshopEntry[] = [
   experienceRow,
   highlightTile,
   skillGroup,
-  educationRow,
   socialLinks,
   navList,
   intro,

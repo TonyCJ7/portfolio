@@ -56,7 +56,7 @@ export const experience: Experience[] = [
     to: "2021-08",
     title: "Frontend Developer",
     company: "HASpaces",
-    url: "",
+    url: "http://haspaces.com/",
     place: "Thiruvananthapuram",
     body: "Built an admin panel and a comparison and rating system in React and SCSS for 100k+ candidates. Virtualized the candidate list, cutting scripting and painting time by 60%.",
     tags: ["React", "SCSS", "Virtualization"],

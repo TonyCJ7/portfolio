@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import Button from "@/components/Button/Button";
+import Label from "@/components/Label/Label";
 import LogoLink from "@/components/Logo/LogoLink";
 import NavList from "@/components/NavList/NavList";
 import SocialLinks from "@/components/SocialLinks/SocialLinks";
@@ -42,6 +43,9 @@ export default function Intro({ profile, cvHref }: IntroProps) {
         >
           {profile.role}
         </p>
+        <p className={`mt-2 ${ENTER}`} style={enterDelay(2)}>
+          <Label className="block">{profile.location}</Label>
+        </p>
         <p
           className={`mt-4 max-w-lede text-body text-fg-2 wrap-anywhere ${ENTER}`}
           style={enterDelay(3)}
@@ -63,7 +67,7 @@ export default function Intro({ profile, cvHref }: IntroProps) {
           <NavList sections={nav} />
         </div>
       </div>
-      <div className="phone:hidden">
+      <div className="phone:motion-safe:animate-enter" style={enterDelay(5)}>
         <SocialLinks />
       </div>
     </header>

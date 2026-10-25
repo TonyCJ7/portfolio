@@ -1,6 +1,5 @@
 import Link from "@/components/Link/Link";
 import SectionLabel from "@/components/SectionLabel/SectionLabel";
-import SocialLinks from "@/components/SocialLinks/SocialLinks";
 import { contact } from "@/content/contact";
 import { sectionLabel } from "@/content/nav";
 import { profile } from "@/content/profile";
@@ -21,9 +20,6 @@ export default function Contact() {
           {profile.email}
         </Link>
       </p>
-      <div className="mt-6">
-        <SocialLinks handles />
-      </div>
     </section>
   );
 }

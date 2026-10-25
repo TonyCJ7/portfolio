@@ -17,7 +17,7 @@ const VARIANT_CLASSES = {
   primary:
     "bg-accent text-ink hover:bg-accent-hover focus-visible:bg-accent-hover",
   ghost:
-    "border border-line text-fg hover:bg-surface focus-visible:bg-surface active:bg-surface-hover",
+    "border border-line text-fg hover:bg-surface-lift focus-visible:bg-surface-lift active:bg-surface-hover",
 };
 
 export default function Button({

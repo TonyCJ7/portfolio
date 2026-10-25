@@ -8,7 +8,8 @@ import Link from "./Link";
 
 const DEFAULT_TEXT = {
   prose: "Almosafer",
-  arrow: "Download the full résumé",
+  arrow: "Full résumé",
+  "arrow-small": "See every component in the workshop",
   large: "tonycj1996@gmail.com",
   social: "GitHub",
 };
@@ -16,6 +17,7 @@ const DEFAULT_TEXT = {
 const HREF = {
   prose: "https://almosafer.com",
   arrow: "/Tony-CJ-Resume.pdf",
+  "arrow-small": "/workshop",
   large: "mailto:tonycj1996@gmail.com",
   social: "https://github.com/TonyCJ7",
 };
@@ -25,16 +27,16 @@ export const entry = defineEntry({
   name: "Link",
   stage: 1,
   center: true,
-  lede: "The text link in four kinds: inline prose, an arrow link, a large link and a mono social link.",
+  lede: "The text link in five kinds: inline prose, an arrow link, a small arrow link, a large link and a mono social link.",
   controls: {
-    kind: select("Kind", ["prose", "arrow", "large", "social"], "prose"),
+    kind: select("Kind", ["prose", "arrow", "arrow-small", "large", "social"], "prose"),
     state: select("State", ["rest", "hover", "focus"], "rest"),
     text: text("Text", "", 40),
   },
   spec: {
     folder: "src/components/Link/",
     props: [
-      "kind: prose | arrow | large | social (default prose)",
+      "kind: prose | arrow | arrow-small | large | social (default prose)",
       "href: next/link for site pages, a plain anchor for files such as /Tony_CJ_Resume.pdf, #, mailto: and external",
       "external: opens in a new tab",
       "className: extra classes appended last (the experience row adds its whole-row hit area)",
@@ -42,11 +44,12 @@ export const entry = defineEntry({
     tokens: [
       "Prose: text-fg, medium weight, Tangerine underline on hover and focus",
       "Arrow: text-title, Accent Text on hover and focus; 4 px padding above and after, so the focus ring holds the moved arrow",
+      "Arrow small: text-small at medium weight, Text, Accent Text on hover and focus; the same arrow and padding as arrow (the colophon's workshop link)",
       "Large: text-headline, text-headline-phone on phone, Tangerine underline, Accent Text on hover and focus",
       "Social: mono label, uppercase, Text Muted, Text on hover and focus",
     ],
     motion: [
-      "Prose and social fade their colour over 150 ms; arrow and large change colour at once; arrow 75 ms translate; under reduced motion the arrow jumps to its hover position at once, and the prose and social fades stay",
+      "Prose and social fade their colour over 150 ms; arrow, arrow small and large change colour at once; both arrow kinds 75 ms translate; under reduced motion the arrow jumps to its hover position at once, and the prose and social fades stay",
     ],
     a11y: [
       "External links open in a new tab with rel noopener noreferrer",

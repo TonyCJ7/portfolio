@@ -14,7 +14,7 @@ export const entry = defineEntry({
     tokens: [
       "Footer: 48 px above, capped at the measure (36rem), text-small in Muted",
       "Long sentence on desktop, short sentence on phones; the other one is display none",
-      "Link: Link kind arrow to /workshop, 8 px below the sentence; text-title Text, Tangerine Text on hover and focus",
+      "Link: Link kind arrow-small to /workshop, 8 px below the sentence; text-small at medium weight in Text, Tangerine Text on hover and focus",
     ],
     motion: [
       "Arrow moves 4 px up and right over 75 ms on hover and focus; the colour changes at once",

@@ -31,7 +31,7 @@ export const entry = defineEntry({
     ],
     tokens: [
       "Primary: Tangerine fill, Ink text, Accent Hover fill on hover and focus",
-      "Ghost: Line border, Text color, Surface on hover, Surface Hover when pressed",
+      "Ghost: Line border, Text color, Surface Lift on hover and focus, Surface Hover when pressed",
       "text-title, full radius, 20 px side padding",
     ],
     motion: [

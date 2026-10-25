@@ -9,4 +9,4 @@ Turns the State and On item controls into the `forced` prop of `SocialLinks`.
 
 ## Constants
 
-- [`entry`](../../../../../../src/components/SocialLinks/SocialLinks.workshop.tsx#L16): the Social links Workshop entry: Handles, State and On item controls, centered in the frame. With Handles on, the location shows after the three links. On item offers only the three links, because the location has no hover or focus state. The State control is keyed `itemState`, not `state`, because the Stage writes a `state` control onto the frame's `data-state`, which would force every item.
+- [`entry`](../../../../../../src/components/SocialLinks/SocialLinks.workshop.tsx#L16): the Social links Workshop entry: State and On item controls, centered in the frame. On item offers the three links. The State control is keyed `itemState`, not `state`, because the Stage writes a `state` control onto the frame's `data-state`, which would force every item.

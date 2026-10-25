@@ -17,7 +17,7 @@ export const entry = defineEntry({
     props: ["No component; one global rule on :focus-visible", "main:focus-visible shows no ring, so a skip link target stays quiet"],
     tokens: [
       "outline-color --focus-ring: Tangerine in dark, Tangerine Text in light; offset 2px",
-      "5.8:1 on ink, 4.7:1 on paper",
+      "5.8:1 on ink, 5.4:1 on paper",
       "Radius inherited from the control",
     ],
     motion: ["None"],

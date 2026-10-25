@@ -4,7 +4,7 @@ import Spotlight from "./Spotlight";
 
 const SPOT_RGB = {
   dark: "255, 92, 26",
-  light: "201, 58, 8",
+  light: "184, 53, 10",
 };
 
 const PLACEHOLDER_LINES = [
