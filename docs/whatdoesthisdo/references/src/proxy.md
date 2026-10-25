@@ -1,6 +1,6 @@
 ## `src/proxy.ts`
 
-### [proxy(request)](../../../../src/proxy.ts#L7)
+### [proxy(request)](../../../../src/proxy.ts#L8)
 
 Answers an unknown Workshop entry such as `/workshop/nope` with a real 404 status before any page renders.
 
@@ -10,4 +10,4 @@ Answers an unknown Workshop entry such as `/workshop/nope` with a real 404 statu
 
 ## Constants
 
-- [`config`](../../../../src/proxy.ts#L4): limits the proxy to one-segment Workshop paths, `/workshop/:entry`, so the home page, `/workshop` and static files never run it.
+- [`config`](../../../../src/proxy.ts#L5): limits the proxy to one-segment Workshop paths, `/workshop/:entry`, so the home page, `/workshop` and static files never run it.

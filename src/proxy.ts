@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+// TODO: this import puts every Workshop entry in the proxy chunk (~285 KB); revisit if entries grow or cold starts show up.
 import { findEntry } from "@/app/workshop/entries";
 
 export const config = { matcher: "/workshop/:entry" };
