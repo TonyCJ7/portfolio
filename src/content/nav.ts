@@ -3,6 +3,7 @@ import type { NavSection } from "@/types/content";
 export const nav: NavSection[] = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
   { id: "highlights", label: "Highlights" },
   { id: "skills", label: "Skills" },
   { id: "contact", label: "Contact" },

@@ -1,6 +1,6 @@
 ## `src/app/workshop/entries.ts`
 
-### [findEntry(id)](../../../../../../src/app/workshop/entries.ts#L54)
+### [findEntry(id)](../../../../../../src/app/workshop/entries.ts#L58)
 
 Looks up the entry behind a Workshop URL.
 
@@ -9,4 +9,4 @@ Looks up the entry behind a Workshop URL.
 
 ## Constants
 
-- [`entries`](../../../../../../src/app/workshop/entries.ts#L27): every Workshop entry in build order (Tokens, Focus ring, Label, Tag, Logo, Button, Link, Theme toggle, Nav link, Section label, Spotlight, Skip link, Experience row, Highlight tile, Skill group, Social links, Nav list, Intro column, Colophon, About, Experience, Highlights, Skills, Contact, …). Each component task appends its own; the sidebar and the static params come from this list.
+- [`entries`](../../../../../../src/app/workshop/entries.ts#L29): every Workshop entry in build order (Tokens, Focus ring, Label, Tag, Logo, Button, Link, Theme toggle, Nav link, Section label, Spotlight, Skip link, Experience row, Project row, Highlight tile, Skill group, Social links, Nav list, Intro column, Colophon, About, Experience, Projects, Highlights, Skills, Contact, …). Each component task appends its own; the sidebar and the static params come from this list.

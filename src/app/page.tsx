@@ -12,6 +12,7 @@ import About from "@/sections/About/About";
 import Contact from "@/sections/Contact/Contact";
 import ExperienceSection from "@/sections/Experience/Experience";
 import Highlights from "@/sections/Highlights/Highlights";
+import ProjectsSection from "@/sections/Projects/Projects";
 import Skills from "@/sections/Skills/Skills";
 
 export const metadata: Metadata = {
@@ -36,11 +37,12 @@ export default function Home() {
       <Spotlight />
       <div className="mx-auto grid max-w-page grid-cols-[48fr_52fr] gap-x-12 px-24 phone:block phone:px-(--gutter)">
         <Intro profile={profile} cvHref={cvHref} />
-        <div className="py-24 phone:py-0 phone:pb-12">
+        <div className="py-24 short:py-16 phone:py-0 phone:pb-12">
           <main id="main" tabIndex={-1}>
             <div className="space-y-36 phone:space-y-24">
               <About />
               <ExperienceSection cvHref={cvHref} />
+              <ProjectsSection />
               <Highlights />
               <Skills />
               <Contact />

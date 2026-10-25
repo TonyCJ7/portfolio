@@ -12,6 +12,7 @@ import { entry as sectionLabel } from "@/components/SectionLabel/SectionLabel.wo
 import { entry as spotlight } from "@/components/Spotlight/Spotlight.workshop";
 import { entry as skipLink } from "@/components/SkipLink/SkipLink.workshop";
 import { entry as experienceRow } from "@/components/ExperienceRow/ExperienceRow.workshop";
+import { entry as projectRow } from "@/components/ProjectRow/ProjectRow.workshop";
 import { entry as highlightTile } from "@/components/HighlightTile/HighlightTile.workshop";
 import { entry as skillGroup } from "@/components/SkillGroup/SkillGroup.workshop";
 import { entry as socialLinks } from "@/components/SocialLinks/SocialLinks.workshop";
@@ -20,6 +21,7 @@ import { entry as intro } from "@/components/Intro/Intro.workshop";
 import { entry as colophon } from "@/components/Colophon/Colophon.workshop";
 import { entry as about } from "@/sections/About/About.workshop";
 import { entry as experience } from "@/sections/Experience/Experience.workshop";
+import { entry as projectsSection } from "@/sections/Projects/Projects.workshop";
 import { entry as highlights } from "@/sections/Highlights/Highlights.workshop";
 import { entry as skills } from "@/sections/Skills/Skills.workshop";
 import { entry as contact } from "@/sections/Contact/Contact.workshop";
@@ -38,6 +40,7 @@ export const entries: WorkshopEntry[] = [
   spotlight,
   skipLink,
   experienceRow,
+  projectRow,
   highlightTile,
   skillGroup,
   socialLinks,
@@ -46,6 +49,7 @@ export const entries: WorkshopEntry[] = [
   colophon,
   about,
   experience,
+  projectsSection,
   highlights,
   skills,
   contact,

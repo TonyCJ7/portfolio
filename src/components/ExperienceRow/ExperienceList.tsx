@@ -8,7 +8,7 @@ type ExperienceListProps = {
 
 export default function ExperienceList({ items, targetId }: ExperienceListProps) {
   return (
-    <ol className="exp-list space-y-12">
+    <ol className="row-list space-y-12">
       {items.map((entry) => (
         <ExperienceRow
           key={entry.id}

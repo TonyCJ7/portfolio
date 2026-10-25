@@ -2,6 +2,8 @@ export type Profile = { name: string; role: string; tagline: string; email: stri
 
 export type Experience = { id: string; from: string; to: string | null; partTime?: boolean; title: string; company: string; url: `http${"" | "s"}://${string}`; place: string; body: string; tags: string[] };
 
+export type Project = { id: string; owner: string; title: string; url: Experience["url"]; github?: boolean; body: string; tags: string[] };
+
 export type Highlight = { figure: string; what: string; how: string };
 
 export type SkillGroup = { name: string; items: string[] };

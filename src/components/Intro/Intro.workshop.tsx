@@ -21,8 +21,8 @@ export const entry = defineEntry({
       "cvHref: the CV file's URL; omitted, the Full résumé button is not rendered",
     ],
     tokens: [
-      "Column: sticky at the top, full viewport height (dvh), 96 px block padding; top block and social links pushed apart",
-      "Short viewport: the column scrolls on its own, so the nav list and social links stay reachable by wheel and Tab; 4 px inline padding inside a -4 px margin keeps the focus ring unclipped",
+      "Column: a StickyColumn, at least the viewport height (dvh), 96 px block padding (64 px on desktop windows under 896 px tall); top block and social links pushed apart",
+      "Short viewport: no inner scrollbar; the column scrolls with the page until its bottom meets the viewport's bottom, holds while the sections scroll, and moves back with the page on any scroll up until its top meets the top",
       "Mark row: LogoLink 44 px and ThemeToggle at either end; the mark is 36 px on phones",
       "Name: text-display Text, 24 px below the mark; role: text-tagline Text, 12 px below; location: profile.location in a muted Label, 8 px below the role; tagline: text-body Text 2, 16 px below, capped at the lede width; name, role and tagline wrap anywhere",
       "Buttons: primary Get in touch to #contact and ghost Full résumé, 32 px below, 12 px gap, wrapping",
@@ -41,7 +41,7 @@ export const entry = defineEntry({
     ],
   },
   render: (args) => (
-    <div className="[&>header]:h-[800px]">
+    <div className="[&_header]:min-h-[800px]">
       <Intro
         profile={{
           ...profile,

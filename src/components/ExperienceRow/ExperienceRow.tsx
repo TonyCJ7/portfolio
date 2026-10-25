@@ -1,5 +1,6 @@
 import Label from "@/components/Label/Label";
 import Link from "@/components/Link/Link";
+import RowLift from "@/components/RowLift/RowLift";
 import TagList from "@/components/Tag/TagList";
 import type { Experience } from "@/types/content";
 
@@ -27,10 +28,7 @@ export default function ExperienceRow({ entry, target = false }: ExperienceRowPr
       data-row={target ? "target" : undefined}
       className="group relative isolate grid grid-cols-label gap-x-6 phone:grid-cols-1 phone:gap-y-2"
     >
-      <span
-        aria-hidden
-        className="absolute -inset-y-4 -inset-x-6 -z-10 rounded-sm transition-[background-color,box-shadow] duration-150 ease-standard group-hover:bg-surface-lift group-hover:shadow-lift group-focus-visible-within:bg-surface-lift group-focus-visible-within:shadow-lift phone:-inset-x-4"
-      />
+      <RowLift />
       <Label className="block pt-1 phone:pt-0">
         <time dateTime={entry.from} className="whitespace-nowrap">
           {formatMonth(entry.from)}

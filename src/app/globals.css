@@ -11,6 +11,15 @@
   }
 }
 
+/* Desktop windows too short for the intro at its 96px padding (703px of content + 192px). */
+@custom-variant short {
+  @media (min-width: 1024px) and (max-height: 895px) {
+    &:not([data-device="phone"] *) {
+      @slot;
+    }
+  }
+}
+
 @custom-variant hover {
   @media (hover: hover) {
     &:hover {
@@ -280,28 +289,28 @@ main:focus-visible {
     display: var(--theme-word-light);
   }
 
-  .exp-list > li {
+  .row-list > li {
     transition: opacity 150ms var(--ease-standard);
   }
 
   @media (hover: hover) {
-    .exp-list:has(> li:hover) > li:not(:hover) {
+    .row-list:has(> li:hover) > li:not(:hover) {
       opacity: 0.5;
     }
   }
 
-  .exp-list:has(> li :focus-visible):not(:has(> li:hover)) > li:not(:has(:focus-visible)),
-  [data-state="dimmed"] .exp-list > li:not([data-row="target"]) {
+  .row-list:has(> li :focus-visible):not(:has(> li:hover)) > li:not(:has(:focus-visible)),
+  [data-state="dimmed"] .row-list > li:not([data-row="target"]) {
     opacity: 0.5;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .exp-list > li {
+    .row-list > li {
       transition: none;
     }
   }
 
-  html[data-motion="reduced"] .exp-list > li {
+  html[data-motion="reduced"] .row-list > li {
     transition: none;
   }
 }
