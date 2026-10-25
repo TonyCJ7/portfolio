@@ -50,19 +50,27 @@ Runs the fallback switch for browsers without View Transitions.
 - In: `apply`, the function that writes the new scheme.
 - Out: nothing. Adds `theme-fade` to `html` before `apply`, so colours, backgrounds and borders cross-fade over 300 ms. The class is removed after `FADE_MS`. A second click inside that time restarts the timer, so the class stays for the whole second fade.
 
-### [getServerSnapshot()](../../../../../src/hooks/useTheme.ts#L80)
+### [swapInstantly(apply)](../../../../../src/hooks/useTheme.ts#L80)
+
+Switches the scheme in one frame, for reduced motion and for the Workshop frame.
+
+- In: `apply`, the function that writes the new scheme.
+- Out: nothing. Adds `theme-instant` to `html`, which turns every transition off. It then runs `apply` and reads a computed style, so the browser takes the new colours while transitions are off. The class is removed right after.
+- Without it, the links, nav labels, toggle and tiles that fade their colour on hover would also fade the scheme change over 150 ms.
+
+### [getServerSnapshot()](../../../../../src/hooks/useTheme.ts#L90)
 
 Gives the scheme used on the server and during hydration.
 
 - Out: always `"dark"`. The server cannot read storage, so the markup matches the default. The client then reads the real scheme without a hydration mismatch.
 
-### [useTheme(scopeRef)](../../../../../src/hooks/useTheme.ts#L84)
+### [useTheme(scopeRef)](../../../../../src/hooks/useTheme.ts#L94)
 
 Connects a theme toggle to the scheme of the place it sits in: the Workshop frame, or the whole site.
 
 - In: `scopeRef`, a ref to the toggle's own element. It locates the scope when the toggle reads, subscribes and clicks.
 - Out: `theme`, kept live by a `MutationObserver` on `data-theme` of `html` and on `data-scheme` of the frame. A Workshop toolbar change therefore reaches the toggle too. `toggle`, which switches the scope to the other scheme.
-- On `html`, `toggle` runs a View Transition: a circle grows from the click over 500 ms. Without `document.startViewTransition` it runs `fade`. Under reduced motion, from the OS or from `data-motion="reduced"`, it switches at once. Inside a frame it always switches at once.
+- On `html`, `toggle` runs a View Transition: a circle grows from the click over 500 ms. Without `document.startViewTransition` it runs `fade`. Under reduced motion, from the OS or from `data-motion="reduced"`, it runs `swapInstantly`, so nothing fades. Inside a frame it always runs `swapInstantly`.
 
 ## Constants
 

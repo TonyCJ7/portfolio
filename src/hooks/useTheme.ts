@@ -77,6 +77,16 @@ function fade(apply: () => void): void {
   fadeTimer = setTimeout(() => html.classList.remove("theme-fade"), FADE_MS);
 }
 
+function swapInstantly(apply: () => void): void {
+  const html = document.documentElement;
+
+  html.classList.add("theme-instant");
+  apply();
+  // Reading a style flushes the new colours while transitions are off.
+  void getComputedStyle(html).color;
+  html.classList.remove("theme-instant");
+}
+
 function getServerSnapshot(): Theme {
   return "dark";
 }
@@ -120,7 +130,7 @@ export function useTheme(
       const apply = () => writeTheme(scope, next);
 
       if (scope !== document.documentElement || reducedMotion) {
-        apply();
+        swapInstantly(apply);
 
         return;
       }

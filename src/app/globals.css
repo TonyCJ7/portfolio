@@ -326,3 +326,8 @@ html.theme-fade * {
     color 300ms var(--ease-standard),
     border-color 300ms var(--ease-standard) !important;
 }
+
+html.theme-instant,
+html.theme-instant * {
+  transition: none !important;
+}
