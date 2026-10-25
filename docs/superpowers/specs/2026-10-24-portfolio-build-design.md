@@ -301,7 +301,10 @@ WhatDoesThisDo pages, DESIGN.md and the three canvases, except where a row says 
 | Colophon link | Link kind `arrow-small`, 14 px medium, at the footer's size |
 | HASpaces | the row links to `http://haspaces.com/`; every experience row now has a URL |
 | Education and languages | removed from the site, the Workshop and the canvases |
-| Favicon | the small-favicon mark on a white rounded tile, so it shows on dark tabs |
+| Favicon and app icons | the logo mark, Ink tj with the Tangerine dot, on a white rounded tile, for the tab (`icon.svg`, `favicon.ico` 16/32/48), iOS (`apple-icon.png`) and the manifest (192, 512, and a full-bleed maskable 512 with the mark inside the safe circle), all from one source; the small-size cut is not used because its straight t is not the mark (code only; DESIGN.md and the canvases do not show icons) |
+| Experience dates | month ranges printed from `from`/`to` (`Jan 2021 — Aug 2021`, `Jan 2026 — Present`); part time sits on the place line (`Thiruvananthapuram · Part time`), not in the date column; `public/llms.txt` matches (code, Workshop, WhatDoesThisDo; DESIGN.md and the canvases still show years) |
+| Label column | experience and skill rows share `grid-cols-label`, a 156 px first column and the rest, instead of 2fr 6fr, so a month range is one line at every desktop width and both sections keep one content edge (code, Workshop, WhatDoesThisDo; DESIGN.md and the canvases still show 2fr 6fr) |
+| Skip link scene | the Workshop scene draws the page's top corner (the mark and the name) at the page's offsets, so the focused pill sits in the margin above the mark as on the home page, not on a fake header (Workshop and WhatDoesThisDo) |
 | Browser bar | the scheme's ground (Ink in dark, Paper in light), set by the theme script and the toggle; the manifest uses Ink for its theme and splash colour |
 | Theme toggle | a Line border at rest, so it reads as a control: a ghost pill with the word on desktop and a 44 px circle around the dot on phone (code, Workshop, WhatDoesThisDo and DESIGN.md; the canvases still show the borderless rest state) |
 
