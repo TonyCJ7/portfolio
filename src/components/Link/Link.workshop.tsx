@@ -42,7 +42,7 @@ export const entry = defineEntry({
     ],
     tokens: [
       "Prose: text-fg, medium weight, Tangerine underline on hover and focus",
-      "Arrow: text-title, Accent Text on hover and focus",
+      "Arrow: text-title, Accent Text on hover and focus; 4 px padding above and after, so the focus ring holds the moved arrow",
       "Large: text-headline, text-headline-phone on phone, Tangerine underline, Accent Text on hover and focus",
       "Social: mono label, uppercase, Text Muted, Text on hover and focus",
     ],
