@@ -1,4 +1,4 @@
-import { defineEntry, select, STATES, toggle } from "@/app/workshop/controls";
+import { defineEntry, select, toggle } from "@/app/workshop/controls";
 import { experience } from "@/content/experience";
 import type { Experience } from "@/types/content";
 import ExperienceList from "./ExperienceList";
@@ -22,7 +22,7 @@ const extreme: Experience = {
   ],
 };
 
-const ROW_STATES = [...STATES, "dimmed"] as const;
+const ROW_STATES = ["rest", "hover", "focus", "dimmed"] as const;
 
 function findSample(id: string): Experience {
   return experience.find((item) => item.id === id) ?? extreme;
@@ -77,6 +77,7 @@ export const entry = defineEntry({
       "An ol of li rows; dates in a time element with datetime",
       "The whole row is the title link's hit area through its after pseudo element, so the focus ring stays on the title",
       "External titles open in a new tab",
+      "Pressed looks like hover (a press on the row is a hover), so the State control does not offer it",
     ],
   },
   render: (args) => {

@@ -24,5 +24,5 @@ Names the chosen job the way code would read it, for the usage line.
 ## Constants
 
 - [`extreme`](../../../../../../src/components/ExperienceRow/ExperienceRow.workshop.tsx#L6): a made-up job with a 48-character title, an 18-letter place, five tags and an unbroken 40-character tag, to prove the row wraps without sideways scroll.
-- [`ROW_STATES`](../../../../../../src/components/ExperienceRow/ExperienceRow.workshop.tsx#L25): the State options: the four shared forced states plus `dimmed`, which the Stage passes to the frame as `data-state="dimmed"`.
+- [`ROW_STATES`](../../../../../../src/components/ExperienceRow/ExperienceRow.workshop.tsx#L25): the State options: rest, hover and focus, plus `dimmed`, which the Stage passes to the frame as `data-state="dimmed"`. Pressed is left out because the row has no pressed look of its own; a press shows the hover look.
 - [`entry`](../../../../../../src/components/ExperienceRow/ExperienceRow.workshop.tsx#L45): the Experience row Workshop entry: Entry, State and "With siblings" controls, rendered as an `ExperienceList`, not centred in the frame. In the dimmed state the chosen job is the list's `targetId`.
