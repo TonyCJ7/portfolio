@@ -31,3 +31,7 @@ Describes the footer copy: the desktop sentence in `long`, the phone sentence in
 ### [NotFoundCopy](../../../../../src/types/content.ts#L15)
 
 Describes the 404 page copy: the heading, the sentence under it and the button label.
+
+### [ContactCopy](../../../../../src/types/content.ts#L17)
+
+Describes the Contact section copy: `intro`, the sentences above the email address.

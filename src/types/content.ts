@@ -13,3 +13,5 @@ export type NavSection = { id: string; label: string };
 export type Colophon = { long: string; short: string; workshopLink: string };
 
 export type NotFoundCopy = { title: string; body: string; cta: string };
+
+export type ContactCopy = { intro: string };
