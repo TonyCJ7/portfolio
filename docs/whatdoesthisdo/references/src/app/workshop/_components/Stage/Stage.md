@@ -2,12 +2,12 @@
 
 ### [StageProps](../../../../../../../../src/app/workshop/_components/Stage/Stage.tsx#L6)
 
-Describes the props `WorkshopView` passes to `Stage`.
+Describes the props `EntryStage` passes to `Stage`.
 
 - `entry`: the Workshop entry to draw.
 - `args`: the current control values, keyed by control name.
 - `ctx`: the frame settings from the URL: scheme, device and motion.
-- `onCtxChange`: writes a change of the frame settings back to the URL; `WorkshopView` passes `setCtx`.
+- `onCtxChange`: writes a change of the frame settings back to the URL; `EntryStage` passes `setCtx`.
 
 ### [Stage({ entry, args, ctx, onCtxChange })](../../../../../../../../src/app/workshop/_components/Stage/Stage.tsx#L17)
 

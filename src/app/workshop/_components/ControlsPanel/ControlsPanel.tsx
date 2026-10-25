@@ -1,17 +1,24 @@
 "use client";
 
-import type { ArgValue, Controls } from "@/types/workshop";
+import { notFound } from "next/navigation";
+import { findEntry } from "../../entries";
+import { useWorkshopState } from "../../useWorkshopState";
 
 type ControlsPanelProps = {
-  controls: Controls;
-  args: Record<string, ArgValue>;
-  onChange: (key: string, value: ArgValue) => void;
-  onReset: () => void;
+  entryId: string;
 };
 
 const FIELD_CLASS = "mt-1 w-full rounded-sm border border-line bg-surface px-2 py-1.5 text-small text-fg";
 
-export default function ControlsPanel({ controls, args, onChange, onReset }: ControlsPanelProps) {
+export default function ControlsPanel({ entryId }: ControlsPanelProps) {
+  const entry = findEntry(entryId);
+
+  if (entry === undefined) {
+    notFound();
+  }
+
+  const { args, setArg, reset } = useWorkshopState(entry);
+  const { controls } = entry;
   const names = Object.keys(controls);
 
   if (names.length === 0) {
@@ -31,7 +38,7 @@ export default function ControlsPanel({ controls, args, onChange, onReset }: Con
                 type="checkbox"
                 name={key}
                 checked={value === true}
-                onChange={(event) => onChange(key, event.target.checked)}
+                onChange={(event) => setArg(key, event.target.checked)}
                 className="accent-accent"
               />
               {control.label}
@@ -46,7 +53,7 @@ export default function ControlsPanel({ controls, args, onChange, onReset }: Con
               <select
                 name={key}
                 value={String(value)}
-                onChange={(event) => onChange(key, event.target.value)}
+                onChange={(event) => setArg(key, event.target.value)}
                 className={FIELD_CLASS}
               >
                 {control.options.map((option) => (
@@ -72,7 +79,7 @@ export default function ControlsPanel({ controls, args, onChange, onReset }: Con
               name={key}
               value={String(value)}
               maxLength={control.max}
-              onChange={(event) => onChange(key, event.target.value)}
+              onChange={(event) => setArg(key, event.target.value)}
               className={FIELD_CLASS}
             />
           </label>
@@ -80,7 +87,7 @@ export default function ControlsPanel({ controls, args, onChange, onReset }: Con
       })}
       <button
         type="button"
-        onClick={onReset}
+        onClick={reset}
         className="self-start rounded-sm border border-line px-3 py-1.5 text-label uppercase text-fg-2 hover:bg-surface hover:text-fg"
       >
         Reset

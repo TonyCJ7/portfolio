@@ -18,6 +18,6 @@ Gives each entry page its own document title, canonical link and Open Graph bloc
 Renders one Workshop entry.
 
 - In: `params`, the route params promise holding the `entry` id.
-- Out: the client Workshop view for that id, under a Suspense boundary with no fallback. The stage draws nothing until the URL state is read, so a shared link never flashes the defaults.
+- Out: `WorkshopView` for that id, under a Suspense boundary with no fallback. Every id in the entry list resolves at build time, so each entry's prerendered HTML holds the whole view except the parts that read the URL search params.
 - The id is read inside the boundary with `params.then`, so Cache Components can prerender the page shell without it and navigation between entries stays instant.
 - The page does not check the id. `proxy` in `src/proxy.ts` answers an unknown id with a 404 before the page runs, because a `notFound()` here would come after the shell streamed with status 200.

@@ -2,10 +2,10 @@
 
 ### [ToolbarProps](../../../../../../../../src/app/workshop/_components/Toolbar/Toolbar.tsx#L5)
 
-Describes the props `WorkshopView` passes to `Toolbar`.
+Describes the props `EntryStage` passes to `Toolbar`.
 
 - `ctx`: the frame settings from the URL, which decide the pressed button of each group.
-- `onChange`: writes a one-key patch of the frame settings to the URL; `WorkshopView` passes `setCtx`.
+- `onChange`: writes a one-key patch of the frame settings to the URL; `EntryStage` passes `setCtx`.
 
 ### [Toolbar({ ctx, onChange })](../../../../../../../../src/app/workshop/_components/Toolbar/Toolbar.tsx#L16)
 

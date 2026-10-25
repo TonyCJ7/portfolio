@@ -1,21 +1,18 @@
 ## `src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx`
 
-### [ControlsPanelProps](../../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L5)
+### [ControlsPanelProps](../../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L7)
 
 Describes the props `WorkshopView` passes to `ControlsPanel`.
 
-- `controls`: the open entry's control definitions, keyed by control name.
-- `args`: the current value of each control, read from the URL.
-- `onChange`: writes one control's new value to the URL; `WorkshopView` passes `setArg`.
-- `onReset`: removes every control param from the URL; `WorkshopView` passes `reset`.
+- `entryId`: the id of the entry on screen, a string, since the entry object holds render functions that cannot leave the server.
 
-### [ControlsPanel({ controls, args, onChange, onReset })](../../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L14)
+### [ControlsPanel({ entryId })](../../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L13)
 
-Renders one field per control of the open entry, plus a Reset button.
+Renders one field per control of the open entry, plus a Reset button, and writes every edit to the URL.
 
-- In: `controls`, the entry's control definitions. `args`, their current values. `onChange`, called with the key and new value on every edit. `onReset`, called by the Reset button.
-- Out: a `select` for a select control, a checkbox for a toggle, and a text input with a `used/max` counter for a text control. An entry without controls shows a one-line note instead.
+- In: `entryId`, looked up in the entry list on the client. An unknown id renders the 404 page.
+- Out: a `select` for a select control, a checkbox for a toggle, and a text input with a `used/max` counter for a text control. Values come from `useWorkshopState`; an edit calls its `setArg` and Reset calls its `reset`. An entry without controls shows a one-line note instead. It reads the search params, so it renders only after hydration.
 
 ## Constants
 
-- [`FIELD_CLASS`](../../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L12): the shared classes of the select and text fields.
+- [`FIELD_CLASS`](../../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L11): the shared classes of the select and text fields.

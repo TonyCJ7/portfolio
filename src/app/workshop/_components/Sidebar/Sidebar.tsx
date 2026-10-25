@@ -3,12 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import type { FrameContext, WorkshopEntry } from "@/types/workshop";
+import type { FrameContext } from "@/types/workshop";
+import { entries } from "../../entries";
 
 type SidebarProps = {
-  entries: WorkshopEntry[];
   currentId: string;
-  ctx: FrameContext;
+  ctx?: FrameContext;
 };
 
 const STAGES = [
@@ -17,7 +17,11 @@ const STAGES = [
   { stage: 3, heading: "Sections" },
 ] as const;
 
-function ctxQuery(ctx: FrameContext): string {
+function ctxQuery(ctx: FrameContext | undefined): string {
+  if (ctx === undefined) {
+    return "";
+  }
+
   const params = new URLSearchParams();
 
   if (ctx.scheme !== "dark") {
@@ -37,7 +41,7 @@ function ctxQuery(ctx: FrameContext): string {
   return query ? `?${query}` : "";
 }
 
-export default function Sidebar({ entries, currentId, ctx }: SidebarProps) {
+export default function Sidebar({ currentId, ctx }: SidebarProps) {
   const [filter, setFilter] = useState("");
   const router = useRouter();
   const query = ctxQuery(ctx);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import type {
   ArgValue,
@@ -24,9 +24,15 @@ function readCtx(params: URLSearchParams): FrameContext {
   };
 }
 
+export function useFrameContext(): FrameContext {
+  const params = useSearchParams();
+
+  return useMemo(() => readCtx(params), [params]);
+}
+
 export function useWorkshopState(entry: WorkshopEntry): WorkshopState {
   const params = useSearchParams();
-  const ctx = useMemo(() => readCtx(params), [params]);
+  const ctx = useFrameContext();
   const args = useMemo(() => coerceArgs(entry.controls, params), [entry, params]);
 
   const write = useCallback(
@@ -81,18 +87,6 @@ export function useWorkshopState(entry: WorkshopEntry): WorkshopState {
       }
     });
   }, [entry, write]);
-
-  useEffect(() => {
-    if (ctx.motion === "reduced") {
-      document.documentElement.dataset.motion = "reduced";
-    } else {
-      delete document.documentElement.dataset.motion;
-    }
-
-    return () => {
-      delete document.documentElement.dataset.motion;
-    };
-  }, [ctx.motion]);
 
   return { ctx, args, setArg, setCtx, reset };
 }
