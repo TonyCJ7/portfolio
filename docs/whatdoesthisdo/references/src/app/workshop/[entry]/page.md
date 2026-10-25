@@ -18,7 +18,7 @@ Gives each entry page its own document title, canonical link and Open Graph bloc
 Reads the entry id and renders the Workshop view for it, inside the page's Suspense boundary.
 
 - In: `params`, the route params promise holding the `entry` id.
-- Out: the client Workshop view for a known id; an unknown id renders the 404 page. It is a separate component so the `await` of the URL data happens under Suspense, which Cache Components needs for instant navigation between entries.
+- Out: the client Workshop view for a known id; an unknown id renders the 404 page. In practice an unknown id never gets here: `proxy` in `src/proxy.ts` answers it with a real 404 first, because a `notFound()` under this Suspense boundary keeps status 200. It is a separate component so the `await` of the URL data happens under Suspense, which Cache Components needs for instant navigation between entries.
 
 ### [WorkshopEntryPage({ params })](../../../../../../../src/app/workshop/[entry]/page.tsx#L43)
 
