@@ -1,6 +1,7 @@
 # Portfolio build: components, Workshop, sections, page
 
-Date: 2026-10-24. Status: builder-checked, awaiting Tony's approval. Nothing in this document is built.
+Date: 2026-10-24. Status: approved by Tony 2026-10-24 and built 2026-10-25 (32 tasks). Amended 2026-10-25 to match
+the code after the build and Tony's review of it; "Changes after the build" lists what moved.
 
 ## Intent
 
@@ -22,7 +23,7 @@ repository extension so each session loads them.
 
 ## Goals
 
-1. Twenty components in build order, each one commit, each with a Workshop entry that shows its states, variants,
+1. Twenty components in build order (nineteen since Education row was removed on 2026-10-25), each one commit, each with a Workshop entry that shows its states, variants,
    both schemes and both devices.
 2. The Workshop at `/workshop`, built from the real components, with URL-addressable state, shipped in production
    and linked from the home page colophon.
@@ -85,9 +86,9 @@ repository extension so each session loads them.
 | Experience row title | links to the company website; the row is focusable and focus lifts it like hover | 2026-10-24 |
 | Spelling | American, the résumé's | 2026-10-24 |
 | Deployment | undecided; keep Vercel and VPS open, no `output` setting, origin from `NEXT_PUBLIC_SITE_URL` with a placeholder default | 2026-10-24 |
-| Download CV | the ghost button renders only when `public/Tony_CJ_Resume.pdf` exists (phone-free copy Tony supplies later) | 2026-10-24 |
+| CV button | the ghost button, labelled "Full résumé", renders only when `public/Tony_CJ_Resume.pdf` exists (Tony's phone-free copy, in place since 2026-10-25) | 2026-10-24, label 2026-10-25 |
 | Default theme | dark, regardless of the OS scheme; visitors switch with the toggle, the choice is stored in `tj-theme` | 2026-10-24 |
-| Spotlight light scheme | Tangerine Text `rgba(201, 58, 8, 0.06)`; dark `rgba(255, 92, 26, 0.08)` | 2026-10-24 |
+| Spotlight light scheme | Tangerine Text `rgba(184, 53, 10, 0.06)`; dark `rgba(255, 92, 26, 0.08)` | 2026-10-24, value 2026-10-25 |
 | Logo | final, `src/components/Logo/Logo.tsx`, not reopened | earlier |
 
 ## Decisions made for Tony (my calls, each reversible before the plan)
@@ -111,9 +112,13 @@ repository extension so each session loads them.
 4. **Fonts:** DM Sans (`--font-sans`) and Geist Mono (`--font-mono`) via `next/font/google`, replacing the
    scaffold's Geist.
 5. **Theme:** inline head script reads `localStorage["tj-theme"]` and sets `data-theme` on `html` before paint;
-   no stored value means dark. `ThemeToggle` writes the same key. Reduced motion: a `useReducedMotion`
-   hook reads the media query and `html[data-motion="reduced"]`; global CSS kills transitions and animations
-   under either.
+   no stored value means dark. The same script creates the page's one `theme-color` meta, the browser bar colour:
+   the scheme's ground, Ink `#16161A` in dark and Paper `#F5F5F4` in light (`THEME_COLOR` in
+   `src/types/theme.ts`). The layout sets no `viewport.themeColor`, because React re-inserts a rendered tag ahead
+   of any edit made before hydration. `ThemeToggle` writes the same key and updates the meta. Reduced motion: a
+   `useReducedMotion` hook reads the media query and `html[data-motion="reduced"]`. There is no global kill: each
+   component gates its own motion with the `motion-safe:` and `motion-reduce:` variants, which read both, and a
+   theme switch under reduced motion swaps colours at once (`theme-instant`).
 6. **Workshop architecture:** `src/app/workshop/[entry]/page.tsx`, statically generated for every entry
    (`generateStaticParams`), with `cacheComponents` kept on as scaffolded. Controls, scheme, device and motion live
    in the URL search params (`?variant=ghost&state=hover&scheme=light&device=phone`), read on the client under
@@ -132,19 +137,22 @@ repository extension so each session loads them.
      param. The Workshop is the second user of that scope rule.
    - SkipLink takes `href` (default `#main`); the Workshop chrome uses it with its own target id. No other
      element in the Workshop carries `id="main"`.
-   - NavList shows its states through the forced `data-state` control only; the live scroll-spy is accepted on
-     the page card, where the sections exist. No `active` prop.
+   - NavList takes an optional `activeId`: the Workshop sets it to choose the active item, and the page leaves
+     it out so `useActiveSection` follows the section in view. Hover and focus are shown through the Workshop-only
+     `forced` data hook. The live scroll-spy is accepted on the page card, where the sections exist.
    - LogoLink is a real link home; its entry shows hover and focus forced.
    - Spotlight runs for real inside the frame, contained by the frame's transform.
 7. **Workshop chrome** reuses the site's components (Label, Link, Logo, ThemeToggle, focus ring) and the site's
    tokens; the chrome follows the viewer's theme, the stage frame follows the `scheme` param. Layout as the HTML
    storybook: sidebar of entries grouped by stage with a filter, stage with a dotted grid and a scaled frame
    (desktop 656 px, phone 390 px), aside with Controls and Spec tabs, a Usage line showing the JSX for the current
-   state. Below 1100 px the aside drops under the stage; below 760 px the sidebar becomes a select.
+   state. Below 1024 px (the same `phone:` variant as the site) the aside drops under the stage and the sidebar becomes a
+   select.
 8. **Sections are components too**, in `src/sections/<Name>/`, each with a Workshop entry under a third group
    "Sections", so the page is assembled from checked parts and the Workshop shows the whole build.
 9. **Content model:** `src/content/` holds `profile.ts`, `experience.ts`, `highlights.ts`, `skills.ts`,
-   `education.ts`, `contact.ts`, `colophon.ts`; types in `src/types/content.ts`. Sections import content directly;
+   `contact.ts`, `colophon.ts`, plus `nav.ts`, `jsonLd.ts` and `notFound.ts` (`education.ts` was removed on
+   2026-10-25); types in `src/types/content.ts`. Sections import content directly;
    no props plumbing for data that never varies.
 10. **Verification without a test runner.** `npm run check` = `eslint && tsc --noEmit && next build`. Each card
     names a Workshop URL and the states to look at in Chrome DevTools MCP at the breakpoints in the QA section.
@@ -172,22 +180,23 @@ Every component is a server component unless it needs state or the DOM; those ar
 | 4 | Tag | `src/components/Tag/` | children; `TagList` wraps a `ul` | |
 | 5 | Logo link | `src/components/Logo/` | existing `Logo`; add `LogoLink` (home link, wiggle on hover, ring on focus) | |
 | 6 | Button | `src/components/Button/` | `variant: primary \| ghost`, `href`, `arrow` (primary only), children | |
-| 7 | Link | `src/components/Link/` | `kind: prose \| arrow \| large \| social`, `href`, `external`, children | |
-| 8 | Theme toggle | `src/components/ThemeToggle/` | `size: auto \| text \| icon`; reads and writes `tj-theme`, View Transitions reveal | yes |
+| 7 | Link | `src/components/Link/` | `kind: prose \| arrow \| arrow-small \| large \| social`, `href`, `external`, children; `arrow-small` is the colophon's 14 px arrow link | |
+| 8 | Theme toggle | `src/components/ThemeToggle/` | `size: auto \| text \| icon`; reads and writes `tj-theme` and the browser bar colour, View Transitions reveal; named by `aria-label` ("dark theme, switch to light"), no `aria-pressed` | yes |
 | 9 | Nav link | `src/components/NavLink/` | `href`, `active`, children | |
 | 10 | Section label | `src/components/SectionLabel/` | `id`, children; label on desktop, sticky bar on phone | |
 | 11 | Spotlight | `src/components/Spotlight/` | none; fine pointer and no reduced motion only | yes |
 | 12 | Skip link | `src/components/SkipLink/` | none; targets `#main` | |
-| 13 | Experience row | `src/components/ExperienceRow/` | `entry: Experience` (title is an arrow link to `entry.url`); sibling dimming on the list | |
+| 13 | Experience row | `src/components/ExperienceRow/` | `entry: Experience` (title is an arrow link to `entry.url`, which every row has, typed `http(s)://…`); sibling dimming on the list | |
 | 14 | Highlight tile | `src/components/HighlightTile/` | `figure`, `what`, `how`; `HighlightGrid` | |
 | 15 | Skill group | `src/components/SkillGroup/` | `group: SkillGroup` | |
-| 16 | Education row | `src/components/EducationRow/` | `education: Education`, `languages?: string` | |
-| 17 | Social links | `src/components/SocialLinks/` | `handles: boolean` | |
+| 16 | Education row | removed 2026-10-25 | Tony took Education and languages off the site; the component, entry, content and type are deleted | |
+| 17 | Social links | `src/components/SocialLinks/` | none on the site (`forced` for the Workshop only); GitHub, LinkedIn, Email as short names, shown once, in the intro column | |
 | 18 | Nav list | `src/components/NavList/` | `sections: NavSection[]`; scroll-spy with IntersectionObserver | yes |
-| 19 | Intro column | `src/components/Intro/` | `profile: Profile`; mark row with toggle, name, role, tagline, buttons, nav list on desktop | |
+| 19 | Intro column | `src/components/Intro/` | `profile: Profile`, `cvHref`; mark row with toggle, name, role with the location under it, tagline, buttons, nav list on desktop, social links (column bottom on desktop, under the buttons on phone) | |
 | 20 | Colophon | `src/components/Colophon/` | none; the Workshop link lives here | |
 
-Sections (`src/sections/`): About, Experience, Highlights, Skills (with Education and languages), Contact. The
+Sections (`src/sections/`): About, Experience, Highlights, Skills (the skill table only), Contact (label, intro
+and the email link). The
 page (`src/app/page.tsx`): skip link, spotlight, two-column layout (sticky intro, scrolling sections) on desktop,
 single column with the intro as header and hero on phone.
 
@@ -197,7 +206,8 @@ Content is written before the composites are built, in one step:
 
 1. Run `resume-portfolio-writer` in portfolio mode on every slot in its slot table (`references/portfolio-copy.md`):
    hero tagline, about (three paragraphs), five experience rows, four highlights, skill groups, education,
-   languages, contact intro, colophon, page title, meta description, image alt.
+   languages, contact intro, colophon, page title, meta description, image alt. (Education and languages were
+   written and later removed from the site, on 2026-10-25.)
 2. The output is the slot table with budgets, proposed copy, character counts and résumé sources. Tony approves
    or edits in the reply.
 3. The approved table is typed into `src/content/*.ts` in one commit. Budgets become the `maxLength` of the
@@ -228,10 +238,12 @@ Workshop frame covers 390 and 656; the page itself is driven through all seven. 
   colophon in order; every hover state reachable by focus; landmarks `header`, `nav`, `main`, `footer`; one `h1`;
   sections with `aria-labelledby`; contrast of every token pair measured (fg 4.5:1, muted 4.5:1 on ground and
   surface, label 3:1, tangerine text on both grounds); reduced motion removes every animation; the toggle has
-  `aria-pressed` and a name; the spotlight is `aria-hidden`.
+  a name that states the current and next theme and no `aria-pressed` (Task 10 ruling: the ARIA toggle-button
+  pattern keeps a pressed button's name fixed, and this name changes; the visible word comes first, so WCAG 2.5.3
+  holds in both states); the spotlight is `aria-hidden`.
 - SEO: `<title>` ≤ 60, description ≤ 155, canonical, `metadataBase` set to the production origin, Open Graph and
   Twitter card with a generated 1200 × 630 image (ink ground, mark, name, role), `robots.ts`, `sitemap.ts` with
-  `/` and `/workshop`, `manifest.ts` already present, Lighthouse SEO 100, Lighthouse performance ≥ 95 on the
+  `/` and `/workshop/tokens` (`/workshop` redirects there, and a sitemap lists final URLs only), `manifest.ts` already present, Lighthouse SEO 100, Lighthouse performance ≥ 95 on the
   phone profile, LCP under 1.8 s on the throttled run.
 - GEO (generative engine readability): JSON-LD `Person` (name, jobTitle, worksFor Almosafer, address Dubai,
   sameAs GitHub and LinkedIn, knowsAbout from the skill groups) in the home page; `llms.txt` in `public/` with
@@ -264,7 +276,8 @@ Stage 1, primitives, one commit each with its entry: focus ring, Label, Tag, Log
 toggle, Nav link, Section label, Spotlight, Skip link. 11 commits.
 
 Stage 2, content and composites: (15) content types and files from the approved slot table; then Experience row,
-Highlight tile, Skill group, Education row, Social links, Nav list, Intro column, Colophon. 9 commits.
+Highlight tile, Skill group, Education row (removed after the build), Social links, Nav list, Intro column,
+Colophon. 9 commits.
 
 Stage 3, sections, one commit each with its entry: About, Experience, Highlights, Skills, Contact. 5 commits.
 
@@ -272,6 +285,25 @@ Stage 4, page: (29) layout and page assembly replacing the scaffold page; (30) m
 robots, sitemap, JSON-LD, `llms.txt`; (31) not-found page; (32) final QA pass fixes, one commit per fix.
 
 About 32 commits. Each is reviewable alone and leaves the site deployable.
+
+## Changes after the build (2026-10-25)
+
+Tony reviewed the finished site and asked for these; all are in the code, the Workshop entries, the
+WhatDoesThisDo pages, DESIGN.md and the three canvases, except where a row says otherwise.
+
+| Change | Now |
+|---|---|
+| Light Tangerine Text | `--accent-text` `#B8350A` (was `#C93A08`): tags 4.86:1 on their tint, links and the focus ring 5.42:1 on paper |
+| Hover fill | new token `surface-lift` for every hover fill: `#1D1D22` dark, `#F2F2F1` light, a step below paper instead of pure white; `surface` stays the resting panel |
+| CV labels | the ghost button and the Experience link both read "Full résumé" |
+| Location | "Dubai, UAE" is a muted Label 8 px under the role in the intro column; Contact no longer prints it |
+| Social links | GitHub, LinkedIn and Email appear once, in the intro column, also on phone; Contact keeps only the email link; the `handles` prop is gone |
+| Colophon link | Link kind `arrow-small`, 14 px medium, at the footer's size |
+| HASpaces | the row links to `http://haspaces.com/`; every experience row now has a URL |
+| Education and languages | removed from the site, the Workshop and the canvases |
+| Favicon | the small-favicon mark on a white rounded tile, so it shows on dark tabs |
+| Browser bar | the scheme's ground (Ink in dark, Paper in light), set by the theme script and the toggle; the manifest uses Ink for its theme and splash colour |
+| Theme toggle | a Line border at rest, so it reads as a control: a ghost pill with the word on desktop and a 44 px circle around the dot on phone (code, Workshop, WhatDoesThisDo and DESIGN.md; the canvases still show the borderless rest state) |
 
 ## Left to the builder
 
