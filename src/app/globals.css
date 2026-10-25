@@ -142,6 +142,9 @@
   --container-measure: 36rem;
   --container-lede: 26rem;
 
+  /* 156px holds the widest experience range, "Jan 2023 — Jan 2026" at 150.5px, on one line. */
+  --grid-template-columns-label: 156px minmax(0, 1fr);
+
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out-tj: cubic-bezier(0.17, 0, 0.21, 1.01);
 

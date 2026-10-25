@@ -26,7 +26,7 @@ export const entry = defineEntry({
       "SkillTable: groups, one SkillGroup row per group",
     ],
     tokens: [
-      "Row: label column 2fr, tags column 6fr, 24 px column gap, 16 px vertical padding",
+      "Row: 156 px label column and the tags in the rest (grid-cols-label, shared with the experience rows), 24 px column gap, 16 px vertical padding",
       "Label: muted Label as a block, 6 px top padding to sit level with the first row of tags; tags: TagList",
       "Border hairline above every row and below the table",
       "Phone: one column, label above the tags with an 8 px gap",

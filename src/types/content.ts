@@ -1,6 +1,6 @@
 export type Profile = { name: string; role: string; tagline: string; email: string; github: string; linkedin: string; location: string; cvFile: string; primaryCta: string; cvCta: string; cvLinkText: string; pageTitle: string; metaDescription: string };
 
-export type Experience = { id: string; dates: string; from: string; to: string | null; title: string; company: string; url: `http${"" | "s"}://${string}`; place: string; body: string; tags: string[] };
+export type Experience = { id: string; from: string; to: string | null; partTime?: boolean; title: string; company: string; url: `http${"" | "s"}://${string}`; place: string; body: string; tags: string[] };
 
 export type Highlight = { figure: string; what: string; how: string };
 

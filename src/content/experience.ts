@@ -3,7 +3,6 @@ import type { Experience } from "@/types/content";
 export const experience: Experience[] = [
   {
     id: "almosafer-senior",
-    dates: "2026 — present",
     from: "2026-01",
     to: null,
     title: "Senior Frontend Specialist",
@@ -15,7 +14,6 @@ export const experience: Experience[] = [
   },
   {
     id: "almosafer",
-    dates: "2023 — 2026",
     from: "2023-01",
     to: "2026-01",
     title: "Frontend Specialist",
@@ -27,7 +25,6 @@ export const experience: Experience[] = [
   },
   {
     id: "nokia",
-    dates: "2021 — 2022",
     from: "2021-09",
     to: "2022-12",
     title: "Software Designer",
@@ -39,7 +36,6 @@ export const experience: Experience[] = [
   },
   {
     id: "qburst",
-    dates: "2018 — 2021",
     from: "2018-07",
     to: "2021-09",
     title: "Senior Software Engineer",
@@ -51,7 +47,7 @@ export const experience: Experience[] = [
   },
   {
     id: "haspaces",
-    dates: "2021 · part time",
+    partTime: true,
     from: "2021-01",
     to: "2021-08",
     title: "Frontend Developer",

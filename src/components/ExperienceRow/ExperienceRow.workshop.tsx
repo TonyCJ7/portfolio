@@ -5,13 +5,13 @@ import ExperienceList from "./ExperienceList";
 
 const extreme: Experience = {
   id: "extreme",
-  dates: "2020 — 2021",
   from: "2020-01",
   to: "2021-01",
   title: "Internationalization Accessibility Platform Lead",
   company: "Example Company",
   url: "https://example.com",
   place: "Thiruvananthapuram",
+  partTime: true,
   body: "A sample row with the longest title and tag the layout has to hold.",
   tags: [
     "React",
@@ -64,7 +64,7 @@ export const entry = defineEntry({
       "ExperienceList: items, targetId (marks one row as the dimmed state's target)",
     ],
     tokens: [
-      "Date: mono label, column 1 of a 2fr 6fr grid, one column on phone",
+      "Date: mono label, one line in the 156 px first column of the label grid (grid-cols-label), one column on phone",
       "Title: text-title arrow link; place: 11 px label; body: text-small Text 2",
       "Hover and focus layer: Surface Lift with shadow-lift, 6 px radius, 24 px past the row (16 px on phone)",
       "48 px between rows",

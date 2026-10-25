@@ -6,7 +6,7 @@ Describes who Tony is and how to reach him: the name, role and hero tagline, the
 
 ### [Experience](../../../../../src/types/content.ts#L3)
 
-Describes one row of the Experience section. `dates` is the printed label; `from` and `to` are ISO months (`"2023-01"`) for `<time dateTime>`, and `to` is `null` for the current role. `url` is the company website the row's title links to. Its type only accepts a string that starts with `http://` or `https://`, so an empty url fails the type check instead of rendering a link to the current page. `body` is one or two sentences and `tags` holds three or four tool names.
+Describes one row of the Experience section. `from` and `to` are ISO months (`"2023-01"`); the row prints them as `Jan 2023 — Jan 2026` and uses them for `<time dateTime>`, and `to` is `null` for the current role. `partTime` is `true` for a part-time job and adds `Part time` to the place line; leave it out otherwise. `url` is the company website the row's title links to. Its type only accepts a string that starts with `http://` or `https://`, so an empty url fails the type check instead of rendering a link to the current page. `body` is one or two sentences and `tags` holds three or four tool names.
 
 ### [Highlight](../../../../../src/types/content.ts#L5)
 

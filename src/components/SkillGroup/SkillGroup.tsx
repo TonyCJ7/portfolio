@@ -8,7 +8,7 @@ type SkillGroupProps = {
 
 export default function SkillGroup({ group }: SkillGroupProps) {
   return (
-    <div className="grid grid-cols-[2fr_6fr] gap-x-6 border-t border-line py-4 phone:grid-cols-1 phone:gap-y-2">
+    <div className="grid grid-cols-label gap-x-6 border-t border-line py-4 phone:grid-cols-1 phone:gap-y-2">
       <dt>
         <Label className="block pt-1.5">{group.name}</Label>
       </dt>
