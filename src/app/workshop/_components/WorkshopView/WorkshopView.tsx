@@ -1,8 +1,6 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { findEntry } from "../../entries";
-import Sidebar from "../Sidebar/Sidebar";
-import SidebarFromUrl from "../SidebarFromUrl/SidebarFromUrl";
 import EntryStage from "../EntryStage/EntryStage";
 import EntryTabs from "../EntryTabs/EntryTabs";
 import ControlsPanel from "../ControlsPanel/ControlsPanel";
@@ -20,10 +18,7 @@ export default function WorkshopView({ entryId }: WorkshopViewProps) {
   }
 
   return (
-    <div className="grid grid-cols-[236px_minmax(0,1fr)_340px] gap-6 p-6 phone:grid-cols-1">
-      <Suspense fallback={<Sidebar currentId={entry.id} />}>
-        <SidebarFromUrl currentId={entry.id} />
-      </Suspense>
+    <div className="grid min-w-0 grid-cols-[minmax(0,1fr)_340px] gap-6 phone:grid-cols-1">
       <div className="flex min-w-0 flex-col gap-4">
         <div>
           <h1 className="text-headline">{entry.name}</h1>

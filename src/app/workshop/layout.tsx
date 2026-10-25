@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Label from "@/components/Label/Label";
 import LogoLink from "@/components/Logo/LogoLink";
 import SkipLink from "@/components/SkipLink/SkipLink";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
+import Sidebar from "./_components/Sidebar/Sidebar";
+import SidebarFromUrl from "./_components/SidebarFromUrl/SidebarFromUrl";
 import { titleTemplate, workshopDescription, workshopOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
@@ -24,7 +27,12 @@ export default function WorkshopLayout({ children }: LayoutProps<"/workshop">) {
         </div>
       </header>
       <main id="workshop-main" tabIndex={-1}>
-        {children}
+        <div className="grid grid-cols-[236px_minmax(0,1fr)] gap-6 p-6 phone:grid-cols-1">
+          <Suspense fallback={<Sidebar />}>
+            <SidebarFromUrl />
+          </Suspense>
+          {children}
+        </div>
       </main>
     </div>
   );

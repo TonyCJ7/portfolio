@@ -2,13 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSelectedLayoutSegment } from "next/navigation";
 import type { FrameContext } from "@/types/workshop";
 import Label from "@/components/Label/Label";
 import { entries } from "../../entries";
 
 type SidebarProps = {
-  currentId: string;
   ctx?: FrameContext;
 };
 
@@ -42,9 +41,10 @@ function ctxQuery(ctx: FrameContext | undefined): string {
   return query ? `?${query}` : "";
 }
 
-export default function Sidebar({ currentId, ctx }: SidebarProps) {
+export default function Sidebar({ ctx }: SidebarProps) {
   const [filter, setFilter] = useState("");
   const router = useRouter();
+  const currentId = useSelectedLayoutSegment();
   const query = ctxQuery(ctx);
   const visible = entries.filter((entry) =>
     entry.name.toLowerCase().includes(filter.trim().toLowerCase()),
@@ -56,7 +56,7 @@ export default function Sidebar({ currentId, ctx }: SidebarProps) {
         <Label>Entry</Label>
         <select
           name="entry"
-          value={currentId}
+          value={currentId ?? ""}
           onChange={(event) => router.push(`/workshop/${event.target.value}${query}`)}
           className="mt-1 w-full rounded-sm border border-line bg-surface px-2 py-2 text-small text-fg"
         >

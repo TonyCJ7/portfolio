@@ -3,12 +3,8 @@
 import { useFrameContext } from "../../useWorkshopState";
 import Sidebar from "../Sidebar/Sidebar";
 
-type SidebarFromUrlProps = {
-  currentId: string;
-};
-
-export default function SidebarFromUrl({ currentId }: SidebarFromUrlProps) {
+export default function SidebarFromUrl() {
   const ctx = useFrameContext();
 
-  return <Sidebar currentId={currentId} ctx={ctx} />;
+  return <Sidebar ctx={ctx} />;
 }
