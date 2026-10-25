@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type KeyboardEvent, type ReactNode } from "react";
+import Label from "@/components/Label/Label";
 
 type EntryTabsProps = {
   controls: ReactNode;
@@ -43,9 +44,11 @@ export default function EntryTabs({ controls, spec }: EntryTabsProps) {
             tabIndex={tab === name ? 0 : -1}
             onClick={() => setTab(name)}
             onKeyDown={onTabKeyDown}
-            className="-mb-px border-b-2 border-transparent px-3 py-2 text-label uppercase text-fg-muted aria-selected:border-accent aria-selected:text-fg hover:text-fg"
+            className="group -mb-px border-b-2 border-transparent px-3 py-2 aria-selected:border-accent"
           >
-            {TAB_LABELS[name]}
+            <Label tone={tab === name ? "active" : "muted"} className="block group-hover:text-fg">
+              {TAB_LABELS[name]}
+            </Label>
           </button>
         ))}
       </div>

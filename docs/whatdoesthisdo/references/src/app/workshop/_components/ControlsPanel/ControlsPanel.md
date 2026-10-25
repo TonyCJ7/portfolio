@@ -1,12 +1,12 @@
 ## `src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx`
 
-### [ControlsPanelProps](../../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L7)
+### [ControlsPanelProps](../../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L8)
 
 Describes the props `WorkshopView` passes to `ControlsPanel`.
 
 - `entryId`: the id of the entry on screen, a string, since the entry object holds render functions that cannot leave the server.
 
-### [ControlsPanel({ entryId })](../../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L13)
+### [ControlsPanel({ entryId })](../../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L14)
 
 Renders one field per control of the open entry, plus a Reset button, and writes every edit to the URL.
 
@@ -15,4 +15,4 @@ Renders one field per control of the open entry, plus a Reset button, and writes
 
 ## Constants
 
-- [`FIELD_CLASS`](../../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L11): the shared classes of the select and text fields.
+- [`FIELD_CLASS`](../../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L12): the shared classes of the select and text fields.

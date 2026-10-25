@@ -1,13 +1,13 @@
 ## `src/app/workshop/_components/Toolbar/Toolbar.tsx`
 
-### [ToolbarProps](../../../../../../../../src/app/workshop/_components/Toolbar/Toolbar.tsx#L5)
+### [ToolbarProps](../../../../../../../../src/app/workshop/_components/Toolbar/Toolbar.tsx#L6)
 
 Describes the props `EntryStage` passes to `Toolbar`.
 
 - `ctx`: the frame settings from the URL, which decide the pressed button of each group.
 - `onChange`: writes a one-key patch of the frame settings to the URL; `EntryStage` passes `setCtx`.
 
-### [Toolbar({ ctx, onChange })](../../../../../../../../src/app/workshop/_components/Toolbar/Toolbar.tsx#L16)
+### [Toolbar({ ctx, onChange })](../../../../../../../../src/app/workshop/_components/Toolbar/Toolbar.tsx#L17)
 
 Shows the three segmented switches above the stage: scheme, device and motion.
 
@@ -16,4 +16,4 @@ Shows the three segmented switches above the stage: scheme, device and motion.
 
 ## Constants
 
-- [`GROUPS`](../../../../../../../../src/app/workshop/_components/Toolbar/Toolbar.tsx#L10): the setting key, label and two options of each switch.
+- [`GROUPS`](../../../../../../../../src/app/workshop/_components/Toolbar/Toolbar.tsx#L11): the setting key, label and two options of each switch.

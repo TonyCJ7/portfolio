@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { FrameContext } from "@/types/workshop";
+import Label from "@/components/Label/Label";
 import { entries } from "../../entries";
 
 type SidebarProps = {
@@ -52,7 +53,7 @@ export default function Sidebar({ currentId, ctx }: SidebarProps) {
   return (
     <nav aria-label="Entries" className="flex min-w-0 flex-col gap-4">
       <label className="hidden phone:block">
-        <span className="text-label uppercase text-fg-muted">Entry</span>
+        <Label>Entry</Label>
         <select
           name="entry"
           value={currentId}
@@ -85,7 +86,9 @@ export default function Sidebar({ currentId, ctx }: SidebarProps) {
 
           return (
             <div key={stage} className="mt-4">
-              <h2 className="text-label uppercase text-fg-muted">{heading}</h2>
+              <h2>
+                <Label className="block">{heading}</Label>
+              </h2>
               <ul className="mt-1 flex flex-col">
                 {group.map((entry) => (
                   <li key={entry.id}>

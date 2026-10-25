@@ -1,4 +1,5 @@
 import type { Spec } from "@/types/workshop";
+import Label from "@/components/Label/Label";
 
 type SpecPanelProps = {
   spec: Spec;
@@ -15,12 +16,16 @@ export default function SpecPanel({ spec }: SpecPanelProps) {
   return (
     <dl className="flex flex-col gap-4 text-small text-fg-2">
       <div>
-        <dt className="text-label uppercase text-fg-muted">Folder</dt>
+        <dt>
+          <Label className="block">Folder</Label>
+        </dt>
         <dd className="mt-1 font-mono text-fg">{spec.folder}</dd>
       </div>
       {LISTS.map(({ key, heading }) => (
         <div key={key}>
-          <dt className="text-label uppercase text-fg-muted">{heading}</dt>
+          <dt>
+            <Label className="block">{heading}</Label>
+          </dt>
           <dd className="mt-1">
             <ul className="flex flex-col gap-1">
               {spec[key].map((item) => (
@@ -33,7 +38,9 @@ export default function SpecPanel({ spec }: SpecPanelProps) {
       {spec.note
         ? (
             <div>
-              <dt className="text-label uppercase text-fg-muted">Note</dt>
+              <dt>
+                <Label className="block">Note</Label>
+              </dt>
               <dd className="mt-1">{spec.note}</dd>
             </div>
           )

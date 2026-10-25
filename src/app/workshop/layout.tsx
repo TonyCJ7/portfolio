@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Label from "@/components/Label/Label";
 import LogoLink from "@/components/Logo/LogoLink";
 import SkipLink from "@/components/SkipLink/SkipLink";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
@@ -17,9 +18,7 @@ export default function WorkshopLayout({ children }: LayoutProps<"/workshop">) {
       <SkipLink href="#workshop-main" />
       <header className="flex items-center gap-3 border-b border-line px-6 py-3">
         <LogoLink size={28} />
-        <span className="font-mono text-label uppercase text-fg-muted">
-          Workshop
-        </span>
+        <Label>Workshop</Label>
         <div className="ms-auto">
           <ThemeToggle size="text" />
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { notFound } from "next/navigation";
+import Label from "@/components/Label/Label";
 import { findEntry } from "../../entries";
 import { useWorkshopState } from "../../useWorkshopState";
 
@@ -49,7 +50,7 @@ export default function ControlsPanel({ entryId }: ControlsPanelProps) {
         if (control.kind === "select") {
           return (
             <label key={key} className="block">
-              <span className="text-label uppercase text-fg-muted">{control.label}</span>
+              <Label>{control.label}</Label>
               <select
                 name={key}
                 value={String(value)}
@@ -70,9 +71,9 @@ export default function ControlsPanel({ entryId }: ControlsPanelProps) {
 
         return (
           <label key={key} className="block">
-            <span className="flex justify-between text-label uppercase text-fg-muted">
-              {control.label}
-              <span className="font-mono normal-case">{`${length}/${control.max}`}</span>
+            <span className="flex justify-between">
+              <Label>{control.label}</Label>
+              <Label>{`${length}/${control.max}`}</Label>
             </span>
             <input
               type="text"
@@ -88,9 +89,9 @@ export default function ControlsPanel({ entryId }: ControlsPanelProps) {
       <button
         type="button"
         onClick={reset}
-        className="self-start rounded-sm border border-line px-3 py-1.5 text-label uppercase text-fg-2 hover:bg-surface hover:text-fg"
+        className="group self-start rounded-sm border border-line px-3 py-1.5 hover:bg-surface"
       >
-        Reset
+        <Label className="block group-hover:text-fg">Reset</Label>
       </button>
     </div>
   );

@@ -1,20 +1,20 @@
 ## `src/app/workshop/_components/Sidebar/Sidebar.tsx`
 
-### [SidebarProps](../../../../../../../../src/app/workshop/_components/Sidebar/Sidebar.tsx#L9)
+### [SidebarProps](../../../../../../../../src/app/workshop/_components/Sidebar/Sidebar.tsx#L10)
 
 Describes the props of `Sidebar`.
 
 - `currentId`: the id of the entry on screen.
 - `ctx`: the frame settings from the URL, which every entry link carries along. `SidebarFromUrl` sets it; the prerendered fallback in `WorkshopView` leaves it out.
 
-### [ctxQuery(ctx)](../../../../../../../../src/app/workshop/_components/Sidebar/Sidebar.tsx#L20)
+### [ctxQuery(ctx)](../../../../../../../../src/app/workshop/_components/Sidebar/Sidebar.tsx#L21)
 
 Builds the query string that carries the frame settings from one entry to the next, for the links below.
 
 - In: `ctx`, the current frame settings, or undefined before the URL has been read.
 - Out: `?scheme=…&device=…&motion=…` holding only the settings that differ from their defaults. An empty string when nothing differs or `ctx` is undefined.
 
-### [Sidebar({ currentId, ctx })](../../../../../../../../src/app/workshop/_components/Sidebar/Sidebar.tsx#L44)
+### [Sidebar({ currentId, ctx })](../../../../../../../../src/app/workshop/_components/Sidebar/Sidebar.tsx#L45)
 
 Lists every entry grouped by build stage, with a filter box, and marks the open one.
 
@@ -23,4 +23,4 @@ Lists every entry grouped by build stage, with a filter box, and marks the open 
 
 ## Constants
 
-- [`STAGES`](../../../../../../../../src/app/workshop/_components/Sidebar/Sidebar.tsx#L14): the three build stages and their headings, in order.
+- [`STAGES`](../../../../../../../../src/app/workshop/_components/Sidebar/Sidebar.tsx#L15): the three build stages and their headings, in order.

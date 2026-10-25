@@ -1,6 +1,7 @@
 "use client";
 
 import type { FrameContext } from "@/types/workshop";
+import Label from "@/components/Label/Label";
 
 type ToolbarProps = {
   ctx: FrameContext;
@@ -18,16 +19,21 @@ export default function Toolbar({ ctx, onChange }: ToolbarProps) {
     <div className="flex flex-wrap gap-4">
       {GROUPS.map((group) => (
         <div key={group.key} role="group" aria-label={group.label} className="flex items-center gap-1">
-          <span className="pe-1 text-label uppercase text-fg-muted">{group.label}</span>
+          <Label className="pe-1">{group.label}</Label>
           {group.options.map((option) => (
             <button
               key={option}
               type="button"
               aria-pressed={ctx[group.key] === option}
               onClick={() => onChange({ [group.key]: option })}
-              className="rounded-sm border border-line px-2 py-1 text-label uppercase text-fg-2 hover:bg-surface hover:text-fg aria-pressed:bg-surface-hover aria-pressed:text-fg"
+              className="group rounded-sm border border-line px-2 py-1 hover:bg-surface aria-pressed:bg-surface-hover"
             >
-              {option}
+              <Label
+                tone={ctx[group.key] === option ? "active" : "muted"}
+                className="block group-hover:text-fg"
+              >
+                {option}
+              </Label>
             </button>
           ))}
         </div>
