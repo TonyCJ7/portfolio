@@ -1,5 +1,14 @@
 ## `src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx`
 
+### [ControlsPanelProps](../../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L5)
+
+Describes the props `WorkshopView` passes to `ControlsPanel`.
+
+- `controls`: the open entry's control definitions, keyed by control name.
+- `args`: the current value of each control, read from the URL.
+- `onChange`: writes one control's new value to the URL; `WorkshopView` passes `setArg`.
+- `onReset`: removes every control param from the URL; `WorkshopView` passes `reset`.
+
 ### [ControlsPanel({ controls, args, onChange, onReset })](../../../../../../../../src/app/workshop/_components/ControlsPanel/ControlsPanel.tsx#L14)
 
 Renders one field per control of the open entry, plus a Reset button.

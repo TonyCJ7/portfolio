@@ -1,5 +1,12 @@
 ## `src/components/Logo/Logo.tsx`
 
+### [LogoProps](../../../../../../src/components/Logo/Logo.tsx#L3)
+
+Describes the props of `Logo`.
+
+- `size`: the width and height in pixels, `32` when omitted.
+- `className`: extra classes for the `svg` element.
+
 ### [Logo({ size, className })](../../../../../../src/components/Logo/Logo.tsx#L8)
 
 Draws the tj monogram as an inline SVG: the letters in the current text colour and the dot in Tangerine, so the mark follows light and dark schemes without separate files. The two paths come from `paths.ts`, which the Open Graph image draws too.

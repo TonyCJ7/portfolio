@@ -1,5 +1,13 @@
 ## `src/app/workshop/_components/Sidebar/Sidebar.tsx`
 
+### [SidebarProps](../../../../../../../../src/app/workshop/_components/Sidebar/Sidebar.tsx#L8)
+
+Describes the props `WorkshopView` passes to `Sidebar`.
+
+- `entries`: every Workshop entry in build order.
+- `currentId`: the id of the entry on screen.
+- `ctx`: the frame settings from the URL, which every entry link carries along.
+
 ### [ctxQuery(ctx)](../../../../../../../../src/app/workshop/_components/Sidebar/Sidebar.tsx#L20)
 
 Builds the query string that carries the frame settings from one entry to the next, for the links below.

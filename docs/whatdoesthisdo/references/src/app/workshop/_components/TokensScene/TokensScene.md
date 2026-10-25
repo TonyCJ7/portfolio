@@ -1,5 +1,13 @@
 ## `src/app/workshop/_components/TokensScene/TokensScene.tsx`
 
+### [TokensSceneProps](../../../../../../../../src/app/workshop/_components/TokensScene/TokensScene.tsx#L6)
+
+Describes the props the Tokens entry passes to `TokensScene`.
+
+- `show`: `"both"`, `"color"` or `"type"`, the value of the entry's Show control.
+- `sample`: the text of the entry's Sample control, set in every type step.
+- `ctx`: the frame settings; only `scheme` is read, to re-read the swatch values after a scheme change.
+
 ### [TokensScene({ show, sample, ctx })](../../../../../../../../src/app/workshop/_components/TokensScene/TokensScene.tsx#L38)
 
 Renders the Tokens entry: the colour swatches with their computed values and the type steps set in a sample text.

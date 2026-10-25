@@ -1,5 +1,12 @@
 ## `src/app/workshop/_components/Toolbar/Toolbar.tsx`
 
+### [ToolbarProps](../../../../../../../../src/app/workshop/_components/Toolbar/Toolbar.tsx#L5)
+
+Describes the props `WorkshopView` passes to `Toolbar`.
+
+- `ctx`: the frame settings from the URL, which decide the pressed button of each group.
+- `onChange`: writes a one-key patch of the frame settings to the URL; `WorkshopView` passes `setCtx`.
+
 ### [Toolbar({ ctx, onChange })](../../../../../../../../src/app/workshop/_components/Toolbar/Toolbar.tsx#L16)
 
 Shows the three segmented switches above the stage: scheme, device and motion.

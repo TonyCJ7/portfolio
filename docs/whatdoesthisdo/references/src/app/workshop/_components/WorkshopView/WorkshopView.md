@@ -1,5 +1,11 @@
 ## `src/app/workshop/_components/WorkshopView/WorkshopView.tsx`
 
+### [WorkshopViewProps](../../../../../../../../src/app/workshop/_components/WorkshopView/WorkshopView.tsx#L14)
+
+Describes the props the entry page passes to `WorkshopView`.
+
+- `entryId`: the `[entry]` segment of the URL, a string, since the entry object holds render functions that cannot leave the server.
+
 ### [WorkshopView({ entryId })](../../../../../../../../src/app/workshop/_components/WorkshopView/WorkshopView.tsx#L24)
 
 Lays out one Workshop entry on the client: sidebar, title and lede, toolbar, stage, usage line, and the aside with its Controls and Spec tabs.
