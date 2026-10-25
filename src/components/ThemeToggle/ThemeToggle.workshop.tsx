@@ -6,7 +6,7 @@ export const entry = defineEntry({
   name: "Theme toggle",
   stage: 1,
   center: true,
-  lede: "Text pill on desktop, icon-only on phone. Click it here and the frame switches scheme, the same way the site will.",
+  lede: "Text pill on desktop, icon-only on phone. Click it here and only the frame switches scheme; on the site it switches the whole page.",
   controls: {
     state: select("State", STATES, "rest"),
     size: select("Size", ["auto", "text", "icon"], "auto"),
