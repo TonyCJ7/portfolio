@@ -1,14 +1,12 @@
 import { defineEntry, jsx, select } from "@/app/workshop/controls";
-import Label from "@/components/Label/Label";
 import Logo from "@/components/Logo/Logo";
+import { profile } from "@/content/profile";
 import SkipLink from "./SkipLink";
 
 const FRAME_STATE = {
   hidden: undefined,
   focused: "focus",
 };
-
-const HEADER_WORDS = ["About", "Experience", "Contact"];
 
 export const entry = defineEntry({
   id: "skip-link",
@@ -32,12 +30,10 @@ export const entry = defineEntry({
     ],
   },
   render: (args) => (
-    <div data-state={FRAME_STATE[args.state]} className="relative h-60">
-      <div className="flex items-center gap-4 text-fg-muted">
-        <Logo size={28} />
-        {HEADER_WORDS.map((word) => (
-          <Label key={word}>{word}</Label>
-        ))}
+    <div data-state={FRAME_STATE[args.state]} className="pt-12 phone:pt-6">
+      <div aria-hidden>
+        <Logo size={44} className="phone:size-9" />
+        <div className="mt-6 text-display text-fg">{profile.name}</div>
       </div>
       <SkipLink href="#main" />
     </div>
