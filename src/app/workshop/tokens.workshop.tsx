@@ -13,14 +13,17 @@ export const entry = defineEntry({
   spec: {
     folder: "src/app/globals.css",
     props: [
-      "Colors: ground, surface, surface-lift, surface-hover, line, fg, fg-2, fg-muted, accent, accent-text, accent-soft, ink, accent-hover",
-      "Type: display, stat, headline, tagline, title, body, small, label, label-sm, headline-phone",
+      "Colors: ground, surface, surface-lift, surface-hover, line, fg, fg-2, fg-muted, accent, accent-text, accent-soft, focus-ring, spot, ink, accent-hover",
+      "Type: display, stat, headline, headline-phone, tagline, title, body, small, label-xl (16 px, 700), label-lg (14 px, 700), label (12 px, 600), label-sm (11 px, 600); the label steps are mono and uppercase through Label",
       "Radii: xs 2, sm 6, lg 8, md 12, full",
       "Widths: page 1200, measure 36rem, lede 26rem",
+      "Layout: grid-cols-label (a 156 px label column and the rest, for experience, project and skill rows); --gutter clamp(24px, 6vw, 48px)",
+      "Shadow: shadow-lift (a 1 px inner top line and a soft drop, from --lift-line and --lift-shadow)",
+      "Variants: phone (under 1024 px, or a phone frame), short (desktop windows under 896 px tall), hover, focus-visible, focus-visible-within, active, motion-reduce, motion-safe",
     ],
     tokens: [
       "Colors as listed, both schemes",
-      "Radii 6, 12, pill",
+      "Radii xs 2, sm 6, lg 8, md 12, full",
       "Space 4 base",
     ],
     motion: [

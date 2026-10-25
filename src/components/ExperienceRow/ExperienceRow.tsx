@@ -44,7 +44,7 @@ export default function ExperienceRow({ entry, target = false }: ExperienceRowPr
             kind="arrow"
             href={entry.url}
             external
-            className="after:absolute after:inset-0"
+            stretched
           >
             {heading}
           </Link>

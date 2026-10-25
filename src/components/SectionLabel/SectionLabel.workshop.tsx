@@ -8,7 +8,7 @@ const PLACEHOLDER_PARAGRAPHS = [
   "The bar is translucent and blurred, so the lines passing under it stay faintly visible without hurting legibility.",
   "Scroll further to see the bar stay in place. Its edges reach the page gutter on both sides.",
   "Content keeps flowing under the bar for as long as the section is tall, and the heading stays readable the whole time.",
-  "The heading text turns from muted to full strength on a phone, so it reads clearly over the blurred background.",
+  "The heading text is at full strength, so it reads clearly over the blurred background.",
   "A last paragraph gives the scene enough height to scroll well past the bar.",
 ];
 
@@ -30,7 +30,7 @@ export const entry = defineEntry({
     tokens: [
       "Ground at 60% opacity with an 8 px backdrop blur on phone",
       "Line: 1 px bottom border on phone",
-      "Label: Text Muted on desktop, Text on phone",
+      "Label: Label tone active, size heading: Text, 14 px mono at 700 on desktop (text-label-lg) and 16 px on phone (text-label-xl), filling the sticky bar without making it taller",
     ],
     motion: ["none"],
     a11y: [

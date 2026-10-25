@@ -176,11 +176,11 @@ Every component is a server component unless it needs state or the DOM; those ar
 |---|---|---|---|---|
 | 1 | Tokens and type | `src/app/globals.css` | both scheme blocks, type steps display/stat/headline/tagline/title/body/small/label, radii 6/12/pill, spacing scale, motion tokens | |
 | 2 | Focus ring | `src/app/globals.css` | one `:focus-visible` rule: 2px tangerine outline, offset 2px | |
-| 3 | Label | `src/components/Label/` | `tone: muted \| active \| accent`, `size: 12 \| 11`, `as: span \| time \| a`, children | |
+| 3 | Label | `src/components/Label/` | `tone: muted \| active \| accent`, `size: heading \| 12 \| 11`, `interactive`, `as: span \| time \| a`, children | |
 | 4 | Tag | `src/components/Tag/` | children; `TagList` wraps a `ul` | |
-| 5 | Logo link | `src/components/Logo/` | existing `Logo`; add `LogoLink` (home link, wiggle on hover, ring on focus) | |
+| 5 | Logo link | `src/components/Logo/` | existing `Logo`; add `LogoLink` (home link, wiggle on hover, ring on focus); `size: 44 \| 36 \| 28 \| header` (header is 44 px, 36 px on phones) | |
 | 6 | Button | `src/components/Button/` | `variant: primary \| ghost`, `href`, `arrow` (primary only), children | |
-| 7 | Link | `src/components/Link/` | `kind: prose \| arrow \| arrow-small \| large \| social`, `href`, `external`, children; `arrow-small` is the colophon's 14 px arrow link | |
+| 7 | Link | `src/components/Link/` | `kind: prose \| arrow \| arrow-small \| github \| social`, `href`, `external`, `stretched` (whole-row hit area), children; `arrow-small` is the colophon's 14 px arrow link | |
 | 8 | Theme toggle | `src/components/ThemeToggle/` | `size: auto \| text \| icon`; reads and writes `tj-theme` and the browser bar colour, View Transitions reveal; named by `aria-label` ("dark theme, switch to light"), no `aria-pressed` | yes |
 | 9 | Nav link | `src/components/NavLink/` | `href`, `active`, children | |
 | 10 | Section label | `src/components/SectionLabel/` | `id`, children; label on desktop, sticky bar on phone | |
@@ -308,6 +308,11 @@ WhatDoesThisDo pages, DESIGN.md and the three canvases, except where a row says 
 | Skip link scene | the Workshop scene draws the page's top corner (the mark and the name) at the page's offsets, so the focused pill sits in the margin above the mark as on the home page, not on a fake header (Workshop and WhatDoesThisDo) |
 | Browser bar | the scheme's ground (Ink in dark, Paper in light), set by the theme script and the toggle; the manifest uses Ink for its theme and splash colour |
 | Theme toggle | a Line border at rest, so it reads as a control: a ghost pill with the word on desktop and a 44 px circle around the dot on phone (code, Workshop, WhatDoesThisDo and DESIGN.md; the canvases still show the borderless rest state) |
+| Section rhythm | sections 96 px apart on desktop (was 144) and 60 px on phone (was 96) |
+| Section labels | Text on every layout (was Text Muted on desktop); Label `size="heading"`: a new `text-label-lg` step (14 px mono, 700, 0.06em), one step above the 12 px nav and dates, and `text-label-xl` (16 px, 700) in the phone's sticky bar; the nav stays 12 px |
+| Résumé link | Link kind `arrow-small` under the experience list, so it does not read as a row title |
+| Contact email | inline at the end of the intro after "email:", Link kind `arrow` (with the ↗) in body size; the `large` link kind is removed |
+| Design-system variants | callers no longer restyle components: `Label size="heading"` and `interactive` (nav link, theme toggle), `Logo`/`LogoLink size="header"` (intro, 36 px on phones), `Link stretched` (experience and project rows); `Link` has no `className`; the Tokens page lists every colour and type token |
 
 ## Left to the builder
 

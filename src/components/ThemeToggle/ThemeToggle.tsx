@@ -14,9 +14,6 @@ const BUTTON_CLASSES =
 const DOT_CLASSES =
   "theme-dot size-2.5 rounded-full transition-transform duration-75 group-active:scale-60 motion-reduce:transition-none";
 
-const WORD_COLOR_CLASSES =
-  "transition-colors duration-150 ease-standard group-hover:text-fg group-focus-visible:text-fg group-active:text-fg";
-
 const WORD_VISIBILITY = {
   auto: "phone:hidden",
   text: "",
@@ -38,8 +35,8 @@ export default function ThemeToggle({ size = "auto" }: ThemeToggleProps) {
     >
       <span aria-hidden className={DOT_CLASSES} />
       <span className={WORD_VISIBILITY[size]}>
-        <Label className={`theme-word-dark ${WORD_COLOR_CLASSES}`}>dark</Label>
-        <Label className={`theme-word-light ${WORD_COLOR_CLASSES}`}>light</Label>
+        <Label interactive className="theme-word-dark">dark</Label>
+        <Label interactive className="theme-word-light">light</Label>
       </span>
     </button>
   );

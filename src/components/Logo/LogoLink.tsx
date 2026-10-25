@@ -2,7 +2,7 @@ import Link from "next/link";
 import Logo from "./Logo";
 
 type LogoLinkProps = {
-  size?: 44 | 36 | 28;
+  size?: 44 | 36 | 28 | "header";
   href?: string;
   className?: string;
 };

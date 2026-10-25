@@ -29,7 +29,7 @@ export default function Intro({ profile, cvHref }: IntroProps) {
             className={`flex items-center justify-between ${ENTER}`}
             style={enterDelay(0)}
           >
-            <LogoLink size={44} className="phone:[&_svg]:size-9" />
+            <LogoLink size="header" />
             <ThemeToggle />
           </div>
           <h1

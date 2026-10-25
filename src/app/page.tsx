@@ -39,7 +39,7 @@ export default function Home() {
         <Intro profile={profile} cvHref={cvHref} />
         <div className="py-24 short:py-16 phone:py-0 phone:pb-12">
           <main id="main" tabIndex={-1}>
-            <div className="space-y-36 phone:space-y-24">
+            <div className="space-y-24 phone:space-y-15">
               <About />
               <ExperienceSection cvHref={cvHref} />
               <ProjectsSection />

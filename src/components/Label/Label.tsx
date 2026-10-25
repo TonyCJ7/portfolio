@@ -2,7 +2,8 @@ import type { ReactNode } from "react";
 
 type LabelBaseProps = {
   tone?: "muted" | "active" | "accent";
-  size?: 12 | 11;
+  size?: "heading" | 12 | 11;
+  interactive?: boolean;
   className?: string;
   children: ReactNode;
 };
@@ -20,10 +21,24 @@ const TONE_CLASS = {
   accent: "text-accent-text",
 };
 
+const SIZE_CLASS = {
+  heading: "text-label-lg phone:text-label-xl",
+  12: "text-label",
+  11: "text-label-sm",
+};
+
+const INTERACTIVE_CLASS =
+  "transition-colors duration-150 ease-standard group-hover:text-fg group-focus-visible:text-fg group-active:text-fg group-aria-[current=true]:text-fg";
+
 export default function Label(props: LabelProps) {
-  const { tone = "muted", size = 12, className = "", children } = props;
-  const sizeClass = size === 11 ? "text-label-sm" : "text-label";
-  const classes = `font-mono uppercase ${sizeClass} ${TONE_CLASS[tone]} ${className}`.trim();
+  const { tone = "muted", size = 12, interactive = false, className = "", children } = props;
+  const classes = [
+    "font-mono uppercase",
+    SIZE_CLASS[size],
+    TONE_CLASS[tone],
+    interactive && INTERACTIVE_CLASS,
+    className,
+  ].filter(Boolean).join(" ");
 
   if (props.as === "time") {
     return (

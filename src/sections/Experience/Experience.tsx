@@ -24,7 +24,7 @@ export default function ExperienceSection({ cvHref }: ExperienceSectionProps) {
       </div>
       {cvHref && (
         <p className="mt-8">
-          <Link kind="arrow" href={cvHref} external>
+          <Link kind="arrow-small" href={cvHref} external>
             {profile.cvLinkText}
           </Link>
         </p>

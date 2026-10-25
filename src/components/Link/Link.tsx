@@ -3,10 +3,10 @@ import type { ReactNode } from "react";
 import { isInternalRoute } from "@/lib/href";
 
 type LinkProps = {
-  kind?: "prose" | "arrow" | "arrow-small" | "github" | "large" | "social";
+  kind?: "prose" | "arrow" | "arrow-small" | "github" | "social";
   href: string;
   external?: boolean;
-  className?: string;
+  stretched?: boolean;
   children: ReactNode;
 };
 
@@ -19,11 +19,12 @@ const KIND_CLASSES = {
   arrow: `${ARROW_CLASSES} text-title`,
   "arrow-small": `${ARROW_CLASSES} text-small font-medium`,
   github: `${ARROW_CLASSES} text-title`,
-  large:
-    "text-headline text-fg underline decoration-accent decoration-1 underline-offset-6 wrap-anywhere hover:text-accent-text focus-visible:text-accent-text phone:text-headline-phone",
   social:
     "font-mono text-label text-fg-muted uppercase transition-colors duration-150 hover:text-fg focus-visible:text-fg",
 };
+
+// The after box covers the nearest positioned ancestor, so the whole row is the hit area and the focus ring stays on the text.
+const STRETCHED_CLASS = "after:absolute after:inset-0";
 
 // An inline block is a line break point of its own; the joiner and nowrap keep ↗ on the last word's line.
 const WORD_JOINER = "\u2060";
@@ -35,10 +36,12 @@ export default function Link({
   kind = "prose",
   href,
   external = false,
-  className = "",
+  stretched = false,
   children,
 }: LinkProps) {
-  const classes = `${KIND_CLASSES[kind]} ${className}`.trim();
+  const classes = stretched
+    ? `${KIND_CLASSES[kind]} ${STRETCHED_CLASS}`
+    : KIND_CLASSES[kind];
   const content = (
     <>
       {children}

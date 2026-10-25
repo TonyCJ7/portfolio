@@ -11,7 +11,7 @@ export default function SectionLabel({ id, children }: SectionLabelProps) {
       id={id}
       className="phone:sticky phone:top-0 phone:z-10 phone:-mx-(--gutter) phone:border-b phone:border-line phone:bg-ground/60 phone:px-(--gutter) phone:py-4 phone:backdrop-blur-sm"
     >
-      <Label tone="muted" className="phone:text-fg">
+      <Label tone="active" size="heading">
         {children}
       </Label>
     </h2>

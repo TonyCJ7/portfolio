@@ -23,7 +23,7 @@ export default function ProjectRow({ project, target = false }: ProjectRowProps)
             kind={project.github ? "github" : "arrow"}
             href={project.url}
             external
-            className="after:absolute after:inset-0"
+            stretched
           >
             {project.title}
           </Link>

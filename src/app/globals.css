@@ -199,6 +199,16 @@
   --text-small--letter-spacing: normal;
   --text-small--font-weight: 400;
 
+  --text-label-xl: 1rem;
+  --text-label-xl--line-height: 1.35;
+  --text-label-xl--letter-spacing: 0.06em;
+  --text-label-xl--font-weight: 700;
+
+  --text-label-lg: 0.875rem;
+  --text-label-lg--line-height: 1.35;
+  --text-label-lg--letter-spacing: 0.06em;
+  --text-label-lg--font-weight: 700;
+
   --text-label: 0.75rem;
   --text-label--line-height: 1.35;
   --text-label--letter-spacing: 0.06em;

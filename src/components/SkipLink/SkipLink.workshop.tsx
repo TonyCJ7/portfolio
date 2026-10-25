@@ -32,7 +32,7 @@ export const entry = defineEntry({
   render: (args) => (
     <div data-state={FRAME_STATE[args.state]} className="pt-12 phone:pt-6">
       <div aria-hidden>
-        <Logo size={44} className="phone:size-9" />
+        <Logo size="header" />
         <div className="mt-6 text-display text-fg">{profile.name}</div>
       </div>
       <SkipLink href="#main" />

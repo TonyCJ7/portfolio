@@ -21,6 +21,8 @@ const COLOR_TOKENS = [
   "accent",
   "accent-text",
   "accent-soft",
+  "focus-ring",
+  "spot",
   "ink",
   "accent-hover",
 ] as const;
@@ -29,11 +31,15 @@ const TYPE_STEPS = [
   { name: "display", className: "text-display" },
   { name: "stat", className: "text-stat" },
   { name: "headline", className: "text-headline" },
+  { name: "headline-phone", className: "text-headline-phone" },
   { name: "tagline", className: "text-tagline" },
   { name: "title", className: "text-title" },
   { name: "body", className: "text-body" },
   { name: "small", className: "text-small" },
-  { name: "label", className: "text-label uppercase" },
+  { name: "label-xl", className: "font-mono text-label-xl uppercase" },
+  { name: "label-lg", className: "font-mono text-label-lg uppercase" },
+  { name: "label", className: "font-mono text-label uppercase" },
+  { name: "label-sm", className: "font-mono text-label-sm uppercase" },
 ] as const;
 
 export default function TokensScene({ show, sample, ctx }: TokensSceneProps) {

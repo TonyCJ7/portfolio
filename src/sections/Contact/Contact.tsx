@@ -13,10 +13,8 @@ export default function Contact() {
     >
       <SectionLabel id="contact-label">{sectionLabel("contact")}</SectionLabel>
       <p className="mt-6 max-w-measure text-body text-fg-2 phone:mt-4">
-        {contact.intro}
-      </p>
-      <p className="mt-6">
-        <Link kind="large" href={`mailto:${profile.email}`}>
+        {contact.intro}{" "}
+        <Link kind="arrow" href={`mailto:${profile.email}`}>
           {profile.email}
         </Link>
       </p>
