@@ -2,7 +2,6 @@ import {
   defineEntry,
   jsx,
   select,
-  STATES,
   text,
 } from "@/app/workshop/controls";
 import Link from "./Link";
@@ -29,7 +28,7 @@ export const entry = defineEntry({
   lede: "The text link in four kinds: inline prose, an arrow link, a large link and a mono social link.",
   controls: {
     kind: select("Kind", ["prose", "arrow", "large", "social"], "prose"),
-    state: select("State", STATES, "rest"),
+    state: select("State", ["rest", "hover", "focus"], "rest"),
     text: text("Text", "", 40),
   },
   spec: {
