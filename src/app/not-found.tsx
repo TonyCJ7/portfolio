@@ -1,7 +1,12 @@
+import type { Metadata } from "next";
 import Button from "@/components/Button/Button";
 import Label from "@/components/Label/Label";
 import LogoLink from "@/components/Logo/LogoLink";
 import { notFound } from "@/content/notFound";
+
+export const metadata: Metadata = {
+  title: "Not found",
+};
 
 export default function NotFound() {
   return (
