@@ -6,7 +6,7 @@ export const entry = defineEntry({
   name: "Theme toggle",
   stage: 1,
   center: true,
-  lede: "Text pill on desktop, icon-only on phone. Click it here and only the frame switches scheme; on the site it switches the whole page.",
+  lede: "A ghost pill on desktop and a ghost circle around the dot on phone. Click it here and only the frame switches scheme; on the site it switches the whole page.",
   controls: {
     state: select("State", STATES, "rest"),
     size: select("Size", ["auto", "text", "icon"], "auto"),
@@ -20,7 +20,7 @@ export const entry = defineEntry({
     tokens: [
       "Dot 10 px: Tangerine fill in dark, 2 px Text ring in light",
       "Word: mono label, Text Muted at rest, Text on hover, focus and pressed; both words render and CSS shows the one for the scheme",
-      "Surface Lift fill and Line border on hover, Surface Lift when pressed, full radius",
+      "Line border at rest, Surface Lift fill on hover and when pressed, full radius",
     ],
     motion: [
       "Color 150 ms standard; dot scales to 0.6 over 75 ms while pressed",
