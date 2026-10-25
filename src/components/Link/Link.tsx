@@ -12,9 +12,9 @@ type LinkProps = {
 
 const KIND_CLASSES = {
   prose:
-    "rounded-xs font-medium text-fg decoration-accent decoration-1 underline-offset-4 transition-colors duration-150 ease-standard hover:underline focus-visible:underline",
+    "rounded-xs font-medium text-fg decoration-accent decoration-1 underline-offset-4 wrap-anywhere transition-colors duration-150 ease-standard hover:underline focus-visible:underline",
   arrow:
-    "group pt-1 pe-1 text-title text-fg hover:text-accent-text focus-visible:text-accent-text",
+    "group pt-1 pe-1 text-title text-fg wrap-anywhere hover:text-accent-text focus-visible:text-accent-text",
   large:
     "text-headline text-fg underline decoration-accent decoration-1 underline-offset-6 wrap-anywhere hover:text-accent-text focus-visible:text-accent-text phone:text-headline-phone",
   social:
