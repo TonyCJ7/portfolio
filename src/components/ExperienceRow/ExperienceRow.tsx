@@ -18,7 +18,7 @@ export default function ExperienceRow({ entry, target = false }: ExperienceRowPr
     >
       <span
         aria-hidden
-        className="absolute -inset-y-4 -inset-x-6 -z-10 rounded-sm transition-[background-color,box-shadow] duration-150 ease-standard group-hover:bg-surface-lift group-hover:shadow-lift group-focus-within:bg-surface-lift group-focus-within:shadow-lift phone:-inset-x-4"
+        className="absolute -inset-y-4 -inset-x-6 -z-10 rounded-sm transition-[background-color,box-shadow] duration-150 ease-standard group-hover:bg-surface-lift group-hover:shadow-lift group-focus-visible-within:bg-surface-lift group-focus-visible-within:shadow-lift phone:-inset-x-4"
       />
       <Label as="time" dateTime={entry.from} className="block pt-1 phone:pt-0">
         {entry.dates}

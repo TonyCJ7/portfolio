@@ -43,8 +43,8 @@
   }
 }
 
-@custom-variant focus-within {
-  &:focus-within {
+@custom-variant focus-visible-within {
+  &:has(:focus-visible) {
     @slot;
   }
   [data-state="focus"] & {
@@ -287,7 +287,7 @@ main:focus-visible {
     }
   }
 
-  .exp-list:has(> li:focus-within) > li:not(:focus-within),
+  .exp-list:has(> li :focus-visible):not(:has(> li:hover)) > li:not(:has(:focus-visible)),
   [data-state="dimmed"] .exp-list > li:not([data-row="target"]) {
     opacity: 0.5;
   }
