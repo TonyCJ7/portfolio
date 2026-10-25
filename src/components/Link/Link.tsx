@@ -21,6 +21,9 @@ const KIND_CLASSES = {
     "font-mono text-label text-fg-muted uppercase transition-colors duration-150 hover:text-fg focus-visible:text-fg",
 };
 
+// An inline block is a line break point of its own; the joiner and nowrap keep ↗ on the last word's line.
+const WORD_JOINER = "\u2060";
+
 export default function Link({
   kind = "prose",
   href,
@@ -33,11 +36,11 @@ export default function Link({
     <>
       {children}
       {kind === "arrow" && (
-        <span
-          aria-hidden
-          className="ms-1 inline-block leading-none transition-transform duration-75 ease-standard group-hover:translate-x-1 group-hover:-translate-y-1 group-focus-visible:translate-x-1 group-focus-visible:-translate-y-1 motion-reduce:transition-none"
-        >
-          ↗
+        <span aria-hidden className="whitespace-nowrap">
+          {WORD_JOINER}
+          <span className="ms-1 inline-block leading-none transition-transform duration-75 ease-standard group-hover:translate-x-1 group-hover:-translate-y-1 group-focus-visible:translate-x-1 group-focus-visible:-translate-y-1 motion-reduce:transition-none">
+            ↗
+          </span>
         </span>
       )}
     </>
