@@ -6,8 +6,6 @@ export type Device = "desktop" | "phone";
 
 export type Motion = "full" | "reduced";
 
-export type ForcedState = "rest" | "hover" | "focus" | "pressed";
-
 export type SelectControl<O extends readonly string[] = readonly string[]> = {
   kind: "select";
   label: string;
